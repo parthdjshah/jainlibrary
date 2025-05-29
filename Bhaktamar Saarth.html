@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+  <meta charset="UTF-8">
+  <title>Bhaktamar Stotra - Interactive</title>
+  <style>
+    body {
+      font-family: "Noto Serif Devanagari", serif;
+      display: flex;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .left, .right {
+      padding: 30px;
+      box-sizing: border-box;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .left {
+      flex: 2;
+      background: #fff;
+      border-right: 2px solid #ddd;
+    }
+
+    .right {
+      flex: 1;
+      background: #f9f9f9;
+    }
+
+    .shloka {
+      margin-bottom: 40px;
+      font-size: 20px;
+      line-height: 2;
+    }
+
+    span.word {
+      position: relative;
+      cursor: help;
+      border-bottom: 1px dotted #555;
+	  font-size:25px;
+    }
+
+    span.word:hover::after {
+      content: attr(data-meaning);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #222;
+      color: #fff;
+      padding: 5px 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      z-index: 10;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="left">
+  <div class="shloka">
+    <span class="word" data-meaning="भक्त (devotee) + अमर (immortal)">भक्तामर</span> -
+    <span class="word" data-meaning="प्रणत (bowed)">प्रणत</span> -
+    <span class="word" data-meaning="मौलि (crown)">मौलि</span> -
+    <span class="word" data-meaning="मणि (jewel)">मणि</span> -
+    <span class="word" data-meaning="प्रभाणाम् (radiance)">प्रभाणा</span><br>
+    <span class="word" data-meaning="उद्योतकं (illuminator)">मुद्योतकं</span>
+    <span class="word" data-meaning="दलित (dispelled)">दलित</span> -
+    <span class="word" data-meaning="पाप (sin)">पाप</span> -
+    <span class="word" data-meaning="तमो (darkness) + वितानम् (covered with) covered with Darkness">तमो - वितानम्</span>।<br>
+    <span class="word" data-meaning="सम्यक् (properly)">सम्यक्</span> -
+    <span class="word" data-meaning="प्रणम्य (bowing)">प्रणम्य</span>
+    <span class="word" data-meaning="जिन (conqueror)">जिन</span> -
+    <span class="word" data-meaning="पाद (feet) + युगं (pair)">पाद - युगं</span>
+    <span class="word" data-meaning="युगादौ (from ages)(युगादौ+आलम्बनं = युगादावालम्बनं")>युगादा</span> -<br>
+    <span class="word" data-meaning="आलम्बनं (support)">वालम्बनं</span>
+    <span class="word" data-meaning="भव (worldly) + जले (ocean)">भव - जले</span>
+    <span class="word" data-meaning="पततां (falling) + जनानाम् (people)">पततां जनानाम्</span>।। 1॥
+  </div>
+<div class="shloka">
+  <span class="word" data-meaning="य: (he who)">य:</span>
+  <span class="word" data-meaning="संस्तुत: (praised)">संस्तुत:</span>
+  <span class="word" data-meaning="सकल (entire) - वाङ्मय (speech) - तत्त्व-बोधा (essence knowledge)">सकल - वाङ् मय - तत्त्व-बोधा</span> -<br>
+  <span class="word" data-meaning="उद्भूत (emerged) - बुद्धि (intellect) - पटुभि: (wise)">उद्भूत-बुद्धि - पटुभि:</span>
+  <span class="word" data-meaning="सुर (deity) - लोक (world) - नाथै: (lords)">सुर - लोक - नाथै:</span>।<br>
+  <span class="word" data-meaning="स्तोत्रै: (by hymns)">स्तोत्रै:</span>
+  <span class="word" data-meaning="जगत् (world) - त्रितय (three worlds) - चित्त (minds) - हरै: (captivating)">जगत्- त्रितय - चित्त - हरैरुदारै:</span>,<br>
+  <span class="word" data-meaning="स्तोष्ये (I shall praise) - किल (indeed) - अहम् (I) - अपि (also)">स्तोष्ये किलाहमपि</span>
+  <span class="word" data-meaning="तं (that) - प्रथमं (first) - जिनेन्द्रम् (Lord Jina)">तं प्रथमं जिनेन्द्रम्</span>॥ 2॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="बुद्ध्या (with intellect) - विनापि (even without)">बुद्ध्या विनापि</span>
+  <span class="word" data-meaning="विबुध (divine) - अर्चित (worshipped) - पाद (feet) - पीठ (platform)">विबुधार्चित - पाद - पीठ</span>!<br>
+  <span class="word" data-meaning="स्तोतुं (to praise)">स्तोतुं</span>
+  <span class="word" data-meaning="समुद्यत (resolved) - मति: (mind)">समुद्यत - मति:</span>
+  <span class="word" data-meaning="विगत (freed from) - त्रप: (shame)">विगत - त्रपोऽहम्</span>।<br>
+  <span class="word" data-meaning="बालं (child) - विहाय (leaving aside)">बालं विहाय</span>
+  <span class="word" data-meaning="जल (water) - संस्थित (situated) - इन्दु-बिम्बम् (moon-reflection)">जल-संस्थित-मिन्दु-बिम्ब</span> -<br>
+  <span class="word" data-meaning="मन्य: (who) - क: (who) - इच्छति (desires) - जन: (person) - सहसा (suddenly) - ग्रहीतुम् (to grasp)">मन्य: क इच्छति जन: सहसा ग्रहीतुम्</span>॥ 3॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="वक्तुं (to speak)">वक्तुं</span>
+  <span class="word" data-meaning="गुणान् (virtues) - गुणसमुद्र (ocean of qualities)">गुणान्गुण -समुद्र</span> !
+  <span class="word" data-meaning="शशाङ्क (moon) - कान्तान् (beautiful like)">शशाङ्क-कान्तान्</span>,<br>
+  <span class="word" data-meaning="क: (who) - ते (your) - क्षम: (capable)">कस्ते क्षम:</span>
+  <span class="word" data-meaning="सुर (deity) - गुरु (preceptor) - प्रतिम: (equivalent) - अपि (even) - बुद्ध्या (by intellect)">सुर - गुरु-प्रतिमोऽपि बुद्ध्या</span>।<br>
+  <span class="word" data-meaning="कल्पान्त (end of kalpa) - काल (time) - पवन (wind) - उद्दत (stirred) - नक्र (crocodile) - चक्रं (whirlpool)">कल्पान्त - काल - पवनोद्धत- नक्र - चक्रं</span>,<br>
+  <span class="word" data-meaning="को (who) - वा (indeed) - तरीतुं (to cross) - अलम् (capable) - अम्बुनिधिं (ocean) - भुजाभ्याम् (with arms)">को वा तरीतुमलमम्बुनिधिं भुजाभ्याम्</span>॥ 4॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="स: अहम् (I am that)">सोऽहं</span>
+  <span class="word" data-meaning="तथापि (even so)">तथापि</span>
+  <span class="word" data-meaning="तव (your) - भक्ति (devotion) - वशात् (due to power)">तव भक्ति - वशान्मुनीश</span>!<br>
+  <span class="word" data-meaning="कर्तुं (to do) - स्तवं (hymn) - विगत (lacking) - शक्ति: (strength)">कर्तुं स्तवं विगत - शक्ति - रपि</span>
+  <span class="word" data-meaning="प्रवृत्त: (engaged)">प्रवृत्त:</span>।<br>
+  <span class="word" data-meaning="प्रीत्या (out of love) - आत्मवीर्यम् (one's own strength) - अविचार्य (without considering)">प्रीत्यात्म - वीर्य - मविचार्य</span>
+  <span class="word" data-meaning="मृगी (female deer) - मृगेन्द्रम् (lion)">मृगी मृगेन्द्रम्</span><br>
+  <span class="word" data-meaning="नाभ्येति (approaches not) - किं (why not) - निजशिशो: (own child) - परिपालनार्थम् (for protection)">नाभ्येति किं निज-शिशो: परिपालनार्थम्</span>॥ 5॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="अल्प (little) - श्रुतं (learning)">अल्प- श्रुतं</span>
+  <span class="word" data-meaning="श्रुतवतां (learned ones) - परिहास (mockery) - धाम (object)">श्रुतवतां परिहास-धाम</span>,<br>
+  <span class="word" data-meaning="त्वत् (your) - भक्तिः (devotion) - एव (only)">त्वद्-भक्तिरेव</span>
+  <span class="word" data-meaning="मुखरी (makes eloquent) - कुरुते (does) - बलात् (forcefully)">मुखरी-कुरुते बलान्माम्</span> ।<br>
+  <span class="word" data-meaning="यत् (as) - कोकिल: (cuckoo) - किल (indeed)">यत्कोकिल: किल</span>
+  <span class="word" data-meaning="मधौ (in spring) - मधुरं (sweetly) - विरौति (sings)">मधौ मधुरं विरौति</span>,<br>
+  <span class="word" data-meaning="तत् (that) - च (and) - आम्र (mango) - चारु (lovely) - कलिका (buds) - निकर (cluster) - एक (only) - हेतु: (reason)">तच्चाम्र -चारु -कलिका-निकरैक -हेतु:</span>॥ 6॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="त्वत् (your) - संस्तवेन (by praise)">त्वत्संस्तवेन</span>
+  <span class="word" data-meaning="भव (worldly) - सन्तति (cycle of birth)">भव - सन्तति</span> -
+  <span class="word" data-meaning="सन्निबद्धं (bound)">सन्निबद्धं</span>,<br>
+  <span class="word" data-meaning="पापं (sin) - क्षणात् (instantly) - क्षयम् (destruction) - उपैति (attains)">पापं क्षणात्क्षयमुपैति</span>
+  <span class="word" data-meaning="शरीरभाजाम् (for embodied beings)">शरीरभाजाम्</span> ।<br>
+  <span class="word" data-meaning="आक्रान्त (covered) - लोक (world) - मलिन (dirty) - नील (dark) - अशेष (entire) - माशु (quickly) ">आक्रान्त - लोक - मलि -नील-मशेष माशु </span> -<br>
+  <span class="word" data-meaning="सूर्यांशु (sun rays) - भिन्न (pierced) - इव (like) - शार्वर (nightly) - मन्धकारम् (darkness)">सूर्यांशु- भिन्न-मिव शार्वर-मन्धकारम्</span>॥ 7॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="मत्वा (thinking thus) - इति (so) - नाथ (lord)">मत्वेति नाथ!</span>
+  <span class="word" data-meaning="तव (your) - संस्तवनं (praise)">तव संस्तवनं</span>
+  <span class="word" data-meaning="मया (by me) - इदं (this)">मयेद</span> -<br>
+  <span class="word" data-meaning="आरभ्यते (is begun) - तनुधिया (by limited mind) - अपि (even) - तव (your) - प्रभावात् (due to power)">मारभ्यते तनु- धियापि तव प्रभावात्</span> ।<br>
+  <span class="word" data-meaning="चेत: (mind) - हरिष्यति (will attract) - सतां (of the good) - नलिनी-दलेषु (lotus petals)">चेतो हरिष्यति सतां नलिनी-दलेषु</span>,<br>
+  <span class="word" data-meaning="मुक्ताफल (pearl) - द्युति (shine) - उपैति (attains) - ननु (indeed) - उदबिन्दु: (drop of water)">मुक्ता-फल - द्युति-मुपैति ननूद-बिन्दु:</span>॥ 8॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="आस्तां (let it be) - तव (your) - स्तवनं (praise)">आस्तां तव स्तवन</span>
+  <span class="word" data-meaning="अस्त (devoid) - समस्त (all) - दोषं (fault)">मस्त-समस्त-दोषं</span>,<br>
+  <span class="word" data-meaning="त्वत्सङ्कथा (your narrative) - अपि (even) - जगतां (of the world) - दुरितानि (sins) - हन्ति (destroys)">त्वत्सङ्कथाऽपि जगतां दुरितानि हन्ति</span> ।<br>
+  <span class="word" data-meaning="दूरे (from afar) - सहस्रकिरण: (sun) - कुरुते (makes) - प्रभा (radiance) - इव (like)">दूरे सहस्रकिरण: कुरुते प्रभैव</span>,<br>
+  <span class="word" data-meaning="पद्माकरेषु (in lotus-ponds) - जलजानि (lotuses) - विकासभाञ्जि (cause to bloom)">पद्माकरेषु जलजानि विकासभाञ्जि</span>॥ 9॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="न (not) - अति (very) - अद्भुतं (amazing)">नात्यद्-भुतं</span>
+  <span class="word" data-meaning="भुवन (world) - भूषण (ornament)!">भुवन - भूषण</span>!
+  <span class="word" data-meaning="भूत (beings) - नाथ (lord)">भूत-नाथ</span>!<br>
+  <span class="word" data-meaning="भूतै: (by beings) - गुणै: (qualities) - भुवि (on earth) - भवन्तम् (you) - अभिष्टुवन्त: (praising)">भूतैर्गुणैर्भुवि भवन्त - मभिष्टुवन्त:</span> ।<br>
+  <span class="word" data-meaning="तुल्या (equal) - भवन्ति (become) - भवतः (to you) - ननु (indeed) - तेन (by that) - किं वा (what of it?)">तुल्या भवन्ति भवतो ननु तेन किं वा</span><br>
+  <span class="word" data-meaning="भूत्याश्रितं (rich man) - य: (who) - इह (here) - न (not) - आत्मसमं (equal to self) - करोति (makes)">भूत्याश्रितं य इह नात्मसमं करोति</span>॥ 10॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="दृष्ट्वा (seeing)">दृष्ट्वा</span>
+  <span class="word" data-meaning="भवंतम् (you) - अनिमेष (unblinking) - विलोकनीयं (worthy of seeing)">भवंत मनिमेष - विलोकनीयं</span>,<br>
+  <span class="word" data-meaning="न (not) - अन्यत्र (elsewhere) - तोषम् (satisfaction) - उपयाति (attains) - जनस्य (of a person) - चक्षु: (eye)">नान्यत्र - तोष- मुपयाति जनस्य चक्षु:</span>।<br>
+  <span class="word" data-meaning="पीत्वा (after drinking) - पय: (milk) - शशिकर (moonbeam) - द्युति (radiance) - दुग्ध-सिन्धो: (milky ocean)">पीत्वा पय: शशिकर - द्युति - दुग्ध-सिन्धो:</span>,<br>
+  <span class="word" data-meaning="क्षारं (salty) - जलं (water) - जलनिधे: (from ocean) - असितुं (to drink) - क: (who) - इच्छेत् (would desire)">क्षारं जलं जलनिधेरसितुं क इच्छेत्?</span>॥ 11॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="यै: (by whom) - शान्त (peaceful) - राग (passion) - रुचिभि: (atoms)">यै: शान्त-राग-रुचिभि:</span>
+  <span class="word" data-meaning="परमाणुभि: (particles) - त्वं (you)">परमाणुभिस्-त्वं</span>,<br>
+  <span class="word" data-meaning="निर्मापित: (formed) - त्रिभुवनैक (three worlds') - ललाम (ornament) - भूत (become)">निर्मापितस्- त्रि-भुवनैक - ललाम-भूत</span>!<br>
+  <span class="word" data-meaning="तावन्त एव (just that many) - खलु (indeed) - ते अपि (those too) - अणव: (atoms)">तावन्त एव खलु तेऽप्यणव:</span>
+  <span class="word" data-meaning="पृथिव्यां (on earth)">पृथिव्यां</span>,<br>
+  <span class="word" data-meaning="यत् (because) - ते (your) - समानम् (equal) - अपरं (another) - न हि (truly not) - रूपम् (form) - अस्ति (exists)">यत्ते समान- मपरं न हि रूप-मस्ति</span>॥ 12॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="वक्त्रं (face) - क्व (where) - ते (your)">वक्त्रं क्व ते</span>
+  <span class="word" data-meaning="सुर (gods) - नर (men) - उरग (serpents) - नेत्र (eyes) - हारि (stealing)">सुर-नरोरग-नेत्र-हारि</span>,<br>
+  <span class="word" data-meaning="निःशेष (entirely) - निर्जित (defeated) - जगत् (world) - त्रितय (three worlds) - उपमानम् (comparison)">नि:शेष- निर्जित - जगत्त्रितयोपमानम्</span> ।<br>
+  <span class="word" data-meaning="बिम्बं (disc) - कलङ्क (blemish) - मलिनं (stained) - क्व (where) - निशाकरस्य (of the moon)">बिम्बं कलङ्क - मलिनं क्व निशाकरस्य</span>,<br>
+  <span class="word" data-meaning="यत् (which) - वासरे (during day) - भवति (becomes) - पाण्डु (pale) - पलाश (leaf) - कल्पम् (like)">यद्वासरे भवति पाण्डुपलाश-कल्पम्</span>॥ 13॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="सम्पूर्ण (full) - मण्डल (disk) - शशाङ्क (moon) - कला (rays) - कलाप (group)">सम्पूर्ण- मण्डल-शशाङ्क - कला-कलाप</span> -<br>
+  <span class="word" data-meaning="शुभ्रा (pure) - गुणाः (virtues) - त्रिभुवनं (three worlds) - लङ्घयन्ति (surpass)">शुभ्रा गुणास् - त्रि-भुवनं तव लङ्घयन्ति</span>।<br>
+  <span class="word" data-meaning="ये (those who) - संश्रिताः (surrendered) - त्रिजगत् (three worlds') - ईश्वरनाथ (Lord) - एकं (only one)">ये संश्रितास् - त्रि-जगदीश्वरनाथ-मेकं</span>,<br>
+  <span class="word" data-meaning="क: (who) - तान् (them) - निवारयति (can stop) - सञ्चरतः (roaming) - यथेष्टम् (as they wish)">कस्तान् निवारयति सञ्चरतो यथेष्टम्</span>॥ 14॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="चित्रं (strange) - किमत्र (what here)">चित्रं - किमत्र</span>
+  <span class="word" data-meaning="यदि (if) - ते (your) - त्रिदश (gods) - अङ्गनाभिः (celestial maidens)">यदि ते त्रिदशाङ्ग-नाभिर्</span> -<br>
+  <span class="word" data-meaning="नीतं (led) - मनाक् अपि (even slightly) - मन: (mind) - न विकारमार्गम् (not to distraction)">नीतं मनागपि मनो न विकार - मार्गम्</span>।<br>
+  <span class="word" data-meaning="कल्पान्त (end of time) - काल (time) - मरुत (storm) - चलित (moved) - अचलेन (by wind)">कल्पान्त - काल - मरुता चलिताचलेन</span>,<br>
+  <span class="word" data-meaning="किं (is it) - मन्दर (Mandara) - आद्रि (mountain) - शिखरं (peak) - चलितं (moved) - कदाचित् (ever)">किं मन्दराद्रिशिखरं चलितं कदाचित्</span>॥ 15॥
+</div>
+<div class="shloka">
+  <span class="word" data-meaning="निर्धूम (smokeless) - वर्तिः (wick)">निर्धूम - वर्ति</span> -
+  <span class="word" data-meaning="अपवर्जित (uninterrupted) - तैलपूरः (filled with oil)">रपवर्जित - तैल-पूर:</span>,<br>
+  <span class="word" data-meaning="कृत्स्नं (entire) - जगत्त्रयम् (three worlds) - इदं (this) - प्रकटीकरोषि (you illuminate)">कृत्स्नं जगत्त्रय - मिदं प्रकटीकरोषि</span>।<br>
+  <span class="word" data-meaning="गम्यः (attainable) - न जातु (never) - मरुताम् (by winds) - चलिताचलानाम् (moving hills)">गम्यो न जातु मरुतां चलिताचलानां</span>,<br>
+  <span class="word" data-meaning="दीपः (lamp) - अपरः (other) - त्वम् (you are) - असि (are) - नाथ (O Lord) - जगत्प्रकाशः (light of the world)">दीपोऽपरस्त्वमसि नाथ ! जगत्प्रकाश:</span>॥ 16॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="नास्तं (setting) - कदाचित् (ever) - उपयासि (you undergo)">नास्तं कदाचिदुपयासि</span>
+  <span class="word" data-meaning="न (not) - राहुगम्यः (eclipsed by Rahu)">न राहुगम्य:</span>,<br>
+  <span class="word" data-meaning="स्पष्टीकरोषि (you clearly show) - सहसा (instantly) - युगपत् (simultaneously) - जगन्ति (worlds)">स्पष्टीकरोषि सहसा युगपज्- जगन्ति</span>।<br>
+  <span class="word" data-meaning="नाम् (indeed) - अम्भोधर (cloud) - उदर (belly) - निरुद्ध (obscured) - महाप्रभावः (great radiance)">नाम्भोधरोदर - निरुद्ध - महा- प्रभाव:</span>,<br>
+  <span class="word" data-meaning="सूर्य (sun) - अतिशायि (surpassing) - महिमा (glory) - असि (you are) - मुनीन्द्र (sage)! - लोके (in world)">सूर्यातिशायि-महिमासि मुनीन्द्र! लोके</span>॥ 17॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="नित्य (eternal) - उदयम् (rising)">नित्योदयं</span>
+  <span class="word" data-meaning="दलित (destroying) - मोह (delusion) - महान्धकारम् (great darkness)">दलित - मोह - महान्धकारं</span>,<br>
+  <span class="word" data-meaning="गम्यम् (accessible) - न (not) - राहु-वदनस्य (by Rahu's mouth) - न (nor) - वारिदानाम् (by clouds)">गम्यं न राहु - वदनस्य न वारिदानाम्</span>।<br>
+  <span class="word" data-meaning="विभ्राजते (shines) - तव (your) - मुखाब्जम् (lotus-face) - अनल्प (immeasurable) - कान्ति (beauty)">विभ्राजते तव मुखाब्ज - मनल्पकान्ति</span>,<br>
+  <span class="word" data-meaning="विद्योतयत् (illuminating) - जगत् (world) - अपूर्व (unprecedented) - शशाङ्क (moon) - बिम्बम् (disc)">विद्योतयज्-जगदपूर्व-शशाङ्क-बिम्बम्</span>॥ 18॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="किम् (what need) - शर्वरीषु (at night) - शशिना (by the moon) - अह्नि (daytime) - विवस्वता (sun)">किं शर्वरीषु शशिनाह्नि विवस्वता वा</span>,<br>
+  <span class="word" data-meaning="युष्मत् (your) - मुखेन्दु (moon-like face) - दलितेषु (after destroying) - तम:सु (darknesses) - नाथ (O Lord)">युष्मन्मुखेन्दु- दलितेषु तम:सु नाथ!</span><br>
+  <span class="word" data-meaning="निष्पन्न (produced) - शालि (rice) - वन (fields) - शालिनी (lush) - जीव-लोके (in the world of beings)">निष्पन्न-शालि-वन-शालिनी जीव-लोके</span>,<br>
+  <span class="word" data-meaning="कार्यं (purpose) - कियत् (how much) - जलधरै: (by clouds) - जलभारनमै: (laden with water)">कार्यं कियज्जल-धरै-र्जल-भार-नम्रै:</span>॥ 19॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="ज्ञानं (knowledge) - यथा (as) - त्वयि (in you) - विभाति (shines) - कृतावकाशं (freely)">ज्ञानं यथा त्वयि विभाति कृतावकाशं</span>,<br>
+  <span class="word" data-meaning="नैवं (not so) - तथा (thus) - हरि (Vishnu) - हरादिषु (and Shiva etc.) - नायकेषु (among deities)">नैवं तथा हरि -हरादिषु नायकेषु</span>।<br>
+  <span class="word" data-meaning="तेजः (brilliance) - स्फुरत् (sparkling) - मणिषु (in jewels) - याति (attains) - यथा (as) - महत्त्वं (greatness)">तेजः स्फ़ुरन्मणिषु याति यथा महत्त्वं</span>,<br>
+  <span class="word" data-meaning="नैवं (not so) - तु (but) - काच (glass) - शकले (piece) - किरणाकुले (with rays)">नैवं तु काच -शकले किरणाकुलेऽपि</span>॥ 20॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="मन्ये (I think)">मन्ये</span>
+  <span class="word" data-meaning="वरं (better) - हरि (Vishnu) - हरादय: (and Shiva etc.) - एव (indeed) - दृष्टा: (have been seen)">वरं हरि- हरादय एव दृष्टा</span>,<br>
+  <span class="word" data-meaning="दृष्टेषु (among those seen) - येषु (in whom) - हृदयं (heart) - त्वयि (in you) - तोषम् (satisfaction) - एति (attains)">दृष्टेषु येषु हृदयं त्वयि तोषमेति</span>।<br>
+  <span class="word" data-meaning="किं (what use) - वीक्षितेन (with being seen) - भवता (by you) - भुवि (on earth) येन (by whom) - न (not) - अन्य: (another) ">किं वीक्षितेन भवता भुवियेन नान्य:, </span><br>
+  <span class="word" data-meaning="- कश्चित् (anyone) - मन: (mind) - हरति (attracts) - नाथ! (O Lord!) - भवान्तरेऽपि (even elsewhere)">कश्चिन्मनो हरति नाथ! भवान्तरेऽपि</span>॥ 21॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="स्त्रीणां (of women) - शतानि (hundreds) - शतश: (in hundreds) - जनयन्ति (give birth) - पुत्रान् (sons)">स्त्रीणां शतानि शतशो जनयन्ति पुत्रान्</span>,<br>
+  <span class="word" data-meaning="नान्या (no other) - सुतं (son) - त्वदुपमं (equal to you) - जननी (mother) - प्रसूता (has given birth)">नान्या सुतं त्वदुपमं जननी प्रसूता</span>।<br>
+  <span class="word" data-meaning="सर्वा (all) - दिश: (directions) - दधति (give rise to) - भानि (light) - सहस्ररश्मिं (sun)">सर्वा दिशो दधति भानि सहस्र-रश्मिं</span>,<br>
+  <span class="word" data-meaning="प्राच्या (eastern) - एव (only) - दिक् (direction) - जनयति (gives birth) - स्फुरत् (sparkling) - अंशु- जालम् (sun rays)">प्राच्येव दिग्जनयति स्फुरदंशु-जालम्</span>॥ 22॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="त्वाम् (you) - आमनन्ति (are called) - मुनय: (sages) - परमं (supreme) - पुमान् (person)">त्वामामनन्ति मुनय: परमं पुमांसम्</span>,<br>
+  <span class="word" data-meaning="आदित्यवर्णम् (sun-like in hue) - अमलम् (pure) - तमस: (of darkness) - पुरस्तात् (beyond)">आदित्य-वर्ण-ममलं तमस: पुरस्तात्</span>।<br>
+  <span class="word" data-meaning="त्वामेव (only you) - सम्यक् (rightly) - उपलभ्य (having realized) - जयन्ति (conquer) - मृत्युं (death)">त्वामेव सम्य - गुपलभ्य जयन्ति मृत्युं</span>,<br>
+  <span class="word" data-meaning="न अन्य: (no other) - शिव: (liberation) - शिवपदस्य (of the auspicious path) - मुनीन्द्र! (O sage!) - पन्था: (way)">नान्य: शिव: शिवपदस्य मुनीन्द्र! पन्था:</span>॥ 23॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="त्वाम् (you) - अव्ययम् (imperishable) - विभुम् (omnipresent) - अचिन्त्यम् (incomprehensible)">त्वा-मव्ययं विभु-मचिन्त्यं</span> -
+  <span class="word" data-meaning="असंख्यम् (innumerable) - आद्यं (first cause)">असंख्य-माद्यं</span>,<br>
+  <span class="word" data-meaning="ब्रह्माणम् (creator) - ईश्वरम् (lord) - अनन्तम् (infinite)">ब्रह्माणमीश्वर - मनन्त</span> -
+  <span class="word" data-meaning="मनङ्गकेतुम् (Lord of love)">मनङ्ग - केतुम्</span>,<br>
+  <span class="word" data-meaning="योगीश्वरं (lord of yogis) - विदितयोगम् (knower of yoga)">योगीश्वरं विदित - योगम</span>,
+  <span class="word" data-meaning="अनेकम् (many forms) - एकम् (yet one)">नेक-मेकं</span>,<br>
+  <span class="word" data-meaning="ज्ञानस्वरूपम् (essence of knowledge) - अमलम् (pure) - प्रवदन्ति (declare) - सन्त: (sages)">ज्ञान-स्वरूप-ममलं प्रवदन्ति सन्त:</span>॥ 24॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="बुद्ध: (Buddha) - त्वमेव (you alone)">बुद्धस्त्वमेव</span>
+  <span class="word" data-meaning="विबुधार्चित (worshiped by gods) - बुद्धिबोधात् (source of knowledge)">विबुधार्चित-बुद्धि-बोधात्</span>,<br>
+  <span class="word" data-meaning="त्वं (you) - शङ्कर: (Shiva) - असि (are) - भुवनत्रय (three worlds) - शङ्करत्वात् (due to auspiciousness)">त्वं शङ्करोऽसि भुवन-त्रय- शङ्करत्वात्</span> ।<br>
+  <span class="word" data-meaning="धाता (creator) - असि (are) - धीर! (O wise one)">धातासि धीर!</span>
+  <span class="word" data-meaning="शिवमार्ग (path of liberation) - विधे: (of Brahma) - विधानात् (by directing)">शिव-मार्ग विधेर्विधानाद्</span>,<br>
+  <span class="word" data-meaning="व्यक्तं (clearly) - त्वम् (you) - एव (only) - भगवन् (O Lord!) - पुरुषोत्तम: (supreme person) - असि (are)">व्यक्तं त्वमेव भगवन् पुरुषोत्तमोऽसि</span>॥ 25॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="तुभ्यं (to you) - नम: (salutations) - त्रिभुवनार्तिहराय (remover of sufferings in all three worlds)">तुभ्यं नमस् - त्रिभुवनार्ति - हराय नाथ!</span><br>
+  <span class="word" data-meaning="तुभ्यं (to you) - नम: - क्षितितल (on earth) - अमल (pure) - भूषणाय (ornament)">तुभ्यं नम: क्षिति-तलामल -भूषणाय</span>।<br>
+  <span class="word" data-meaning="तुभ्यं नम: (salutations) - त्रिजगत: (of three worlds) - परमेश्वराय (supreme Lord)">तुभ्यं नमस् - त्रिजगत: परमेश्वराय</span>,<br>
+  <span class="word" data-meaning="तुभ्यं नम: (salutations) - जिन! (O Jina!) - भवोदधि (ocean of rebirth) - शोषणाय (for drying up)">तुभ्यं नमो जिन! भवोदधि-शोषणाय</span>॥ 26॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="क: (what) - विस्मय: (wonder) - अत्र (here)">को विस्मयोऽत्र</span>
+  <span class="word" data-meaning="यदि (if) - नाम (indeed) - गुणै: (by virtues) - अशेषै: (limitless)">यदि नाम गुणै-रशेषैस्</span> -<br>
+  <span class="word" data-meaning="त्वं (you) - संश्रित: (taken refuge in) - निरवकाशतया (without room for others) - मुनीश! (O sage!)">त्वं संश्रितो निरवकाशतया मुनीश !</span>।<br>
+  <span class="word" data-meaning="दोषै: (with faults) - उपात्त (possessing) - विविधाश्रय (varied support) - जात (born) - गर्वै: (with pride)">दोषै - रुपात्त - विविधाश्रय-जात-गर्वै:</span>,<br>
+  <span class="word" data-meaning="स्वप्नान्तरेऽपि (even in dreams) - न (not) - कदाचित् (ever) - अपीक्षित: (observed) - असि (are)">स्वप्नान्तरेऽपि न कदाचिदपीक्षितोऽसि</span>॥ 27॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="उच्चै: (high) - अशोकतरु (Ashoka tree) - संश्रितम् (clung to) - उन्मयूखम् (with upward rays)">उच्चै - रशोक- तरु - संश्रितमुन्मयूख</span>,<br>
+  <span class="word" data-meaning="आभाति (shines) - रूपम् (form) - अमलं (pure) - भवतः (of yours) - नितान्तम् (exceedingly)">माभाति रूपममलं भवतो नितान्तम्</span>।<br>
+  <span class="word" data-meaning="स्पष्ट (clear) - उल्लसत् (shining) - किरण (rays) - मस्त (blazing) - तमोवितानम् (darkness canopy)">स्पष्टोल्लसत्-किरण-मस्त-तमो-वितानं</span>,<br>
+  <span class="word" data-meaning="बिम्बं (disc) - रवे: (of sun) - इव (like) - पयोधर (cloud) - पार्श्ववर्ति (beside)">बिम्बं रवेरिव पयोधर-पार्श्ववर्ति </span>॥ 28॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="सिंहासने (on throne) - मणिमयूख (gem-rays) - शिखा (flames) - विचित्रे (wonderful)">सिंहासने मणि-मयूख-शिखा-विचित्रे</span>,<br>
+  <span class="word" data-meaning="विभ्राजते (shines) - तव (your) - वपु: (body) - कनक (golden) - अवदातम् (pure)">विभ्राजते तव वपु: कनकावदातम्</span>।<br>
+  <span class="word" data-meaning="बिम्बम् (disc) - वियद् (sky) - विलस (radiant) - अंशुलता (rays) - वितानम् (canopy)">बिम्बं वियद्-विलसदंशुलता-वितानं</span>,<br>
+  <span class="word" data-meaning="तुङ्ग (lofty) - उदय (eastern) - आद्रि (mountain) - शिरसि (on peak) - इव (like) - सहस्ररश्मे: (of the sun)">तुङ्गोदयाद्रि-शिरसीव सहस्र-रश्मे:</span>॥ 29॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="कुन्दावदात (jasmine-white) - चल (waving) - चामर (fly-whisks) - चारु (beautiful) - शोभम् (grace)">कुन्दावदात - चल - चामर-चारु-शोभं</span>,<br>
+  <span class="word" data-meaning="विभ्राजते (shines) - तव (your) - वपु: (body) - कलधौत (moonwashed) - कान्तम् (radiant)">विभ्राजते तव वपु: कलधौत -कान्तम्</span>।<br>
+  <span class="word" data-meaning="उद्यच्छशाङ्क (rising moon) - शुचिनिर्झर (pure stream) - वारिधार (waterfall)">उद्यच्छशाङ्क- शुचिनिर्झर - वारि -धार</span>,<br>
+  <span class="word" data-meaning="मुच्चै: (high) - तटम् (bank) - सुरगिरे: (divine mountain) - इव (like) - शातकौम्भम् (golden)">मुच्चैस्तटं सुरगिरेरिव शातकौम्भम्</span>॥ 30॥
+</div>
+<div class="shloka">
+  <span class="word" data-meaning="छत्रत्रयं (three umbrellas) - तव (your) - विभाति (shine)">छत्र-त्रयं तव विभाति</span>
+  <span class="word" data-meaning="शशाङ्क (moon) - कान्तम् (lustrous)">शशाङ्क- कान्तम्</span> -<br>
+  <span class="word" data-meaning="उच्चै: (highly) - स्थितं (placed) - स्थगित (hidden) - भानु (sun) - कर (ray) - प्रतापम् (brilliance)">उच्चै: स्थितं स्थगित-भानु-कर-प्रतापम्</span>।<br>
+  <span class="word" data-meaning="मुक्ताफल (pearl) - प्रकर (clusters) - जाल (network) - विवृद्ध (enhanced) - शोभं (beauty)">मुक्ता - फल - प्रकर - जाल-विवृद्ध-शोभं</span>,<br>
+  <span class="word" data-meaning="प्रख्यापयत् (declaring) - त्रिजगत: (three worlds') - परमेश्वरत्वम् (supreme lordship)">प्रख्यापयत्-त्रिजगत: परमेश्वरत्वम्</span>॥ 31॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="गम्भीर (deep) - तार (tonal) - रव (sound) - पूरित (filled) - दिग्विभाग: (directions)">गम्भीर - तार - रव-पूरित-दिग्विभागस्</span> -<br>
+  <span class="word" data-meaning="त्रैलोक्य (three worlds) - लोक (people) - शुभ (auspicious) - सङ्गम (union) - भूति (welfare) - दक्ष: (skilled)">त्रैलोक्य - लोक -शुभ - सङ्गम -भूति-दक्ष:</span>।<br>
+  <span class="word" data-meaning="सद्धर्म (true dharma) - राज (king) - जयघोषण (victory declaration) - घोषक: (announcer)">सद्धर्म -राज - जय - घोषण - घोषक: सन्</span>,<br>
+  <span class="word" data-meaning="खे (in the sky) - दुन्दुभि: (divine drum) - ध्वनति (resounds) - ते (your) - यशस: (fame) - प्रवादी (proclaimer)">खे दुन्दुभि-र्ध्वनति ते यशस: प्रवादी</span>॥ 32॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="मन्दार (Mandara tree) - सुन्दर (beautiful) - नमेरु (Meru) - सुपारिजात (heavenly tree)">मन्दार - सुन्दर - नमेरु - सुपारिजात</span> -<br>
+  <span class="word" data-meaning="सन्तानकादि (and other divine trees) - कुसुमोत्कर (flower-clusters) - वृष्टि (rain) - रुद्धा (blocked)">सन्तानकादि - कुसुमोत्कर - वृष्टि-रुद्धा</span>।<br>
+  <span class="word" data-meaning="गन्धोद (fragrant) - बिन्दु (drops) - शुभ (auspicious) - मन्द (gentle) - मरुत् (breeze) - प्रपाता (flow)">गन्धोद - बिन्दु- शुभ - मन्द - मरुत्प्रपाता</span>,<br>
+  <span class="word" data-meaning="दिव्या (divine) - दिव: (from heaven) - पतति (falls) - ते (your) - वचसां (of words) - तति: (stream) - वा (or)">दिव्या दिव: पतति ते वचसां ततिर्वा</span>॥ 33॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="शुम्भत् (shining) - प्रभा (radiance) - वलय (circle) - भूरि (many) - विभा (lights) - विभो: (of the glorious one)">शुम्भत्-प्रभा- वलय-भूरि-विभा-विभोस्ते</span>,<br>
+  <span class="word" data-meaning="लोकत्रये (in the three worlds) - द्युतिमतां (of luminous beings) - द्युति (luster) - माक्षिपन्ती (overwhelms)">लोक - त्रये - द्युतिमतां द्युति-माक्षिपन्ती</span>।<br>
+  <span class="word" data-meaning="प्रोद्यत् (rising) - दिवाकर (sun) - निरन्तर (unceasing) - भूरि-संख्या (many)">प्रोद्यद्- दिवाकर-निरन्तर - भूरि -संख्या</span>,<br>
+  <span class="word" data-meaning="दीप्त्या (with brilliance) - जयति (outshines) - अपि (even) - निशाम् (the night) - अपि (too) - सोमसौम्याम् (moon-softness)">दीप्त्या जयत्यपि निशामपि सोमसौम्याम्</span>॥ 34॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="स्वर्ग (heaven) - अपवर्ग (liberation) - गम (leading to) - मार्ग (path) - विमार्गण (searching) - इष्ट: (desired)">स्वर्गापवर्ग - गम - मार्ग - विमार्गणेष्ट:</span>,<br>
+  <span class="word" data-meaning="सद्धर्म (true dharma) - तत्त्व (essence) - कथनैक (sole explainer) - पटु: (expert) - त्रिलोक्या: (of the three worlds)">सद्धर्म- तत्त्व - कथनैक - पटुस्-त्रिलोक्या:</span>।<br>
+  <span class="word" data-meaning="दिव्यध्वनि: (divine sound) - भवति (becomes) - ते (your) - विशदार्थ (clear meaning) - सर्व (all)">दिव्य-ध्वनि-र्भवति ते विशदार्थ-सर्व</span>,<br>
+  <span class="word" data-meaning="भाषास्वभाव (nature of languages) - परिणामगुणै: (with transform qualities) - प्रयोज्य: (fit)">भाषास्वभाव-परिणाम-गुणै: प्रयोज्य:</span>॥ 35॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="उन्निद्र (open) - हेम (golden) - नवपङ्कज (new lotus) - पुञ्ज (cluster) - कान्ति (beauty)">उन्निद्र - हेम - नव - पङ्कज - पुञ्ज-कान्ती</span>,<br>
+  <span class="word" data-meaning="पर्युल्लसत् (surrounded by shining) - नखमयूख (nail-rays) - शिखा (flames) - अभिरामौ (beautiful)">पर्युल्-लसन्-नख-मयूख-शिखाभिरामौ</span>।<br>
+  <span class="word" data-meaning="पादौ (feet) - पदानि (steps) - तव (your) - यत्र (where) - जिनेन्द्र (O Jina!) - धत्त: (you place)">पादौ पदानि तव यत्र जिनेन्द्र ! धत्त:</span>,<br>
+  <span class="word" data-meaning="पद्मानि (lotuses) - तत्र (there) - विबुधा: (gods) - परिकल्पयन्ति (imagine)">पद्मानि तत्र विबुधा: परिकल्पयन्ति</span>॥ 36॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="इत्थं (thus) - यथा (as) - तव (your) - विभूति: (glory) - अभूत् (has been) - जिनेन्द्र! (O Jina!)">इत्थं यथा तव विभूतिर् भूज् - जिनेन्द्र !</span>,<br>
+  <span class="word" data-meaning="धर्मोपदेशन (dharma teaching) - विधौ (in method) - न तथा (not so) - परस्य (of another)">धर्मोपदेशन - विधौ न तथा परस्य</span>।<br>
+  <span class="word" data-meaning="यादृक् (like) - प्रभा (light) - दिनकृत: (of the sun) - प्रहत (dispelled) - अन्धकारा (darkness)">यादृक् - प्रभा दिनकृत: प्रहतान्धकारा</span>,<br>
+  <span class="word" data-meaning="तादृक् (such) - कुत: (how) - ग्रहगणस्य (of the planets) - विकासिन: (radiant) - अपि (even)">तादृक्-कुतो ग्रहगणस्य विकासिनोऽपि</span>॥ 37॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="श्च्योतत् (dripping) - मद (intoxicated) - आविल (muddy) - विलोल (trembling) - कपोल (cheek) - मूल (root)">श्च्यो-तन्-मदाविल-विलोल-कपोल-मूल</span>,<br>
+  <span class="word" data-meaning="मत्त (intoxicated) - भ्रमत् (wandering) - भ्रमर (bee) - नाद (sound) - विवृद्ध (increased) - कोपम् (anger)">मत्त- भ्रमद्- भ्रमर - नाद - विवृद्ध-कोपम्</span>।<br>
+  <span class="word" data-meaning="ऐरावताभम् (like Airavata) - इभम् (elephant) - उद्धतम् (enraged) - आपतन्तम् (charging)">ऐरावताभमिभ - मुद्धत - मापतन्तं</span>,<br>
+  <span class="word" data-meaning="दृष्ट्वा (seeing) - भयं (fear) - भवति (arises) - नो (not) - भवदाश्रितानाम् (for your devotees)">दृष्ट्वा भयं भवति नो भवदाश्रितानाम्</span>॥ 38॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="भिन्न (split) - इभ (elephant) - कुम्भ (head) - गल (throat) - दुर्ज्वल (fiery) - शोणित (blood) - आक्‍त (smeared)">भिन्नेभ - कुम्भ- गल - दुज्ज्वल-शोणिताक्त</span>,<br>
+  <span class="word" data-meaning="मुक्ताफल (pearls) - प्रकर (clusters) - भूषित (adorned) - भूमिभाग: (piece of land)">मुक्ता - फल- प्रकरभूषित - भूमि - भाग:</span>।<br>
+  <span class="word" data-meaning="बद्धक्रम: (in sequence) - क्रमगतम् (advancing) - हरिणाधिप: (lion) - अपि (even)">बद्ध - क्रम: क्रम-गतं हरिणाधिपोऽपि</span>,<br>
+  <span class="word" data-meaning="नाक्रामति (does not attack) - क्रमयुग (series of steps) - अचल (firm) - संश्रितं (approached) - ते (your)">नाक्रामति क्रम-युगाचल-संश्रितं ते</span>॥ 39॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="कल्पान्त (end of world) - काल (time) - पवन (wind) - उद्धत (raging) - वह्निकल्पम् (like fire)">कल्पान्त - काल - पवनोद्धत - वह्नि -कल्पं</span>,<br>
+  <span class="word" data-meaning="दावानलम् (wildfire) - ज्वलितम् (burning) - उज्ज्वलम् (blazing) - उत्स्फुलिङ्गम् (with sparks)">दावानलं ज्वलित-मुज्ज्वल - मुत्स्फुलिङ्गम्</span>।<br>
+  <span class="word" data-meaning="विश्वम् (world) - जिघत्सुम् (ready to consume) - इव (as if) - सम्मुखम् (in front) - आपतन्तम् (approaching)">विश्वं जिघत्सुमिव सम्मुख - मापतन्तं</span>,<br>
+  <span class="word" data-meaning="त्वन्नाम (your name) - कीर्तन (chanting) - जलम् (water) - शमयति (extinguishes) - अशेषम् (completely)">त्वन्नाम-कीर्तन-जलं शमयत्यशेषम्</span>॥ 40॥
+</div>
+<div class="shloka">
+  <span class="word" data-meaning="रक्तेक्षणं (red-eyed) - समद (intoxicated) - कोकिल (cuckoo) - कण्ठ (voice) - नीलम् (dark)">रक्तेक्षणं समद - कोकिल - कण्ठ-नीलम्</span>,<br>
+  <span class="word" data-meaning="क्रोध (anger) - उद्धतम् (aroused) - फणिन (serpent) - उत्फणम् (raised hood) - आपतन्तम् (charging)">क्रोधोद्धतं फणिन - मुत्फण - मापतन्तम्</span>।<br>
+  <span class="word" data-meaning="आक्रामति (defeats) - क्रमयुगेण (step by step) - निरस्तशङ्क: (fearless)">आक्रामति क्रम - युगेण निरस्त - शङ्कस्</span>,<br>
+  <span class="word" data-meaning="त्वन्नाम (your name) - नागदमनी (tamer of serpents) - हृदि (in the heart) - यस्य (whose) - पुंस: (man)">त्वन्नाम- नागदमनी हृदि यस्य पुंस:</span>॥ 41॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="वल्गत् (prancing) - तुरंग (horses) - गज (elephants) - गर्जित (roars) - भीमनादम् (terrifying sound)">वल्गत् - तुरङ्ग - गज - गर्जित - भीमनाद</span>,<br>
+  <span class="word" data-meaning="आजौ (in battle) - बलम् (army) - बलवताम् (of mighty) - अपि (even) - भूपतीनाम् (kings)">माजौ बलं बलवता - मपि - भूपतीनाम्</span>।<br>
+  <span class="word" data-meaning="उद्यत् (rising) - दिवाकर (sun) - मयूख (rays) - शिखा (flames) - अपविद्धम् (scattered)">उद्यद् - दिवाकर - मयूख - शिखापविद्धं</span>,<br>
+  <span class="word" data-meaning="त्वत्कीर्तनात् (by your praise) - तम: (darkness) - इव (like) - आशु (quickly) - भिदामुपैति (is destroyed)">त्वत् कीर्तनात्तम इवाशु भिदामुपैति</span>॥ 42॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="कुन्त (spear) - अग्र (tip) - भिन्न (pierced) - गज (elephant) - शोणित (blood) - वारिवाह (stream)">कुन्ताग्र-भिन्न - गज - शोणित - वारिवाह</span>,<br>
+  <span class="word" data-meaning="वेग (speed) - अवतार (descent) - तरणातुर (eager to cross) - योध (warrior) - भीमे (terrifying)">वेगावतार - तरणातुर - योध - भीमे</span>।<br>
+  <span class="word" data-meaning="युद्धे (in battle) - जयं (victory) - विजित (having conquered) - दुर्जय (invincible) - जेय (conquerable) - पक्षाः (sides)">युद्धे जयं विजित - दुर्जय - जेय - पक्षास्</span>,<br>
+  <span class="word" data-meaning="त्वत्पाद (your feet) - पङ्कज (lotus) - वनाश्रयिण: (those who seek shelter) - लभन्ते (gain)">त्वत् पाद-पङ्कज-वनाश्रयिणो लभन्ते</span>॥ 43॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="अम्भोनिधौ (in the ocean) - क्षुभित (agitated) - भीषण (terrible) - नक्रचक्र (crocodile whirlpools)">अम्भोनिधौ क्षुभित - भीषण - नक्र - चक्र</span>,<br>
+  <span class="word" data-meaning="पाठीन (fish) - पीठ (backs) - भय (fearful) - दोल्वण (tossing) - वाडवाग्नौ (submarine fire)">पाठीन - पीठ-भय-दोल्वण - वाडवाग्नौ</span>।<br>
+  <span class="word" data-meaning="रङ्ग (waves) - तरङ्ग (billows) - शिखर (peaks) - स्थित (placed) - यानपात्राः (ships)">रङ्गत्तरङ्ग -शिखर- स्थित- यान - पात्रास्</span>,<br>
+  <span class="word" data-meaning="त्रासं (fear) - विहाय (abandoning) - भवतः (of you) - स्मरणात् (by remembrance) - व्रजन्ति (go)">त्रासं विहाय भवत: स्मरणाद्-व्रजन्ति</span>॥ 44॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="उद्भूत (arisen) - भीषण (terrible) - जलोदर (dropsy) - भार (weight) - भुग्नाः (crushed)">उद्भूत - भीषण - जलोदर - भार- भुग्ना:</span>,<br>
+  <span class="word" data-meaning="शोच्यां (lamentable) - दशाम् (state) - उपगताः (attained) - च्युत (lost) - जीविताशाः (hope for life)">शोच्यां दशा-मुपगताश्-च्युत-जीविताशा:</span>।<br>
+  <span class="word" data-meaning="त्वत्पाद (your feet) - पङ्कज (lotus) - रजः (dust) - मृत (nectar) - दिग्ध (smeared) - देहाः (bodies)">त्वत् पाद-पङ्कज-रजो - मृत - दिग्ध - देहा</span>,<br>
+  <span class="word" data-meaning="मर्त्याः (mortals) - भवन्ति (become) - मकरध्वज (like Cupid) - तुल्यरूपाः (of equal beauty)">मर्त्या भवन्ति मकर-ध्वज-तुल्यरूपा:</span>॥ 45॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="आपाद (from feet) - कण्ठ (to head) - उरु (great) - शृङ्खल (chains) - वेष्टिताङ्गाः (bound limbs)">आपाद - कण्ठमुरु - शृङ्खल - वेष्टिताङ्गा:</span>,<br>
+  <span class="word" data-meaning="गाढम् (tightly) - बृहन् (massive) - निगड (fetters) - कोटि (millions) - निघृष्ट (bruised) - जङ्घाः (legs)">गाढं-बृहन्-निगड-कोटि निघृष्ट - जङ्घा:</span>।<br>
+  <span class="word" data-meaning="त्वन्नाम (your name) - मन्त्र (mantra) - अनिशम् (constantly) - मनुजाः (men) - स्मरन्तः (remembering)">त्वन्-नाम-मन्त्र- मनिशं मनुजा: स्मरन्त:</span>,<br>
+  <span class="word" data-meaning="सद्यः (immediately) - स्वयं (automatically) - विगतबन्ध (freed) - भयाः (from fear) - भवन्ति (become)">सद्य: स्वयं विगत-बन्ध-भया भवन्ति</span>॥ 46॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="मत्त (intoxicated) - द्विपेन्द्र (lord elephant) - मृगराज (lion) - दावानल (forest fire) - आहि (snake)">मत्त-द्विपेन्द्र- मृग- राज - दवानलाहि</span>,<br>
+  <span class="word" data-meaning="संग्राम (battle) - वारिधि (ocean) - महोदर (great pit) - बन्ध (trap) - न उत्थम् (unsurpassable)">संग्राम-वारिधि-महोदर - बन्ध -नोत्थम्</span>।<br>
+  <span class="word" data-meaning="तस्य (its) - आशु (quickly) - नाशम् (destruction) - उपयाति (reaches) - भयम् (fear) - भिया इव (like fear itself)">तस्याशु नाश - मुपयाति भयं भियेव</span>,<br>
+  <span class="word" data-meaning="य: (who) - तावकं (your) - स्तवम् (hymn) - इमं (this) - मतिमान् (wise) - अधीते (recites)">यस्तावकं स्तव-मिमं मतिमानधीते</span>॥ 47॥
+</div>
+
+<div class="shloka">
+  <span class="word" data-meaning="स्तोत्रस्रजम् (garland of verses) - तव (your) - जिनेन्द्र (O Jina)">स्तोत्र - स्रजं तव जिनेन्द्र</span>
+  <span class="word" data-meaning="गुणै: (with virtues) - निबद्धाम् (bound)">गुणैर्निबद्धाम्</span>,<br>
+  <span class="word" data-meaning="भक्त्या (with devotion) - मया (by me) - रुचिर (beautiful) - वर्ण (color) - विचित्र (varied) - पुष्पाम् (flowers)">भक्त्या मया रुचिर-वर्ण-विचित्र-पुष्पाम्</span>।<br>
+  <span class="word" data-meaning="धत्ते (wears) - जन: (person) - य: (who) - इह (here) - कण्ठगताम् (around neck) - अजस्रं (always)">धत्ते जनो य इह कण्ठ-गता-मजस्रं</span>,<br>
+  <span class="word" data-meaning="तम् (him) - मान (wealth) - तुङ्गम् (exalted) - अवशा (willingly) - समुपैति (approaches) - लक्ष्मी: (goddess of fortune)">तं मानतुङ्ग-मवशा-समुपैति लक्ष्मी:</span>॥ 48॥
+</div>
+
+  <!-- Additional Shlokas can go here in the same format -->
+  
+
+</div>
+
+<div class="right">
+  <h2>Shloka 1 - Translation</h2>
+  <p>
+    The radiance of the gem on the head of those who bow to the immortal devotee
+    dispels the darkness of sins. I bow properly to the twin feet of the Jina (Conqueror),
+    which have been a refuge from time immemorial for those who are falling
+    into the ocean of worldly existence.
+  </p>
+
+<h2>Shloka 2 - Translation</h2>
+<p>
+He who is praised by the lords of celestial worlds, having great intellect and mastery of all forms of speech and knowledge, with hymns that captivate the minds of beings from the three worlds—Even I shall endeavor to praise that First Jina.
+</p>
+
+<h2>Shloka 3 - Translation</h2>
+<p>
+Though devoid of intellect, I, without shame, have undertaken to praise the one whose feet are worshipped even by gods. Just as none would try to grasp the reflection of the moon in water leaving aside a child, who else but a fool would dare attempt such a task?
+</p>
+
+<h2>Shloka 4 - Translation</h2>
+<p>
+O Ocean of Virtues, moon-bright and radiant! Who is capable of describing your greatness? Even a preceptor among the gods would fall short. Who can cross a storm-tossed ocean, filled with whirlpools and crocodiles, by their arms alone?
+</p>
+
+<h2>Shloka 5 - Translation</h2>
+<p>
+Still, O Lord of Sages, due to my devotion, I begin this hymn despite lacking strength. Just like a doe, in love, rushes to protect her calf from a lion without a second thought, I too am moved by devotion alone.
+</p>
+<h2>Shloka 6 - Translation</h2>
+<p>
+Though I am of little learning and an object of ridicule among the learned, your devotion alone forcibly makes me eloquent. Just like a cuckoo sings sweetly in spring because of the tender mango buds—it is the cause of its sweet voice.
+</p>
+
+<h2>Shloka 7 - Translation</h2>
+<p>
+By singing your praise, the sins accumulated over the cycle of births are instantly destroyed in embodied beings. Just like the darkness of night is quickly dispelled when pierced by rays of the sun.
+</p>
+
+<h2>Shloka 8 - Translation</h2>
+<p>
+O Lord, I begin this hymn even with my limited intellect, inspired by your grace. Like a dewdrop on a lotus petal shines with the luster of a pearl, so too will my mind gain brilliance through your praise.
+</p>
+
+<h2>Shloka 9 - Translation</h2>
+<p>
+Let your praise be, even a simple discussion of your qualities destroys the sins of the world. Just like the sun, from a distance, causes the lotuses in ponds to bloom with its rays.
+</p>
+
+<h2>Shloka 10 - Translation</h2>
+<p>
+It is not surprising, O ornament of the world, that beings who praise you with their qualities become equal to you. After all, anyone blessed with greatness makes others equal to himself.
+</p>
+<h2>Shloka 11 - Translation</h2>
+<p>
+Having seen your ever-delightful form, the eyes find no satisfaction elsewhere. Just as no one would wish to drink salty ocean water after tasting nectar-like milk from the ocean of moonlight.
+</p>
+
+<h2>Shloka 12 - Translation</h2>
+<p>
+O Ornament of the Three Worlds! You were created from passionless atoms. Even if others are made of the same atoms, none equal your divine form—there is no second like you.
+</p>
+
+<h2>Shloka 13 - Translation</h2>
+<p>
+Where is your face, stealing the gaze of gods, men, and serpents? And where is the blemished moon that pales in daylight, resembling a dried leaf? Your radiance surpasses all comparison.
+</p>
+
+<h2>Shloka 14 - Translation</h2>
+<p>
+Your virtues, pure as full-moon rays, transcend the three worlds. Who can obstruct those who have taken shelter in you, the one Lord of all realms, from freely roaming as they wish?
+</p>
+
+<h2>Shloka 15 - Translation</h2>
+<p>
+What is surprising if even the beauties of the heavens cannot disturb your mind? Has the peak of Mount Mandara ever shaken, even during the violent winds of the final destruction?
+</p>
+<h2>Shloka 16 - Translation</h2>
+<p>
+You are like a smokeless lamp with a steady flame, illuminating the entire universe. Like a lamp unmoved by wind, you reveal all, O Lord, the true light of the world.
+</p>
+
+<h2>Shloka 17 - Translation</h2>
+<p>
+You never set, nor can Rahu eclipse you. You instantly illuminate the worlds. Even if clouds cover your glory, your brilliance surpasses that of the sun. O Lord of Sages, your radiance is unmatched.
+</p>
+
+<h2>Shloka 18 - Translation</h2>
+<p>
+Your radiant lotus-face dispels the great darkness of ignorance eternally. It cannot be veiled by Rahu or clouds. It lights up the world like a previously unseen divine moon.
+</p>
+
+<h2>Shloka 19 - Translation</h2>
+<p>
+What use are the moon at night or the sun during day when your moon-like face dispels darkness? In a world already filled with ripe grain, what is the need for rain-laden clouds?
+</p>
+
+<h2>Shloka 20 - Translation</h2>
+<p>
+Knowledge shines in you freely as it does not in other deities like Vishnu or Shiva. Just as brilliance appears naturally in gems, but not in broken glass, so too is your unmatched wisdom.
+</p>
+<h2>Shloka 21 - Translation</h2>
+<p>
+I consider it a blessing that I have seen you, rather than seeing gods like Vishnu and Shiva. Among all I have seen, only your sight brings true satisfaction to my heart. Why look at others, when no one else can captivate the mind like you, O Lord?
+</p>
+
+<h2>Shloka 22 - Translation</h2>
+<p>
+Hundreds of women give birth to sons, but none has borne a son like you. Just as all directions can give rise to sunlight, only the East gives birth to the actual sun and its radiance.
+</p>
+
+<h2>Shloka 23 - Translation</h2>
+<p>
+Sages declare you to be the Supreme Person, sun-colored, pure, and beyond darkness. Those who truly realize you conquer death. O Sage of sages, there is no other path to liberation but yours.
+</p>
+
+<h2>Shloka 24 - Translation</h2>
+<p>
+The wise proclaim you as imperishable, all-pervading, incomprehensible, innumerable, and the first cause. You are Brahma, Ishvara, the infinite, the Lord of Love, the master of yoga, the knower of yoga, the many yet one, the pure form of knowledge.
+</p>
+
+<h2>Shloka 25 - Translation</h2>
+<p>
+You alone are the Buddha because of your supreme wisdom. You are Shiva, for you bring auspiciousness to the three worlds. You are the creator, O wise one, as you guide the world to liberation. Clearly, O Lord, you are the Supreme Being.
+</p>
+
+<h2>Shloka 26 - Translation</h2>
+<p>
+Salutations to you, O Lord, remover of suffering from all three worlds! Salutations to you, the purest ornament on earth. Salutations to you, the supreme Lord of the three realms. Salutations to you, O Jina, who dries up the ocean of birth and death!
+</p>
+
+<h2>Shloka 27 - Translation</h2>
+<p>
+What wonder is there if, being full of boundless virtues, you leave no room for anyone else, O Sage? Those bloated with pride, born of faults and false supports, don’t even dream of reaching you.
+</p>
+
+<h2>Shloka 28 - Translation</h2>
+<p>
+Your pure form, shining with rays above the Ashoka tree, appears dazzlingly beautiful. Its brilliant light dispels all darkness, like the blazing sun’s orb beside a cloudbank in the sky.
+</p>
+
+<h2>Shloka 29 - Translation</h2>
+<p>
+Seated on a jeweled throne lit by shimmering gem flames, your golden-hued body radiates like the sun rising over the eastern peak, beneath a canopy of sky-rays.
+</p>
+
+<h2>Shloka 30 - Translation</h2>
+<p>
+Your radiant body, shining like polished moonlight, is adorned with the gentle waving of pure white chowries. It resembles a golden cliff beside a pure mountain stream under the rising moon.
+</p>
+<h2>Shloka 31 - Translation</h2>
+<p>
+Your triple umbrella shines with the cool radiance of the moon, placed so high it blocks even the brilliance of the sun's rays. Its beauty is magnified by clusters of pearls and declares your supremacy over the three worlds.
+</p>
+
+<h2>Shloka 32 - Translation</h2>
+<p>
+The sound of celestial drums reverberates through the skies, proclaiming your fame. It fills all directions with deep and melodious tones, bringing joy and prosperity to the beings of the three worlds as it heralds the victory of true dharma.
+</p>
+
+<h2>Shloka 33 - Translation</h2>
+<p>
+Showers of heavenly flowers from Mandara, Parijata, and other celestial trees descend through a gentle fragrant breeze. Perhaps this is the stream of your divine speech falling from the heavens in blessing.
+</p>
+
+<h2>Shloka 34 - Translation</h2>
+<p>
+The halo of your radiance surpasses all luster in the three worlds, outshining even the bright beings. Like the rising sun dissolving the night, your light conquers even the soft glow of the moon.
+</p>
+
+<h2>Shloka 35 - Translation</h2>
+<p>
+You are the most sought-after guide to the path of heaven and liberation. You alone are the eloquent teacher of true dharma in all three worlds. Your divine voice is so pure it adapts flawlessly to every language and conveys truth clearly.
+</p>
+
+<h2>Shloka 36 - Translation</h2>
+<p>
+Wherever your lotus-like feet touch the earth, they radiate with golden beauty and beams from your toenails. So divine is their presence that even gods imagine blooming lotuses under each step you take.
+</p>
+
+<h2>Shloka 37 - Translation</h2>
+<p>
+O Jina, your glory in preaching dharma is unmatched. Just as the sun disperses darkness beyond the reach of even brilliant stars, no other teacher can dispel ignorance as you do.
+</p>
+
+<h2>Shloka 38 - Translation</h2>
+<p>
+Even when a maddened elephant, wild with the buzzing of bees and dripping ichor, charges in fury, your devotees remain fearless — for they have taken refuge in you.
+</p>
+
+<h2>Shloka 39 - Translation</h2>
+<p>
+The earth is stained with the blood of the elephant pierced in battle, yet even a lion dare not approach one firmly planted in your path. Your protection is such that it halts even the boldest of foes.
+</p>
+
+<h2>Shloka 40 - Translation</h2>
+<p>
+At the end of the world, when wildfires rage with gales and sparks ready to devour the universe, even that inferno is extinguished completely by the cool stream of your name's chanting.
+</p>
+<h2>Shloka 41 - Translation</h2>
+<p>
+The enraged serpent, its eyes red, its throat dark as the cuckoo’s, and its hood raised in fury—such a deadly force is overcome without fear by the one in whose heart your serpent-taming name resides, O Lord.
+</p>
+
+<h2>Shloka 42 - Translation</h2>
+<p>
+Even the mightiest armies of kings, with their terrifying noise of horses and elephants, are shattered like darkness at dawn—when struck by the rays of the rising sun—so too are they broken by the power of your name's praise.
+</p>
+
+<h2>Shloka 43 - Translation</h2>
+<p>
+In the most fearsome battles, warriors eager to cross rivers of blood from wounded elephants achieve victory over even invincible foes—if they have taken refuge in the forest of your lotus feet.
+</p>
+
+<h2>Shloka 44 - Translation</h2>
+<p>
+Those crossing the terrifying ocean filled with crocodile whirlpools, tossing fish, and burning submarine fires—by merely remembering you—cross over without fear, like boats riding the waves.
+</p>
+
+<h2>Shloka 45 - Translation</h2>
+<p>
+Those afflicted by incurable diseases, weighed down and near death, attain radiant beauty like Cupid himself when their bodies are touched by the dust of your lotus feet.
+</p>
+
+<h2>Shloka 46 - Translation</h2>
+<p>
+People bound from head to foot in heavy chains and crushed by iron fetters are instantly freed from fear and bondage by constantly remembering the mantra of your name.
+</p>
+
+<h2>Shloka 47 - Translation</h2>
+<p>
+The wise one who studies this hymn dedicated to you sees the destruction of all fears—be they from wild beasts, fire, serpents, war, or even the vast ocean of worldly bondage.
+</p>
+
+<h2>Shloka 48 - Translation</h2>
+<p>
+This garland of your praise, woven with virtues and devotion, strung with beautiful, multicolored words—when worn constantly around the neck by anyone, wealth and fortune come humbly to serve them.
+</p>
+
+  <!-- Add translation for additional shlokas here -->
+</div>
+
+</body>
+</html>
