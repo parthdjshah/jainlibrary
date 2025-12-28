@@ -1,0 +1,251 @@
+.block_ {
+  color: #1F4E79;
+  display: block;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_1 {
+  display: block;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_2 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_3 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_4 {
+  display: list-item;
+  font-size: 1.125em;
+  line-height: 1.2;
+  margin-bottom: 5pt;
+  margin-left: 36pt;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.block_5 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 5pt 11pt;
+  padding: 0;
+}
+.block_6 {
+  display: block;
+  font-size: 0.75em;
+  line-height: 1.08;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_7 {
+  display: block;
+  font-family: serif;
+  font-size: 0.75em;
+  line-height: 1.08;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_8 {
+  color: #2F5496;
+  display: block;
+  font-size: 1.41667em;
+  font-weight: normal;
+  line-height: 1.2;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  margin: 12pt 0 0;
+  padding: 0;
+}
+.block_9 {
+  display: block;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_10 {
+  color: #696900;
+  display: block;
+  font-size: 1.41667em;
+  line-height: 1.2;
+  margin: 0 0 5pt;
+  padding: 0;
+}
+.block_11 {
+  display: block;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_12 {
+  color: #C45911;
+  display: block;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_13 {
+  display: block;
+  line-height: 1.2;
+  text-indent: 36pt;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_14 {
+  display: table-row;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_15 {
+  display: table-row;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_16 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 0 18pt;
+  padding: 0;
+}
+.block_17 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 0 36pt;
+  padding: 0;
+}
+.block_18 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 8pt 18pt;
+  padding: 0;
+}
+.block_19 {
+  display: list-item;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 18pt;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.block_20 {
+  display: list-item;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-left: 18pt;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.block_21 {
+  display: list-item;
+  line-height: 1.2;
+  margin-bottom: 8pt;
+  margin-left: 18pt;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.calibre {
+  display: block;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 150%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 5pt;
+}
+.calibre1 {
+  line-height: 1.2;
+}
+.calibre2 {
+  line-height: 1.2;
+  text-decoration: none;
+}
+.calibre3 {
+  line-height: 1.2;
+  white-space: pre-wrap;
+}
+.calibre4 {
+  display: block;
+  line-height: 1.2;
+}
+.calibre5 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+.calibre6 {
+  display: table;
+  margin: 0;
+  padding: 0 0 0 18pt;
+}
+.calibre7 {
+  display: table;
+  margin: 0;
+  padding: 0 0 0 36pt;
+}
+.calibre8 {
+  display: table;
+  margin: 0;
+  padding: 0 0 0 54pt;
+}
+.list_ {
+  display: block;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.list_1 {
+  display: block;
+  list-style-type: disc;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.tab {
+  line-height: 1.2;
+  white-space: pre-wrap;
+}
+.text_ {
+  color: #0563C1;
+  line-height: 1.2;
+  text-decoration: underline;
+}
+.text_1 {
+  color: #0563C1;
+  font-weight: bold;
+  line-height: 1.2;
+  text-decoration: underline;
+}
+.text_2 {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+.text_3 {
+  font-size: 1.33333em;
+  line-height: 1.2;
+}

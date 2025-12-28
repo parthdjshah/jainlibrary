@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title>Jain Book Search Index</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B2Q39Z3BC9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B2Q39Z3BC9');
+</script>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+th {
+    border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000
+}
+
+tr{border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;}
+td{border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;}
+tr:nth-child(even) {
+    background: #e9e9e9;
+
+}
+body {
+	background-image: url('jain sy1.jpg');
+        background-repeat:no-repeat;
+       background-size:cover;
+} 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <p style="text-align:center;">Jay Jinendra, All the books in this site are listed here. Please use Search function to Search or View Books. Just put either Author Name or Book Name or Type and a list will get generated. 
+	<p style="text-align:center;">Click on html page link to read in browser, or click on download icons for downloading it in EPUB or PDF format.
+	<nav style="text-align:center;">
+<a href="about.html" target="_blank" rel="noopener">About Site</a> |
+<a href="contact.html" target="_blank" rel="noopener">Contact Us</a> |
+<a href="volunteer.html" target="_blank" rel="noopener">Volunteering</a>|
+<a href="GujSpellCheckv2.html" target="_blank" rel="noopener">Advanced Gujarati Spell Check</a>
+<!--|<a href="Decode.html" target="_blank" rel="noopener">Font Decoding Tools</a> |<a href="Encode.html" target="_blank" rel="noopener">Font Encoding Tools</a> |-->
+</nav>
+  </div>
+  
+  <div data-role="main" class="ui-content">
+    <form>
+      <input id="filterTable-input" data-type="search" placeholder="Search For Books...">
+    </form>
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+      <thead>
+        <tr>
+          <th data-priority="8">BookID</th>
+          <th>BookName</th>
+          <th data-priority="7">Book Type</th>
+          <th data-priority="6">Author</th>
+		  <th data-priority="4">Language</th>
+          <th data-priority="5">Category</th>
+          <th data-priority="1"><img src="https://img.icons8.com/officel/80/000000/html-filetype.png" Title="Click to View Book HTML File" style="width:50px;height:60px;"></th>
+          <th data-priority="2"><img src="/epub.png" Title="Click to Download Book EPUB File" style="width:50px;height:60px;" /></th>
+          <th data-priority="3"><img src="https://img.icons8.com/ios/50/000000/export-pdf-2.png" Title="Click to View/download Book PDF File" style="width:50px;height:60px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+	  
+	 <!-- Copy everything here onwards.-->
+
+<tr><td>1</td><td>1-Acharanga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/1-Acharanga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1-Acharanga Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1-Acharanga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>2</td><td>1- Acharanga Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/1- Acharanga Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1- Acharanga Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1- Acharanga Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>3</td><td>2- Suyagadanga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/2- Suyagadanga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2- Suyagadanga Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2- Suyagadanga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>4</td><td>2 - Suyagadanga Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/2 - Suyagadanga Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2 - Suyagadanga Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2 - Suyagadanga Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>5</td><td>3 - Thananga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/3 - Thananga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/3 - Thananga Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/3 - Thananga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>6</td><td>3 - Thananga Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/3 - Thananga Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/3 - Thananga Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/3 - Thananga Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>7</td><td>4 - Samvayanga Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/4 - Samvayanga Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/4 - Samvayanga Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/4 - Samvayanga Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>8</td><td>5 - Bhagavati Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/5 - Bhagavati Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5 - Bhagavati Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5 - Bhagavati Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>9</td><td>5 - Bhagavati Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/5 - Bhagavati Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5 - Bhagavati Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5 - Bhagavati Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>10</td><td>5 - Bhagavati Sutra Part 3</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/5 - Bhagavati Sutra Part 3/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5 - Bhagavati Sutra Part 3.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5 - Bhagavati Sutra Part 3.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>11</td><td>5 - Bhagavati Sutra Part 4</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/5 - Bhagavati Sutra Part 4/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5 - Bhagavati Sutra Part 4.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5 - Bhagavati Sutra Part 4.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>12</td><td>5 - Bhagavati Sutra Part 5</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/5 - Bhagavati Sutra Part 5/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5 - Bhagavati Sutra Part 5.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5 - Bhagavati Sutra Part 5.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>13</td><td>6 - Gnatadharmakatha Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/6 - Gnatadharmakatha Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/6 - Gnatadharmakatha Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/6 - Gnatadharmakatha Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>14</td><td>7 - Upasakadashanga Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/7 - Upasakadashanga Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/7 - Upasakadashanga Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/7 - Upasakadashanga Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>15</td><td>8 - Antagada Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/8 - Antagada Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/8 - Antagada Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/8 - Antagada Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>16</td><td>9 - Anuttarovavai Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/9 - Anuttarovavai Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/9 - Anuttarovavai Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/9 - Anuttarovavai Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>17</td><td>10 - Prashnavyakaran Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/10 - Prashnavyakaran Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/10 - Prashnavyakaran Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/10 - Prashnavyakaran Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>18</td><td>11 - Vipaka Sutra</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/11 - Vipaka Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/11 - Vipaka Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/11 - Vipaka Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>19</td><td>1 - Uvvavai Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/1 - Uvvavai Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1 - Uvvavai Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1 - Uvvavai Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>20</td><td>2 - Raipaseniya Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/2 - Raipaseniya Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2 - Raipaseniya Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2 - Raipaseniya Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>21</td><td>3- JeevaJeevabhigam Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/3- JeevaJeevabhigam Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/3- JeevaJeevabhigam Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/3- JeevaJeevabhigam Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>22</td><td>4- Pannavanna Sutra Part 1</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/4- Pannavanna Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/4- Pannavanna Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/4- Pannavanna Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>23</td><td>4- Pannavanna Sutra Part 2</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/4- Pannavanna Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/4- Pannavanna Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/4- Pannavanna Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>24</td><td>4- Pannavanna Sutra Part 3</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/4- Pannavanna Sutra Part 3/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/4- Pannavanna Sutra Part 3.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/4- Pannavanna Sutra Part 3.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>25</td><td>5- Jambudhvip Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/5- Jambudhvip Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/5- Jambudhvip Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/5- Jambudhvip Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>26</td><td>6- Surya Pragnapti, 7- Chandra Pragnapti Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/6- Surya Pragnapti, 7- Chandra Pragnapti Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/6- Surya Pragnapti, 7- Chandra Pragnapti Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/6- Surya Pragnapti, 7- Chandra Pragnapti Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>27</td><td>8- Niryavalika, 9- Kalpavatansika, 10- Pushpika, 11- Pushpachulika, 12- Vrasnidasah Sutra</td><td>Upang Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Upang Aagam/GandharBhagavant/8- Niryavalika, 9- Kalpavatansika, 10- Pushpika, 11- Pushpachulika, 12- Vrasnidasah Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/8- Niryavalika, 9- Kalpavatansika, 10- Pushpika, 11- Pushpachulika, 12- Vrasnidasah Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/8- Niryavalika, 9- Kalpavatansika, 10- Pushpika, 11- Pushpachulika, 12- Vrasnidasah Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>28</td><td>1- Utaradhyayan Sutra Part 1</td><td>Mool Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Mool Sutras/GandharBhagavant/1- Utaradhyayan Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1- Utaradhyayan Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1- Utaradhyayan Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>29</td><td>1- Utaradhyayan Sutra Part 2</td><td>Mool Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Mool Sutras/GandharBhagavant/1- Utaradhyayan Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1- Utaradhyayan Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1- Utaradhyayan Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>30</td><td>2 - Dasvaikalika Sutra</td><td>Mool Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Mool Sutras/GandharBhagavant/2 - Dasvaikalika Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2 - Dasvaikalika Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2 - Dasvaikalika Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>31</td><td>3- Nandi Sutra</td><td>Mool Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Mool Sutras/GandharBhagavant/3- Nandi Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/3- Nandi Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/3- Nandi Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>32</td><td>4- Anuyogdwar Sutra</td><td>Mool Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Mool Sutras/GandharBhagavant/4- Anuyogdwar Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/4- Anuyogdwar Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/4- Anuyogdwar Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>33</td><td>1- Nishith Sutra</td><td>Chhed Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Chhed Sutras/GandharBhagavant/1- Nishith Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1- Nishith Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1- Nishith Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>34</td><td>2- Dashashrut, 3- Bruhatkalpa, 4- Vyavahar Sutra</td><td>Chhed Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Chhed Sutras/GandharBhagavant/2- Dashashrut, 3- Bruhatkalpa, 4- Vyavahar Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2- Dashashrut, 3- Bruhatkalpa, 4- Vyavahar Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2- Dashashrut, 3- Bruhatkalpa, 4- Vyavahar Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>35</td><td>Aavasyaka Sutra</td><td>Chhed Sutras</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Chhed Sutras/GandharBhagavant/Aavasyaka Sutra/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Aavasyaka Sutra.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Aavasyaka Sutra.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>36</td><td>Prashnottar Ratnamala Part 1</td><td>Explaination</td><td>Subodhiben Masalia</td><td>Gujarati</td><td>QnA</td><td><a href="Gujarati/Explaination/Subodhiben Masalia/Prashnottar Ratnamala Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Prashnottar Ratnamala Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Prashnottar Ratnamala Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>37</td><td>Prashnottar Ratnamala Part 2</td><td>Explaination</td><td>Subodhiben Masalia</td><td>Gujarati</td><td>QnA</td><td><a href="Gujarati/Explaination/Subodhiben Masalia/Prashnottar Ratnamala Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Prashnottar Ratnamala Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Prashnottar Ratnamala Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr><tr><td>38</td><td>Atmanusasana - Precept on the Soul</td><td>Explaination</td><td>Vijay K Jain</td><td>English</td><td>Self Discipline</td><td><a href="English/Explaination/Vijay K Jain/Atmanusasana - Precept on the Soul/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Atmanusasana - Precept on the Soul.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Atmanusasana - Precept on the Soul.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>39</td><td>Jain Christian Samvad - Jain Dharma ane khristi dharma no mukablo</td><td>Explaination</td><td>Buddisagar Suri</td><td>Gujarati</td><td>Comparative Study</td><td><a href="Gujarati/Explaination/Buddisagar Suri/Jain Christian Samvad - Jain Dharma ane khristi dharma no mukablo/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Jain Christian Samvad - Jain Dharma ane khristi dharma no mukablo.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Jain Christian Samvad - Jain Dharma ane khristi dharma no mukablo.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>40</td><td>Jain Vigyan Part 1 to 6</td><td>Summary</td><td>Jainam Jayati Shasanam - Chandrakant Lodaya</td><td>Gujarati</td><td>Summary</td><td><a href="Gujarati/Summary/Jainam Jayati Shasanam - Chandrakant Lodaya/Jain Vigyan Part 1 to 6/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/Jain Vigyan Part 1 to 6.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/Jain Vigyan Part 1 to 6.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+
+
+
+	 <!-- Copy everything Upto here.-->
+
+      </tbody>
+    </table>
+  </div>
+
+  <div data-role="footer">
+
+<p>Jay Jinendra, I am Parth Shah, CA,CISA. This site is a non-commercial website by me.
+
+<p>Commercial use and general public distribution of the material is not permitted. You are free to download any literature for non-commercial personal use only. For most of the literature on this site, we have obtained the permission from authors/publishers for individual, private and non-commercial use only. In addition, we occasionally receive the eBooks from various sources including our readers.
+
+<p>If you notice any violation of your copy-righted material on the website, please write (do not send eMail) to us providing the full details of the potentially conflicting material.
+
+<p>We will not act on requests received via e-mail. Mail the written request to the official eLibrary address. We will remove the material from the website as soon as we evaluate your written request. For such incidents, we apologize for our inadvertent error. Our only intention is to spread the message of non-violence and other principles of the Jain religion throughout the world in a non-commercial and non-possessive way.</p>
+  </div>
+</div>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script> 
+
+</body>
+</html>

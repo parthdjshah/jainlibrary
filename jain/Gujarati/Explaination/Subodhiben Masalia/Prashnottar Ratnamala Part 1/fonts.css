@@ -1,0 +1,54 @@
+@font-face {
+	font-family: "Noto Serif Gujarati";
+	src: url(/fonts/Noto-Serif-Gujarati.ttf)
+}
+
+@font-face {
+	font-family: "Cambria";
+	font-weight: bold;
+	src: url(/fonts/Cambria-Bold.ttf)
+}
+
+@font-face {
+	font-family: "Calibri";
+	src: url(/fonts/Calibri.ttf)
+}
+
+@font-face {
+	font-family: "Arial";
+	src: url(/fonts/Arial.ttf)
+}
+
+@font-face {
+	font-family: "Times New Roman";
+	src: url(/fonts/Times-New-Roman.ttf)
+}
+
+@font-face {
+	font-family: "Noto Serif Gujarati";
+	src: url(/fonts/Noto-Serif-Gujarati-1.ttf)
+}
+
+@font-face {
+	font-family: "Arial";
+	font-style: italic;
+	src: url(/fonts/Arial-Italic.ttf)
+}
+
+@font-face {
+	font-family: "Noto Serif Gujarati";
+	font-weight: bold;
+	src: url(/fonts/Noto-Serif-Gujarati-Bold.ttf)
+}
+
+@font-face {
+	font-family: "Arial";
+	font-weight: bold;
+	src: url(/fonts/Arial-Bold.ttf)
+}
+
+@font-face {
+	font-family: "Times New Roman";
+	font-style: italic;
+	src: url(/fonts/Times-New-Roman-Italic.ttf)
+}

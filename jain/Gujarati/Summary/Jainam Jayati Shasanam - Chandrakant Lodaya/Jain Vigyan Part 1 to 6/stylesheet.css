@@ -1,0 +1,563 @@
+body{font-size:150%;}
+.block_ {
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  margin: 0 0 0 22.1pt;
+  padding: 0;
+}
+.block_1 {
+  display: block;
+  font-family: "Noto Serif Gujarati", serif;
+  font-size: 1em;
+  margin: 0 0 0 22.1pt;
+  padding: 0;
+}
+.block_2 {
+  display: block;
+  font-size: 1em;
+  margin: 0 0 0 11.1pt;
+  padding: 0;
+}
+.block_3 {
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  margin: 0 0 0 11.1pt;
+  padding: 0;
+}
+.block_4 {
+  display: block;
+  font-family: "Noto Serif", serif;
+  font-size: 1.41667em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_5 {
+  display: block;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.block_6 {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.block_7 {
+  display: block;
+  font-size: 1.83333em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_8 {
+  color: #2F5496;
+  display: block;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_9 {
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.block_10 {
+  display: block;
+  font-family: "Noto Serif", serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.block_11 {
+  color: #4472C4;
+  display: block;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 3pt 0;
+  padding: 0;
+}
+.block_12 {
+  display: block;
+  font-family: serif;
+  margin: 0;
+  padding: 0;
+}
+.block_13 {
+  color: #4472C4;
+  display: block;
+  font-family: serif;
+  font-size: 1.125em;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 3pt 0;
+  padding: 0;
+}
+.block_14 {
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-size: 0.75em;
+  margin: 0;
+  padding: 0;
+}
+.block_15 {
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 3pt 0;
+  padding: 0;
+}
+.block_16 {
+  display: block;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_17 {
+  display: block;
+  font-family: "Calibri", sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.block_18 {
+  display: block;
+  font-size: 0.41667em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.block_19 {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+}
+.block_20 {
+  display: block;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_21 {
+  display: block;
+  font-size: 0.41667em;
+  margin: 0;
+  padding: 0;
+}
+.block_22 {
+  display: block;
+  font-size: 1.125em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_23 {
+  color: #2F5496;
+  display: block;
+  font-size: 1.125em;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 3pt 0;
+  padding: 0;
+}
+.block_24 {
+  display: table-row;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+.block_25 {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.block_26 {
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 3pt 0;
+  padding: 0;
+}
+.block_27 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_28 {
+  display: block;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_29 {
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-size: 0.58333em;
+  margin: 0;
+  padding: 0;
+}
+.block_30 {
+  color: #2F5496;
+  display: block;
+  font-size: 1.125em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+.block_31 {
+  display: block;
+  font-family: serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 8pt;
+  padding: 0;
+}
+.block_32 {
+  color: #2F5496;
+  display: block;
+  font-size: 1.125em;
+  font-weight: normal;
+  line-height: 1.2;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  margin: 3pt 0;
+  padding: 0;
+}
+.calibre {
+  color: #000;
+  display: block;
+  font-family: "Noto Serif India 11", serif;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 5pt;
+}
+.calibre1 {
+  text-decoration: none;
+}
+.calibre2 {
+  font-weight: bold;
+}
+.calibre3 {
+  height: 406pt;
+  width: 473pt;
+}
+.calibre4 {
+  height: 582pt;
+  width: 463pt;
+}
+.calibre5 {
+  white-space: pre-wrap;
+}
+.calibre6 {
+  display: table;
+  margin: 0;
+  padding: 0 0 0 18pt;
+}
+.calibre7 {
+  line-height: 1.2;
+}
+.calibre8 {
+  display: block;
+  float: right;
+  height: 1.58e +3pt;
+  width: 1.06e +3pt;
+}
+.calibre9 {
+  height: 992pt;
+  width: 662pt;
+}
+.calibre10 {
+  height: 648pt;
+  width: 432pt;
+}
+.calibre11 {
+  height: 648pt;
+  transform: rotate(90deg);
+  width: 432pt;
+}
+.calibre12 {
+  height: 808pt;
+  width: 753pt;
+}
+.calibre13 {
+  height: 1.04e +3pt;
+  width: 1.04e +3pt;
+}
+.calibre14 {
+  height: 1.58e +3pt;
+  width: 1.06e +3pt;
+}
+.calibre15 {
+  height: 1.12e +3pt;
+  width: 986pt;
+}
+.calibre16 {
+  height: 1.58e +3pt;
+  transform: rotate(90deg);
+  width: 1.06e +3pt;
+}
+.calibre17 {
+  height: 599pt;
+  width: 476pt;
+}
+.calibre18 {
+  height: 598pt;
+  width: 476pt;
+}
+.calibre19 {
+  height: 743pt;
+  width: 496pt;
+}
+.text_ {
+  color: #000;
+  font-family: "Noto Serif", serif;
+  font-size: 1.41667em;
+  line-height: 1.2;
+}
+.text_1 {
+  color: #0563C1;
+  font-family: "Noto Serif Gujarati", serif;
+  font-size: 1em;
+  text-decoration: underline;
+}
+.text_2 {
+  color: #0563C1;
+  text-decoration: underline;
+}
+.text_3 {
+  color: #0563C1;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.text_4 {
+  color: #0563C1;
+  font-family: "Shruti", sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.text_5 {
+  color: #0563C1;
+  font-family: "Noto Serif India 11", serif;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.text_6 {
+  color: #0563C1;
+  font-family: "Noto Serif Gujarati", serif;
+  text-decoration: underline;
+}
+.text_7 {
+  color: #0563C1;
+  font-family: "Cambria", serif;
+  text-decoration: underline;
+}
+.text_8 {
+  color: #2F5496;
+  font-size: 1.125em;
+  line-height: 1.2;
+}
+.text_9 {
+  color: #000;
+  font-size: 1em;
+}
+.text_10 {
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1em;
+}
+.text_11 {
+  font-family: "Times New Roman", serif;
+  font-size: 0.58333em;
+}
+.text_12 {
+  font-family: "Times New Roman", serif;
+  font-size: 0.75em;
+}
+.text_13 {
+  font-size: 1em;
+}
+.text_14 {
+  font-family: "Noto Serif India 11", serif;
+}
+.text_15 {
+  font-family: "Times New Roman", serif;
+}
+.text_16 {
+  font-family: "Shruti", sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_17 {
+  font-family: "Noto Serif India 11", serif;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_18 {
+  color: #2F5496;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_19 {
+  color: #4472C4;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_20 {
+  font-family: "Calibri", sans-serif;
+  font-size: 1em;
+}
+.text_21 {
+  color: #000;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1em;
+}
+.text_22 {
+  font-size: 0.41667em;
+}
+.text_23 {
+  color: #4472C4;
+  font-size: 1.125em;
+  line-height: 1.2;
+}
+.text_24 {
+  font-size: 1.41667em;
+  line-height: 1.2;
+}
+.text_25 {
+  font-size: 1.125em;
+  line-height: 1.2;
+}
+.text_26 {
+  color: #4472C4;
+  font-family: "Shruti", sans-serif;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_27 {
+  color: #4472C4;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_28 {
+  color: #2F5496;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1.125em;
+  line-height: 1.2;
+}
+.text_29 {
+  color: #000;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_30 {
+  color: #000;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1.66667em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_31 {
+  color: #000;
+  font-size: 1.66667em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_32 {
+  color: #000;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_33 {
+  color: #000;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 0.41667em;
+  font-weight: bold;
+}
+.text_34 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_35 {
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_36 {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.text_37 {
+  font-family: "Times New Roman", serif;
+  font-size: 1em;
+}
+.text_38 {
+  font-size: 1em;
+  font-weight: bold;
+}
+.text_39 {
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_40 {
+  font-family: "AdobeDevanagari-Regular", serif;
+}
+.text_41 {
+  color: #2F5496;
+  font-family: "Noto Serif India 11", serif;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.text_42 {
+  color: #000;
+  font-family: "Times New Roman", serif;
+  font-size: 1em;
+}
+.text_43 {
+  font-family: "Shruti", sans-serif;
+  line-height: 1.2;
+}
+.text_44 {
+  font-family: "Calibri", sans-serif;
+  line-height: 1.2;
+}
+.text_45 {
+  font-family: "Shruti", sans-serif;
+  font-weight: bold;
+}
+.text_46 {
+  font-family: "Calibri", sans-serif;
+  font-weight: bold;
+}
+.text_47 {
+  color: #000;
+  font-family: "Times New Roman", serif;
+  font-size: 0.75em;
+}

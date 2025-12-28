@@ -1,0 +1,13 @@
+@page {
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+}
+@font-face {
+  font-family: "Noto Serif India 11";
+  src: url(/fonts/Noto_Serif_India_11_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif India 11";
+  src: url(/fonts/Noto_Serif_India_11_-_Bold.ttf);
+  font-weight: bold;
+}

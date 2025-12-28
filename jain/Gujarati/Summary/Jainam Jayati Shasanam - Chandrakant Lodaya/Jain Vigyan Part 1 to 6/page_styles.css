@@ -1,0 +1,43 @@
+@page {
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+}
+@font-face {
+  font-family: "Noto Serif India 11";
+  src: url(/fonts/Noto_Serif_India_11_-_Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url(/fonts/Noto_Serif_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Shruti";
+  src: url(/fonts/Shruti_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif India 11";
+  src: url(/fonts/Noto_Serif_India_11_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Calibri";
+  src: url(/fonts/Calibri_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Calibri";
+  src: url(/fonts/Calibri_-_Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Shruti";
+  src: url(/fonts/Shruti_-_Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Noto Serif Gujarati";
+  src: url(/fonts/Noto_Serif_Gujarati_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Cambria";
+  src: url(/fonts/Cambria_-_Regular.ttf);
+}

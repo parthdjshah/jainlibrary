@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html><meta charset="UTF-8" > 
+<head>
+	<title>Spell Checker</title>
+	<style>
+      /* Style for the popup */
+      #help-popup, #how-popup {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+
+<script>
+		// Spellcheck function
+		
+let popupOpen = false;
+		// Function to handle mouseover event on red underlined word
+function handleMouseOver(event, span) {
+if (popupOpen) {
+        return; // If a popup is already open, do not display a new one
+    } else if (span.style.textDecoration === "none"){return;}
+    // Get the text of the word under the mouse cursor
+	
+    let word = event.target.innerText;
+
+    // Remove special characters, numbers, and Indian digits from the word
+	word = word.replace(/\u002D/g,"");
+	word = word.replace(/[\u0021-\u0A76]/g,"");
+	word = word.replace(/[ଁ-ﬄ]+/g,"");
+    //word = word.replace(/[\/\\\(\)\"\'\.\,\r\n\s\:\;\<\>\~\@\#\$\%\^\&\*\|\+\=\[\]\{\}\?\!\-]+|[0-9]+|[०-९]+|[૦-૯]+/g,"");
+	if (word===""){}
+	else{
+
+    // Check the spelling of the word using the spellcheck() function
+    const spellcheckResult = spellcheck(word);
+var rect = span.getBoundingClientRect();
+  var x = rect.left + window.scrollX;
+  var y = rect.top + window.scrollY;
+    // If the word is not found in the dictionary, display a message to the user
+    if (spellcheckResult === "NA") {
+        const message = "I could not find the word '" + word + "' in my dictionary. Please correct it yourself after checking.";
+        // Display the popup message with the word and its message
+        showPopup(x, y, message, word, span);
+    } else if (spellcheckResult !== word) {
+        // If the word is spelled incorrectly, suggest a correction
+        const message = "I found the word '" + word + "' incorrect. Please check this suggested word: '" + spellcheckResult + "'.";
+        // Display the popup message with the suggested word and its message
+		 
+        showPopup(x, y, message, spellcheckResult, span);
+    }
+    // Add event listener to remove the popup when the mouse leaves the span element
+      //const removePopupListener = function() {
+      //  const popup = document.getElementById("popup");
+      //  if (popup) {
+      //      popup.remove();
+      //      span.removeEventListener("mouseleave", removePopupListener);
+	//		popupOpen = false;
+			
+//}
+  //  };
+   
+}}
+// Function to create and display the popup message
+function showPopup(x, y, message, defaultValue, span) {
+    // Create the popup div
+    const popup = document.createElement("div");
+    popup.style.position = "absolute";
+    popup.style.top = (y + 30) + "px";
+    popup.style.left = (x + 30) + "px";
+    popup.style.backgroundColor = "#fff";
+    popup.style.padding = "10px";
+    popup.style.border = "1px solid #ccc";
+    popup.style.borderRadius = "5px";
+
+    // Add the message to the popup
+    const messageEl = document.createElement("p");
+	messageEl.textContent = message;
+popup.appendChild(messageEl);
+
+// Add the input field to the popup
+const inputEl = document.createElement("input");
+inputEl.type = "text";
+inputEl.value = defaultValue;
+inputEl.style.width = "100%";
+inputEl.style.marginTop = "10px";
+inputEl.style.padding = "5px";
+inputEl.style.borderRadius = "5px";
+inputEl.style.border = "1px solid #ccc";
+popup.appendChild(inputEl);
+
+// Add the "replace" button to the popup
+const replaceBtn = document.createElement("button");
+replaceBtn.textContent = "Replace";
+replaceBtn.style.marginTop = "10px";
+replaceBtn.style.padding = "5px 10px";
+replaceBtn.style.borderRadius = "5px";
+replaceBtn.style.border = "1px solid #ccc";
+replaceBtn.style.backgroundColor = "#f1f1f1";
+replaceBtn.addEventListener("click", function() {
+    span.innerText = inputEl.value;
+    popup.remove();
+    span.style.textDecoration = "none";
+	popupOpen = false;
+});
+popup.appendChild(replaceBtn);
+//Create a new button element for "Replace All" and add it to the popup:
+const replaceAllBtn = document.createElement("button");
+replaceAllBtn.textContent = "Replace All";
+replaceAllBtn.style.marginTop = "10px";
+replaceAllBtn.style.padding = "5px 10px";
+replaceAllBtn.style.borderRadius = "5px";
+replaceAllBtn.style.border = "1px solid #ccc";
+replaceAllBtn.style.backgroundColor = "#f1f1f1";
+popup.appendChild(replaceAllBtn);
+  let ori1=span.innertext;
+  let rep1=inputEl.value;
+replaceAllBtn.addEventListener("click", function()  {
+  // Create a regular expression to match the word
+ // const regex = new RegExp("\\b" + span.innerText + "\\b", "gi");
+
+  // Get all the span elements on the page
+    const ori1 = span.innerText;
+    const rep1 = inputEl.value;
+  const spans = document.querySelectorAll("span");
+
+  // Loop through the spans and update their text content
+  for (let i = 0; i < spans.length; i++) {
+    const span = spans[i];
+	if (span.innerText.search(ori1) > -1)
+	{span.innerText=rep1;
+	span.style.textDecoration = "none";} // Update the text decoration style}
+  }
+popup.remove();
+	popupOpen = false;
+});
+
+// Add the "cancel" button to the popup
+const cancelBtn = document.createElement("button");
+cancelBtn.textContent = "Later";
+cancelBtn.style.marginTop = "10px";
+cancelBtn.style.marginLeft = "10px";
+cancelBtn.style.padding = "5px 10px";
+cancelBtn.style.borderRadius = "5px";
+cancelBtn.style.border = "1px solid #ccc";
+cancelBtn.style.backgroundColor = "#f1f1f1";
+cancelBtn.addEventListener("click", function() {
+    popup.remove();
+	popupOpen = false; 
+});
+popup.appendChild(cancelBtn);
+      // Listen to mouseleave event to remove popup
+    //  popup.addEventListener("mouseleave", function() {
+     //   popup.remove();
+	//	 popupOpen = false; // Set popupOpen to false when the popup is closed
+    //  });
+
+
+// Add the popup to the document
+document.body.appendChild(popup);
+popupOpen = true; // Set popupOpen to true when the popup is displayed
+}
+		// Function to handle form submission
+let spanCount = 0;
+
+function handleSubmit(event) {
+    event.preventDefault();
+    const textarea = document.getElementById("textarea");
+    const words = textarea.value.split(" ");
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+
+for (let i = 0; i < words.length; i++) 
+	{
+  // Check if the word contains a newline character
+  if (/\n/.test(words[i])) 
+  {
+    // Split the word into an array of words using newline as delimiter
+    let NLWords = words[i].split('\n');
+    // Add the split words to the words1 array
+    for (let j = 0; j < NLWords.length; j++) 
+	{let ori = NLWords[j];
+        let word = NLWords[j];
+        // Apply regular expression pattern to remove unwanted characters
+        	word = word.replace(/\u002D/g,"");
+	word = word.replace(/[\u0021-\u0A76]/g,"");
+	word = word.replace(/[ଁ-ﬄ]+/g,"");
+
+        // Create a new span element for the word with a unique ID
+        const span = document.createElement("span");
+        spanCount++;
+        span.id = "span" + spanCount;
+        span.innerText = ori;
+
+        // Apply red underline to span if necessary
+		if (word === "" | word.length <= 2){}else{
+        const spellcheckResult = spellcheck(word);
+        if (spellcheckResult === "NA" || spellcheckResult !== word) {
+            span.style.textDecoration = "underline red";
+			 // Remove existing mouseover event listener for the span
+      span.removeEventListener("mouseover", handleMouseOver);
+            // Add mouseover event listener to the span element
+            span.addEventListener("mouseover", function(event) {
+                handleMouseOver(event, span);
+            });
+        }}
+
+        // Add the span element to the output element
+        output.appendChild(span);
+        // Create a new <br> element
+		if(j+1==NLWords.length){}else{
+		var lineBreak = document.createElement("br");
+		// Add the <br> element to the output element
+		output.appendChild(lineBreak);}
+		}
+  } else {
+    // If the word doesn't contain a newline character, just add it to the words1 array
+	let ori = words[i];
+        let word = words[i];
+        // Apply regular expression pattern to remove unwanted characters
+        	word = word.replace(/\u002D/g,"");
+	word = word.replace(/[\u0021-\u0A76]/g,"");
+	word = word.replace(/[ଁ-ﬄ]+/g,"");
+
+        // Create a new span element for the word with a unique ID
+        const span = document.createElement("span");
+        spanCount++;
+        span.id = "span" + spanCount;
+        span.innerText = ori;
+
+        // Apply red underline to span if necessary
+		if (word === "" | word.length <= 2){}else{
+        const spellcheckResult = spellcheck(word);
+        if (spellcheckResult === "NA" || spellcheckResult !== word) {
+            span.style.textDecoration = "underline red";
+			 // Remove existing mouseover event listener for the span
+      span.removeEventListener("mouseover", handleMouseOver);
+            // Add mouseover event listener to the span element
+            span.addEventListener("mouseover", function(event) {
+                handleMouseOver(event, span);
+            });
+        }}
+
+        // Add the span element to the output element
+        output.appendChild(span);
+        // Add a space after the span element
+        output.appendChild(document.createTextNode(" "));
+    }
+}
+}
+
+</script>
+<style>
+	#output {
+		border: 1px solid #ccc;
+		padding: 10px;
+		border-radius: 5px;
+		width:1100px;
+	}
+</style>
+</head>
+<body style="font-family:'Noto Serif India 11'; width:90%;">
+		<script type="text/javascript" charset="UTF-8" src="Pratrep.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="Form.js"></script>
+	<p>Gujarati Spell Check by Parth Shah CACISA ↓↓↓ PASTE GUJARATI TEXT HERE ↓↓↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="help-button">Help</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="how-button">HowItWorks</a></p>
+	<div id="help-popup">
+      <h2>Spellcheck Help</h2>
+      <p>Just paste your text here in the textarea and press submit button. (system will ignore all characters other than gujarati characters)
+	  <p>Then you will see incorrect words highlighted with red underline. 
+	  <p>When you hover your mouse over them, it will show 
+	  <p>1) If word is not found in dictionary and it has no suggestion also, then original word will be shown. You can edit it as you like or keep it and press Replace. ReplaceAll will replace same word instances throughout the document.
+	  <p>2) If word is not found but possible word suggestions are there, then it will show suggestions by default in pop up modifiable area. You can choose to modify or keep suggested word and click replace. If you press Replace, then it will not ask you to change it next time. ReplaceAll will replace same word instances throughout the document.
+	  <p>3) If you dont want to do anything, just click cancel and it will keep everything as it is.
+      <p><button id="close-button">Close</button>
+    </div>
+	<div id="how-popup">
+      <h2>HowItWorks</h2>
+      
+	  <p> This spell checker is designed keeping in mind following:
+	  <p> Step1: It searches the words in the dictionary of Gujarati Lexicon.
+	  <p> Step2: If not found there, it will check in frequently mistaken word (FMW) list which I created. This list also have frequently mistaken character list as well. So it will see that if we change that character and do we find the correct word.
+	  <p> Step3: If it is not found there, it will see if it removes pratyay(prat) e.g. ("shali" asin Balshali) and see if it is in dictionary.
+	  <p> Step4: If still not found, it will see if it removes PurvPratyay(Pprat) (e.g. "ati" asin Atidhanvan) and see if it is in dictionary.
+	  <p> If not found after all these steps it will keep the original word as answer and tell user to correct it. Since Gujarati and all other Indic languages are already having lakhs of rootwords and if we consider 100s of pratyays and PurvPratyays, the dictionary will become very big to process even. Hence, I have designed a smarter way to check the gujarati spellings. Currently all Gujarati spelling checker online are just doing a simple dictionary check which would give you many words as not found in standard dictionary but if we just adjust them with pratyay and purvpratyay, we can find the correct word.
+	  <p> The entire logical thinking which I mentioned here can be seen in Browser Console log, if anyone interested to see how the system works and it may be useful to improve this software. You can press Ctrl + Shift + I to see the console of the browser.
+	  <p>      <button id="close1-button">Close</button>
+    </div>
+
+    <script>
+      const helpButton = document.getElementById("help-button");
+      const helpPopup = document.getElementById("help-popup");
+      const closeButton = document.getElementById("close-button");
+        const howButton = document.getElementById("how-button");
+      const howPopup = document.getElementById("how-popup");
+	  const close1Button = document.getElementById("close1-button");
+
+      // Show the popup when the help button is clicked
+      helpButton.addEventListener("click", () => {
+        helpPopup.style.display = "block";
+      });
+	        // Show the popup when the how button is clicked
+      howButton.addEventListener("click", () => {
+        howPopup.style.display = "block";
+      });
+
+      // Hide the popup when the close button is clicked
+      closeButton.addEventListener("click", () => {
+        helpPopup.style.display = "none";
+      });
+        // Hide the popup when the close button is clicked
+      close1Button.addEventListener("click", () => {
+        howPopup.style.display = "none";
+      });
+    </script>
+	<form onsubmit="handleSubmit(event)">
+	<textarea style = "font-family:'Noto Serif India 11'; width:100%; height:100px" id="textarea"></textarea><br> 
+	<button type="submit">CHECKNOW</button>
+</form>
+<div style="font-size:15pt; width:100%;" id="output"></div>
+</body>
+</html>

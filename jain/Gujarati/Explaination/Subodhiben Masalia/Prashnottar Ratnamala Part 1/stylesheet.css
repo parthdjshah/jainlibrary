@@ -1,0 +1,1728 @@
+.block_ {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_1 {
+    display: block;
+    font-family: "Calibri", sans-serif;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_2 {
+    color: #696900;
+    display: block;
+    font-family: "Cambria", serif;
+    line-height: 1.2;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_3 {
+    display: block;
+    font-family: "Calibri", sans-serif;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_4 {
+    display: block;
+    font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_5 {
+    color: #696900;
+    display: block;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_6 {
+    display: block;
+    font-family: serif;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_7 {
+    display: block;
+    font-family: serif;
+    font-size: 1.125em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_8 {
+    color: #000;
+    display: block;
+    font-family: serif;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_9 {
+    color: #000;
+    display: block;
+    font-family: serif;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_10 {
+    color: #FF0;
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_11 {
+    color: #000;
+    display: block;
+    font-family: serif;
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0
+    }
+.block_12 {
+    color: #000;
+    display: block;
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0
+    }
+.block_13 {
+    color: #000;
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_14 {
+    color: #000;
+    display: block;
+    font-family: serif;
+    font-size: 1.125em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_15 {
+    color: #000;
+    display: block;
+    font-size: 1.41667em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_16 {
+    color: #000;
+    display: block;
+    font-family: serif;
+    font-size: 1.41667em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_17 {
+    display: block;
+    font-family: "Arial", sans-serif;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_18 {
+    color: #365F91;
+    display: block;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_19 {
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_20 {
+    display: block;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_21 {
+    color: #365F91;
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_22 {
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_23 {
+    color: #365F91;
+    display: block;
+    font-family: serif;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_24 {
+    color: #FFF;
+    display: block;
+    font-family: "Arial", serif;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_25 {
+    display: block;
+    font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_26 {
+    display: block;
+    font-family: serif;
+    font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_27 {
+    display: block;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_28 {
+    color: #FFF;
+    display: block;
+    font-family: "Bold", serif;
+    font-size: 0.58333em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0
+    }
+.block_29 {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_30 {
+    color: #365F91;
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_31 {
+    color: #FFF;
+    display: block;
+    font-family: "Bold", serif;
+    font-size: 0.58333em;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_32 {
+    color: #3D4094;
+    display: block;
+    font-family: "Calibri-Bold-Identity-H", serif;
+    font-size: 0.58333em;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.calibre {
+    color: #242021;
+    display: block;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 5pt
+    }
+.calibre1 {
+    line-height: 1.2;
+    text-decoration: none
+    }
+.calibre2 {
+    font-style: italic;
+    line-height: 1.2
+    }
+.calibre3 {
+    white-space: pre-wrap
+    }
+.calibre4 {
+    font-weight: bold;
+    line-height: 1.2
+    }
+.calibre5 {
+    line-height: 1.2
+    }
+.calibre6 {
+    line-height: 1.2;
+    white-space: pre-wrap
+    }
+.calibre7 {
+    display: table-row-group;
+    line-height: 1.2;
+    vertical-align: middle
+    }
+.calibre8 {
+    display: table-row;
+    line-height: 1.2;
+    vertical-align: inherit
+    }
+.table_ {
+    border-collapse: collapse;
+    border-spacing: 2px;
+    display: table;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 0;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_ {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 68.2pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_1 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 36pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_2 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 74.2pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_3 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 134pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.text_ {
+    color: #00F;
+    line-height: 1.2;
+    text-decoration: underline
+    }
+.text_1 {
+    color: #696900;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_2 {
+    color: #00F;
+    font-size: 1.28571em;
+    text-decoration: underline
+    }
+.text_3 {
+    color: #696900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_4 {
+    color: #E2E200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_5 {
+    color: #6E6E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_6 {
+    color: #6E6E00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.71429em
+    }
+.text_7 {
+    color: #8E8E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_8 {
+    color: #8E8E00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.71429em
+    }
+.text_9 {
+    color: #6F6F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_10 {
+    color: #676700;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_11 {
+    color: #676700;
+    font-family: "Arial", sans-serif;
+    font-size: 1.71429em
+    }
+.text_12 {
+    color: #848400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_13 {
+    color: #818100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_14 {
+    color: #717100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_15 {
+    color: #717100;
+    font-family: "Arial", sans-serif;
+    font-size: 1.71429em
+    }
+.text_16 {
+    color: #A2A200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_17 {
+    color: #DCDC00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_18 {
+    color: #DCDC00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_19 {
+    color: #919100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_20 {
+    color: #707000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_21 {
+    color: #550;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_22 {
+    color: #550;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_23 {
+    color: #5A5A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_24 {
+    color: #848400;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_25 {
+    color: #9A9A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_26 {
+    color: #9A9A00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_27 {
+    color: #939300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_28 {
+    color: #A0A000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_29 {
+    color: #757500;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_30 {
+    color: #9E9E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_31 {
+    color: #959500;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_32 {
+    color: #A1A100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_33 {
+    color: #A1A100;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_34 {
+    color: #565600;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_35 {
+    color: #565600;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_36 {
+    color: #595900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_37 {
+    color: #525200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_38 {
+    color: #525200;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_39 {
+    color: #515100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_40 {
+    color: #515100;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_41 {
+    color: #838300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_42 {
+    color: #6B6B00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_43 {
+    color: #6B6B00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_44 {
+    color: #808000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_45 {
+    color: #5D5D00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_46 {
+    color: #660;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_47 {
+    color: #616100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_48 {
+    color: #606000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_49 {
+    color: #686800;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_50 {
+    color: #ECEC00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_51 {
+    color: #ECEC00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_52 {
+    color: #5E5E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_53 {
+    color: #6E6E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_54 {
+    color: #737300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_55 {
+    color: #717100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_56 {
+    color: #727200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_57 {
+    color: #686800;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_58 {
+    color: #6B6B00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_59 {
+    color: #770;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_60 {
+    color: #656500;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_61 {
+    color: #6C6C00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_62 {
+    color: #7D7D00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_63 {
+    color: #696900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_64 {
+    color: #6A6A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_65 {
+    color: #646400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_66 {
+    color: #646400;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_67 {
+    color: #5B5B00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_68 {
+    color: #787800;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_69 {
+    color: #787800;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_70 {
+    color: #880;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_71 {
+    color: #525200;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_72 {
+    color: #6F6F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_73 {
+    color: #747400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_74 {
+    color: #A3A300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_75 {
+    color: #5C5C00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_76 {
+    color: #5C5C00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_77 {
+    color: #AEAE00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_78 {
+    color: #9C9C00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_79 {
+    color: #757500;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_80 {
+    color: #636300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_81 {
+    color: #636300;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_82 {
+    color: #5F5F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_83 {
+    color: #676700;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_84 {
+    color: #727200;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_85 {
+    color: #868600;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_86 {
+    color: #ACAC00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_87 {
+    color: #ACAC00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_88 {
+    color: #767600;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_89 {
+    color: #545400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_90 {
+    color: #6C6C00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_91 {
+    color: #676700;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_92 {
+    color: #676700;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_93 {
+    color: #6D6D00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_94 {
+    color: #6D6D00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_95 {
+    color: #4F4F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_96 {
+    color: #858500;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_97 {
+    color: #8A8A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_98 {
+    color: #C3C300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_99 {
+    color: #6E6E00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_100 {
+    color: #929200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_101 {
+    color: #5D5D00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_102 {
+    color: #585800;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_103 {
+    color: #C9C900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_104 {
+    color: #8D8D00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_105 {
+    color: #5B5B00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_106 {
+    color: #797900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_107 {
+    color: #909000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_108 {
+    color: #B9B900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_109 {
+    color: #B9B900;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_110 {
+    color: #E2E200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_111 {
+    color: #828200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_112 {
+    color: #5C5C00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_113 {
+    color: #4E4E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_114 {
+    color: #F1F100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_115 {
+    color: #F1F100;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_116 {
+    color: #787800;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_117 {
+    color: #F7F700;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_118 {
+    color: #EE0;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_119 {
+    color: #626200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_120 {
+    color: #646400;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_121 {
+    color: #EFEF00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_122 {
+    color: #5E5E00;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_123 {
+    color: #B4B400;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_124 {
+    color: #848400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_125 {
+    color: #B7B700;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_126 {
+    color: #848400;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_127 {
+    color: #6C6C00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_128 {
+    color: #5E5E00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_129 {
+    color: #6E6E00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_130 {
+    color: #676700;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_131 {
+    color: #717100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_132 {
+    color: #6A6A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_133 {
+    color: #5D5D00;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_134 {
+    color: #5F5F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_135 {
+    color: #5D5D00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_136 {
+    color: #636300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_137 {
+    color: #636300;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_138 {
+    color: #7F7F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_139 {
+    color: #696900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_140 {
+    color: #626200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_141 {
+    color: #7A7A00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_142 {
+    color: #707000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_143 {
+    color: #767600;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_144 {
+    color: #767600;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_145 {
+    color: #6F6F00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_146 {
+    color: #696900;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_147 {
+    color: #747400;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_148 {
+    color: #626200;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_149 {
+    color: #660;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_150 {
+    color: #737300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_151 {
+    color: #545400;
+    font-family: "Arial", sans-serif;
+    line-height: 1.2
+    }
+.text_152 {
+    color: #6B6B00;
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_153 {
+    color: #6A6A00;
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_154 {
+    color: #6A6A00;
+    font-family: "Arial", sans-serif;
+    line-height: 1.2
+    }
+.text_155 {
+    color: #6F6F00;
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_156 {
+    color: #656500;
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_157 {
+    color: #585800;
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_158 {
+    color: #4F4F00;
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_159 {
+    color: #D5D500;
+    font-family: "Arial", sans-serif;
+    font-size: 0.71429em
+    }
+.text_160 {
+    color: #BB0;
+    font-family: "Arial", sans-serif;
+    font-size: 0.71429em
+    }
+.text_161 {
+    color: #CDCD00;
+    font-family: "Arial", sans-serif;
+    font-size: 0.71429em
+    }
+.text_162 {
+    color: #FF0;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 0.71429em
+    }
+.text_163 {
+    color: #D1D100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 0.71429em
+    }
+.text_164 {
+    color: #BEBE00;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 0.71429em
+    }
+.text_165 {
+    color: #D4D400;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 0.71429em
+    }
+.text_166 {
+    color: #D4D400;
+    font-family: "Arial", sans-serif;
+    font-size: 0.71429em
+    }
+.text_167 {
+    color: #C9C900;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 0.71429em
+    }
+.text_168 {
+    color: #BABA00;
+    font-family: "Times New Roman", serif;
+    font-size: 0.71429em
+    }
+.text_169 {
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 0.71429em
+    }
+.text_170 {
+    color: #000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_171 {
+    color: #E0E000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_172 {
+    color: #FF0;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_173 {
+    color: #FF0;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_174 {
+    color: #000;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_175 {
+    color: #000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_176 {
+    color: #FF0;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_177 {
+    font-family: "Arial", sans-serif;
+    line-height: 1.2
+    }
+.text_178 {
+    font-family: "Noto Serif Gujarati", serif;
+    line-height: 1.2
+    }
+.text_179 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_180 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1em
+    }
+.text_181 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.28571em
+    }
+.text_182 {
+    font-family: "Arial", sans-serif;
+    font-size: 1.28571em
+    }
+.text_183 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_184 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_185 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.28571em;
+    font-weight: bold
+    }
+.text_186 {
+    font-family: "Times New Roman", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_187 {
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_188 {
+    font-family: "Times New Roman", serif;
+    font-size: 1.28571em
+    }
+.text_189 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_190 {
+    font-family: "Times New Roman", serif;
+    font-size: 1.71429em
+    }
+.text_191 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.28571em;
+    font-style: italic
+    }
+.text_192 {
+    font-family: "Arial", sans-serif;
+    font-size: 1.71429em
+    }
+.text_193 {
+    font-family: "Noto Serif Gujarati", serif
+    }
+.text_194 {
+    font-family: "Times New Roman", serif
+    }
+.text_195 {
+    font-family: "Arial", sans-serif
+    }
+.text_196 {
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_197 {
+    font-family: "Arial", sans-serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_198 {
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_199 {
+    font-size: 1.71429em
+    }
+.text_200 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_201 {
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_202 {
+    color: #C1C100;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_203 {
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_204 {
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_205 {
+    color: #000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_206 {
+    color: #000;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_207 {
+    color: #000;
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_208 {
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_209 {
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_210 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_211 {
+    font-family: "Arial", sans-serif;
+    font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_212 {
+    color: #B3B300;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_213 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-style: italic
+    }
+.text_214 {
+    font-family: "Times New Roman", serif;
+    line-height: 1.2
+    }
+.text_215 {
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_216 {
+    color: #242021;
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_217 {
+    color: #242021;
+    font-size: 1.71429em
+    }
+.text_218 {
+    color: #FFF;
+    font-size: 1em;
+    font-weight: bold
+    }
+.text_219 {
+    color: #FFF;
+    font-family: "Bold", serif;
+    font-size: 1em;
+    font-weight: bold
+    }
+.text_220 {
+    font-size: 1.28571em
+    }
+.text_221 {
+    font-size: 1em
+    }
+.text_222 {
+    font-family: "Arial", sans-serif;
+    font-size: 1.28571em;
+    font-weight: bold
+    }
+.text_223 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_224 {
+    color: #242021;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_225 {
+    color: #242021;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em
+    }
+.text_226 {
+    color: #FFF;
+    font-size: 1em
+    }
+.text_227 {
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_228 {
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_229 {
+    color: #FFF;
+    font-family: "Arial", serif;
+    font-size: 1em
+    }
+.text_230 {
+    color: #242021;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_231 {
+    font-family: "Times New Roman", serif;
+    font-size: 1em
+    }
+.text_232 {
+    color: #242021;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_233 {
+    color: #FFF;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1em
+    }
+.text_234 {
+    font-family: "Arial", serif;
+    font-size: 1em
+    }
+.text_235 {
+    color: #FFF;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1em;
+    font-weight: bold
+    }
+.text_236 {
+    font-family: "Arial", serif;
+    font-size: 1.28571em
+    }
+.text_237 {
+    color: #365F91;
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_238 {
+    color: #242021;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_239 {
+    color: #FFF;
+    font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_240 {
+    color: #242021;
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_241 {
+    font-family: "Times New Roman", serif;
+    font-size: 1.71429em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_242 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_243 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_244 {
+    font-family: "Bold", serif;
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_245 {
+    font-family: "Noto Serif Gujarati", serif;
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_246 {
+    color: #3D4094;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_247 {
+    color: #A83D40;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_248 {
+    color: #F00;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_249 {
+    color: #063;
+    font-weight: bold;
+    line-height: 1.2
+    }

@@ -1,0 +1,45 @@
+@page {
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+}
+@font-face {
+  font-family: "Kokila";
+  src: url(fonts/Kokila_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url(fonts/Helvetica_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  src: url(fonts/Noto_Serif_Devanagari_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Calibri";
+  src: url(fonts/Calibri_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Shruti";
+  src: url(fonts/Shruti_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif Gujarati";
+  src: url(fonts/Noto_Serif_Gujarati_-_Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Calibri Light";
+  src: url(fonts/Calibri_Light_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Mangal";
+  src: url(fonts/Mangal_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif Gujarati";
+  src: url(fonts/Noto_Serif_Gujarati_-_Regular.ttf);
+}
+@font-face {
+  font-family: "Cambria";
+  src: url(fonts/Cambria_-_Regular.ttf);
+}
