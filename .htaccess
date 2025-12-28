@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^jain\.parthfinvest\.in$ [NC]
+RewriteRule ^(.*)$ http://parthfinvest.in/jain/$1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^invest\.parthfinvest\.in$ [NC]
+RewriteRule ^(.*)$ http://parthfinvest.in/invest/$1 [L,R=301]

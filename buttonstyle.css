@@ -1,0 +1,61 @@
+.bb{color:transparent; font-size:1;} /* This is custom style tag so dot is in front */
+html {
+  scroll-behavior: smooth;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 99;
+  font-size: 100%;
+  border: 1px;
+  outline: 1px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+#myIndex {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 70px;
+  z-index: 99;
+  font-size: 100%;
+  border: 1px;
+  outline: 1px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#myIndex:hover {
+  background-color: #555;
+}
+#nexTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 220px;
+  z-index: 99;
+  font-size: 100%;
+  border: 1px;
+  outline: 1px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+#nexTop:hover {
+  background-color: #555;
+}
