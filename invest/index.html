@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Meta -->
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B2Q39Z3BC9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B2Q39Z3BC9');
+</script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -726,19 +734,5 @@ At our firm, we believe that integrity, transparency, and trust are the foundati
 	<script src="js/SmoothScroll.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-		<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-63f712e34cd37641"></script>
-		<script>
-fetch('count.php', {
-  method: 'POST' // No body needed anymore
-}).then(response => {
-  return response.text();
-}).then(data => {
-  console.log("Current Count: " + data);
-  // Optional: Display it on the page
-  // document.getElementById('counter-display').innerText = data; 
-}).catch(error => {
-  console.error(error);
-});
-</script>
 </body>
 </html>
