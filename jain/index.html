@@ -11,6 +11,15 @@
 
   gtag('config', 'G-B2Q39Z3BC9');
 </script>
+<script>
+function trackDownload(filename) {
+  gtag('event', 'download', {
+    event_category: 'EPUB',
+    event_label: filename,
+    transport_type: 'beacon'
+  });
+}
+</script>
 <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -89,7 +98,7 @@ body {
 	  
 	 <!-- Copy everything here onwards.-->
 
-<tr><td>1</td><td>1-Acharanga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/1-Acharanga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1-Acharanga Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1-Acharanga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
+<tr><td>1</td><td>1-Acharanga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/1-Acharanga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1-Acharanga Sutra Part 1.epub" onclick="trackDownload('1-Acharanga Sutra Part 1.epub')" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1-Acharanga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
 <tr><td>2</td><td>1- Acharanga Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/1- Acharanga Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/1- Acharanga Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/1- Acharanga Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
 <tr><td>3</td><td>2- Suyagadanga Sutra Part 1</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/2- Suyagadanga Sutra Part 1/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2- Suyagadanga Sutra Part 1.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2- Suyagadanga Sutra Part 1.pdf" target="_blank" rel="noopener">Download</a></td></tr>
 <tr><td>4</td><td>2 - Suyagadanga Sutra Part 2</td><td>Aanga Aagam</td><td>GandharBhagavant</td><td>Gujarati</td><td>Shashtra</td><td><a href="Gujarati/Aanga Aagam/GandharBhagavant/2 - Suyagadanga Sutra Part 2/index.html" target="_blank" rel="noopener">View Book</a></td><td><a href="EPUB/2 - Suyagadanga Sutra Part 2.epub" target="_blank" rel="noopener">Download</a></td><td><a href="PDF/2 - Suyagadanga Sutra Part 2.pdf" target="_blank" rel="noopener">Download</a></td></tr>
