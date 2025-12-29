@@ -729,18 +729,16 @@ At our firm, we believe that integrity, transparency, and trust are the foundati
 		<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-63f712e34cd37641"></script>
 		<script>
 fetch('count.php', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
-  },
-  body: 'count=1'
+  method: 'POST' // No body needed anymore
 }).then(response => {
   return response.text();
 }).then(data => {
-  console.log(data);
+  console.log("Current Count: " + data);
+  // Optional: Display it on the page
+  // document.getElementById('counter-display').innerText = data; 
 }).catch(error => {
   console.error(error);
 });
-  </script>
+</script>
 </body>
 </html>
