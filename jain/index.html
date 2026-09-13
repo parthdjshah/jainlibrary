@@ -136,9 +136,9 @@ body {
           <th data-priority="7">Book Type</th>
           <th data-priority="6">Author</th>
 		  <th data-priority="4">Language</th>
-          <th data-priority="5">Category</th>
-          <th data-priority="1"><img src="https://img.icons8.com/officel/80/000000/html-filetype.png" Title="Click to View Book HTML File"></th>
-          <th data-priority="2"><img src="/epub.png" Title="Click to Download Book EPUB File" /></th>
+          <th data-priority="5">Tags</th>
+          <th data-priority="1"><img src="https://img.icons8.com/officel/80/000000/html-filetype.png" width="50" Title="Click to View Book HTML File"></th>
+          <th data-priority="2"><img src="https://img.icons8.com/ios7/1200/epub.jpg"  width="50" Title="Click to Download Book EPUB File" /></th>
           <th data-priority="3"><img src="https://img.icons8.com/ios/50/000000/export-pdf-2.png" Title="Click to View/download Book PDF File"></th>
         </tr>
       </thead>
@@ -265,7 +265,7 @@ async function loadBooksFromExcel() {
         const bookType = col("book type");
         const author = col("author");
         const language = col("language");
-        const category = col("category");
+        const Tags = col("Tags");
         const htmlFile = col("html");
         const epubFile = col("epub");
         const pdfFile = col("pdf");
@@ -273,7 +273,7 @@ async function loadBooksFromExcel() {
         const required = [
             ["BookID", bookID], ["BookName", bookName],
             ["Book Type", bookType], ["Author", author],
-            ["Language", language], ["Category", category],
+            ["Language", language], ["Tags", Tags],
             ["HTML", htmlFile], ["EPUB", epubFile], ["PDF", pdfFile]
         ];
 
@@ -318,7 +318,7 @@ async function loadBooksFromExcel() {
             addTextCell(value(bookType));
             addTextCell(value(author));
             addTextCell(value(language));
-            addTextCell(value(category));
+            addTextCell(value(Tags));
 
             // HTML link
             let td = document.createElement("td");
