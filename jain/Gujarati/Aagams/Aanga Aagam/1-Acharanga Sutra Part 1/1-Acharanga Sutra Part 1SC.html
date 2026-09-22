@@ -2,6 +2,68 @@
 
 <html><head><meta content="text/html; width=device-width, initial-scale=1.0, charset=utf-8" http-equiv="Content-Type" name="viewport"/><style>
 
+html {
+  scroll-behavior: smooth;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+@font-face {
+    font-family: 'Noto Serif India 11';
+    src: url('../../../../fonts/Noto_Serif_India_11_-_Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.zoom-controls {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.zoom-controls button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+@media (max-width: 600px) {`r`n.NormalTable{width:100% !important;table-layout:auto !important;}
+    body {
+        overflow-wrap: anywhere;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+#myBtn:hover {
+  background-color: #555;
+}
+
+
 
 <!--
 
@@ -421,11 +483,59 @@ border:.5pt solid windowtext;
 /* INDEX_GENERATOR_CSS_END */
 
 </style>
-<link rel="stylesheet" href="../../../../common/book-common.css">
-<script src="../../../../common/book-common.js" defer></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B2Q39Z3BC9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B2Q39Z3BC9');
+</script>
 
+<style>
+#aiSelectMenu{display:none;position:fixed;z-index:99999;background:#fff;border:1px solid #aaa;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);padding:6px;width:min(290px,calc(100vw - 20px));font-family:Arial,sans-serif}
+#aiSelectMenu .ai-menu-title{font-weight:bold;padding:7px 8px;border-bottom:1px solid #ddd;margin-bottom:3px}
+#aiSelectMenu button{display:block;width:100%;text-align:left;border:0;background:#fff;padding:8px;border-radius:6px;font-size:14px;cursor:pointer}
+#aiSelectMenu button:hover{background:#eee}
+#aiBookButton{position:fixed;right:18px;bottom:122px;z-index:9998;width:48px;height:48px;border:0;border-radius:50%;font-size:24px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.28);cursor:pointer}
+#aiAskDialog{display:none;position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.45);align-items:center;justify-content:center;padding:15px}
+#aiAskBox{background:#fff;border-radius:12px;width:min(620px,100%);max-height:90vh;overflow:auto;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.35);font-family:Arial,sans-serif}
+#aiAskBox h3{margin-top:0}
+#aiSelectedPreview{background:#f5f5f5;border-left:4px solid #888;padding:10px;margin:10px 0;max-height:180px;overflow:auto;white-space:pre-wrap}
+#aiQuestion{width:100%;min-height:110px;box-sizing:border-box;padding:10px;font-size:16px;border:1px solid #bbb;border-radius:7px}
+#aiAskBox .ai-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+#aiAskBox .ai-actions button{padding:9px 14px;border:1px solid #aaa;border-radius:7px;background:#fff;cursor:pointer}
+#aiOpenChatGPT{font-weight:bold}
+@media(max-width:600px){
+  #aiBookButton{right:12px;bottom:125px}
+  #aiSelectMenu{width:260px}
+}
+</style>
 </head><body spellcheck="false"><!-- INDEX_GENERATOR_START --><div id="generated-index"><h2>Contents</h2><ol><li><a href="#index1">પ્રકાશકીય</a><ol><li><a href="#index2">શાસ્ત્ર સ્વાધ્યાય સદ્વિવેક</a></li><li><a href="#index3">આચાર્ય   જીવન   પરિચય</a></li><li><a href="#index4">ગુરુપ્રાણ આગમ બત્રીસી અનુવાદિકા મહાસતીજીઓ</a></li><li><a href="#index5">શ્રુતાધાર (મુખ્યદાતા)</a></li><li><a href="#index6">૩૨ અસ્વાધ્યાય (શાસ્ત્રના મૂળપાઠ સંબંધી)</a></li><li><a href="#index7">પ્રકાશકના બે બોલ</a></li><li><a href="#index8">અભિગમ</a></li><li><a href="#index9">સંપાદકીય</a></li><li><a href="#index10">સંપાદન અનુભવ</a><ol><li><a href="#index11">આગમની પરિભાષા :-</a></li><li><a href="#index12">આચારાંગસૂત્રનું મહત્ત્વ :-</a></li><li><a href="#index13">આચારાંગસૂત્રનો વિષય :-</a></li><li><a href="#index14">આચારાંગસૂત્રનું પદ પ્રમાણ :-</a></li><li><a href="#index15">આચારાંગસૂત્રના નામ :-</a></li><li><a href="#index16">આચારાંગસૂત્ર રચયિતા :-</a></li><li><a href="#index17">રચનાશેલી :-</a></li><li><a href="#index18">આચારાંગસૂત્રની ભાષા :-</a></li><li><a href="#index19">આચારાંગસૂત્રમાં દાર્શનિક વિષય :-</a></li><li><a href="#index20">આચારાંગસૂત્રમાં તુલનાત્મક સાધનાપક્ષ :-</a></li><li><a href="#index21">નિર્યુક્તિ :-</a></li><li><a href="#index22">ચૂર્ણિ</a></li><li><a href="#index23">ટીકા :-</a></li><li><a href="#index24">પ્રસ્તુત સંસ્કરણ :-</a></li></ol></li></ol></li><li><a href="#index25">પ્રથમ અધ્યયન–શસ્ત્રપરિજ્ઞા</a><ol><li><a href="#index26">પહેલો ઉદ્દેશક</a><ol><li><a href="#index27">આત્મસ્વરૂપનો અબોધ :–</a></li><li><a href="#index28">આત્મ અસ્તિત્વનો બોધ :–</a></li><li><a href="#index29">કર્મજનક સત્યાવીસ ક્રિયાઓ :–</a></li><li><a href="#index30">ક્રિયાઓનું પરિણામ અને તેનાં કારણો :–</a></li><li><a href="#index31">આત્મબોધનો ઉપસંહાર :–</a></li><li><a href="#index32">। અધ્યયન–1/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index33">પહેલું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index34">દુઃખી પ્રાણી :–</a></li><li><a href="#index35">પૃથ્વીકાયની સજીવતા :–</a></li><li><a href="#index36">પૃથ્વીકાયની હિંસાના હેતુઓ :–</a></li><li><a href="#index37">ઈહસાનું પરિણામ :–</a></li><li><a href="#index38">પૃથ્વીકાયિક જીવોની વેદના :–</a></li><li><a href="#index39">પૃથ્વીકાયની હિંસાનો ત્યાગ :–</a></li><li><a href="#index40">। અધ્યયન–1/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index41">પહેલું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index42">અણગારના લક્ષણ :–</a></li><li><a href="#index43">સંયમના ઉત્સાહની સુરક્ષા :–</a></li><li><a href="#index44">અપ્કાયિક જીવોની સજીવતા :–</a></li><li><a href="#index45">અપ્કાયની હિંસા સંબંધી પરિજ્ઞા :–</a></li><li><a href="#index46">પાણીની સજીવતા અને હિંસાનું સૂક્ષ્મજ્ઞાન :–</a></li><li><a href="#index47">હિંસામાં અહિંસાની કલ્પના કરનારાઓની પણ અમુક્તિ :–</a></li><li><a href="#index48">અપ્કાયહિંસા ત્યાગ :–</a></li><li><a href="#index49">।। ત્રીજો ઉદ્દેશક સમાપ્ત ।।</a></li><li><a href="#index50">। અધ્યયન–1/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index51">પહેલું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index52">અગ્નિકાયની સજીવતા :–</a></li><li><a href="#index53">અગ્નિકાય હિંસાત્યાગનો સંકલ્પ :–</a></li><li><a href="#index54">અગ્નિકાયની હિંસાનું પરિજ્ઞાન :–</a></li><li><a href="#index55">અગ્નિથી થતી અન્ય વિરાધના :–</a></li><li><a href="#index56">અગ્નિ વિરાધના ત્યાગ :–</a></li><li><a href="#index57">। અધ્યયન–1/4 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index58">પહેલું અધ્યયન : પાંચમો ઉદ્દેશક</a><ol><li><a href="#index59">અણગારના લક્ષણ :–</a></li><li><a href="#index60">ઈન્દ્રિય વિષય અને સંસાર :–</a></li><li><a href="#index61">વનસ્પતિકાયની હિંસાનું પરિજ્ઞાન :–</a></li><li><a href="#index62">વનસ્પતિમાં મનુષ્યનાં લક્ષણોની સમાનતા :–</a></li><li><a href="#index63">વનસ્પતિ હિંસાત્યાગ :–</a></li><li><a href="#index64">। અધ્યયન–1/પ સંપૂર્ણ ।</a></li></ol></li><li><a href="#index65">પહેલું અધ્યયન : છઠ્ઠો ઉદ્દેશક</a><ol><li><a href="#index66">ત્રસ જીવોનો દુઃખમય સંસાર :–</a></li><li><a href="#index67">ત્રસકાય હિંસા પરિજ્ઞાન :–</a></li><li><a href="#index68">પંચેન્દ્રિય જીવોની હિંસાના વિવિધ હેતુ :–</a></li><li><a href="#index69">ત્રસકાય હિંસા ત્યાગ :–</a></li><li><a href="#index70">। અધ્યયન–1/6 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index71">પહેલું અધ્યયન : સાતમો ઉદ્દેશક</a><ol><li><a href="#index72">વાયુકાયની સજીવતા :–</a></li><li><a href="#index73">વાયુકાયિક જીવોની હિંસાનું પરિજ્ઞાન :–</a></li><li><a href="#index74">વાયુકાયની વિરાધના સાથે બીજી વિરાધના :–</a></li><li><a href="#index75">વાયુકાય હિંસાત્યાગ :–</a></li><li><a href="#index76">વિરતિનો બોધ :–</a></li><li><a href="#index77">છજીવનિકાય હિંસાત્યાગ :–</a></li><li><a href="#index78">સાતમો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index79">। અધ્યયન–1/7 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index80">વારંવાર આવનારા શબ્દાર્થ</a></li></ol></li><li><a href="#index81">બીજું અધ્યયન–લોક વિજય</a><ol><li><a href="#index82">પહેલો ઉદ્દેશક</a><ol><li><a href="#index83">સંસારનું મૂળ : વિષયાસક્તિ :–</a></li><li><a href="#index84">અશરણતાનો પરિબોધ :–</a></li><li><a href="#index85">પ્રમાદ–પરિવર્જન :–</a></li><li><a href="#index86">રોગોત્પત્તિ સમયે અશરણતા :–</a></li><li><a href="#index87">આત્મજાગૃતિ :–</a></li><li><a href="#index88">। અધ્યયન–ર/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index89">બીજું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index90">અરતિ ત્યાગનું પરિણામ :–</a></li><li><a href="#index91">સંયમમાં અસફળ સાધક :–</a></li><li><a href="#index92">સંયમમાં સફળ સાધક :–</a></li><li><a href="#index93">સાવદ્યઅનુષ્ઠાનના પ્રયોજનો :–</a></li><li><a href="#index94">દંડ ત્યાગ :–</a></li><li><a href="#index95">। અધ્યયન–ર/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index96">બીજું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index97">ગોત્રમૂલક માન અપમાનનો ત્યાગ :–</a></li><li><a href="#index98">પ્રાણીઓની કર્મજન્ય અવસ્થાઓ :–</a></li><li><a href="#index99">સુખભોગમાં આસક્ત–અનાસક્ત :–</a></li><li><a href="#index100">મરણ નિશ્ચિત – જીવન પ્રિય :–</a></li><li><a href="#index101">ધનની વૃદ્ધિ અને તેની ગતિ :–</a></li><li><a href="#index102">સંસાર પ્રવાહના અપારગામી :–</a></li><li><a href="#index103">બોધની પાત્રતા :–</a></li><li><a href="#index104">। અધ્યયન–ર/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index105">બીજું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index106">રોગાક્રાંત વ્યક્તિની દશા :–</a></li><li><a href="#index107">આશા અને સ્વચ્છંદતાનો ત્યાગ :–</a></li><li><a href="#index108">કામાસક્ત મનુષ્યોની દશા :–</a></li><li><a href="#index109">મોહસ્થાનમાં જાગૃતિ :–</a></li><li><a href="#index110">ભિક્ષાચરીમાં સમભાવ :–</a></li><li><a href="#index111">। અધ્યયન–ર/4 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index112">બીજું અધ્યયન : પાંચમો ઉદ્દેશક</a><ol><li><a href="#index113">ગૃહસ્થાચાર અને નિર્દોષ ભિક્ષાવૃત્તિ :–</a></li><li><a href="#index114">દુસ્ત્યાજ્ય કામભોગ અને તેનું પરિણામ :–</a></li><li><a href="#index115">દીર્ઘદષ્ટા અને કર્મક્ષય કરનાર સાધક :–</a></li><li><a href="#index116">દેહની અસારતા :–</a></li><li><a href="#index117">ઈહલોકિક પ્રવૃત્તિશીલ માનવની દશા :–</a></li><li><a href="#index118">સદોષચિકિત્સા નિષેધ :–</a></li><li><a href="#index119">। અધ્યયન–ર/પ સંપૂર્ણ ।</a></li></ol></li><li><a href="#index120">બીજું અધ્યયન : છઠ્ઠો ઉદ્દેશક</a><ol><li><a href="#index121">દોષની પરંપરા :–</a></li><li><a href="#index122">મમત્વ અને લોકસંજ્ઞાનો ત્યાગ :–</a></li><li><a href="#index123">અરતિ–રતિ–વિવેક :–</a></li><li><a href="#index124">કુસાધુ તથા કુશળજ્ઞાની સાધક :–</a></li><li><a href="#index125">આત્મદર્શી સાધક :–</a></li><li><a href="#index126">કુશળ ઉપદેષ્ટા :–</a></li><li><a href="#index127">પ્રજ્ઞા સંપન્ન પુરુષનો વિવેક :–</a></li><li><a href="#index128">અજ્ઞાની માટે ઉપદેશની આવશ્યકતા :–</a></li><li><a href="#index129">છઠ્ઠો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index130">। અધ્યયન–ર/6 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index131">ત્રીજું અધ્યયન–શીતોષ્ણીય</a><ol><li><a href="#index132">પહેલો ઉદ્દેશક</a><ol><li><a href="#index133">ભાવથી સુપ્ત જાગૃત :–</a></li><li><a href="#index134">દુઃખની અપ્રિયતા :–</a></li><li><a href="#index135">ઈન્દ્રિય વિષયના ત્યાગી મુનિ :–</a></li><li><a href="#index136">સહનશીલતાથી દુઃખ મુક્તિ :–</a></li><li><a href="#index137">અપ્રમત્ત થવાની પ્રેરણા :–</a></li><li><a href="#index138">કર્મ અને સંયમના જ્ઞાતા :–</a></li><li><a href="#index139">કર્મથી જ સંસાર :–</a></li><li><a href="#index140">રાગદ્વેષ અને લોકસંજ્ઞાનો ત્યાગ :–</a></li><li><a href="#index141">। અધ્યયન–3/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index142">ત્રીજું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index143">સંયમ પુષ્ટિ અને કર્મક્ષય પ્રેરણા :–</a></li><li><a href="#index144">સાંસારિક સુખ ચાળણી સમાન :–</a></li><li><a href="#index145">સંયમ સમુત્થાન :–</a></li><li><a href="#index146">કષાય અને હિંસાત્યાગનો બોધ :–</a></li><li><a href="#index147">। અધ્યયન–3/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index148">ત્રીજું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index149">વૈરાગ્યમય બોધ :–</a></li><li><a href="#index150">ભૂત અને ભાવી સંબંધી માન્યતાઓ :–</a></li><li><a href="#index151">અરતિ–આનંદ, હાસ્યાદિનો ત્યાગ :–</a></li><li><a href="#index152">આત્મનિગ્રહથી મુક્તિ :–</a></li><li><a href="#index153">સત્ય–સંયમથી મુક્તિ :–</a></li><li><a href="#index154">। અધ્યયન–3/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index155">ત્રીજું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index156">કષાયોનું વમન :–</a></li><li><a href="#index157">આત્મજ્ઞાતા સંયમજ્ઞાની :–</a></li><li><a href="#index158">પ્રમાદીને ભય :–</a></li><li><a href="#index159">આત્મવિજયી સર્વવિજયી :–</a></li><li><a href="#index160">પ્રગતિશીલ વીર સાધક :–</a></li><li><a href="#index161">એક કષાય વિજયી સર્વકષાય વિજયી :–</a></li><li><a href="#index162">શ્રદ્ધાવાનને સંયમનો આદેશ :–</a></li><li><a href="#index163">શસ્ત્ર અશસ્ત્રનો તફાવત :–</a></li><li><a href="#index164">ક્રોધાદિ આત્મદોષોનું વિસર્જન :–</a></li><li><a href="#index165">જ્ઞાની ઉપાધિથી મુક્ત :–</a></li><li><a href="#index166">ચતુર્થ ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index167">। અધ્યયન–3/4 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index168">ચોથું અધ્યયન–સમ્યક્ત્વ</a><ol><li><a href="#index169">પહેલો ઉદ્દેશક</a><ol><li><a href="#index170">અઈહસાનો ત્રૈકાલિક સિદ્ધાંત :–</a></li><li><a href="#index171">સમ્યક્ત્વ સિદ્ધાંતની સુરક્ષા :–</a></li><li><a href="#index172">નિર્વેદભાવ અને લોકૈષણા ત્યાગ :–</a></li><li><a href="#index173">પ્રજ્ઞાવાનને પ્રબોધ :–</a></li><li><a href="#index174">। અધ્યયન–4/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index175">ચોથુંં અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index176">વિવેક અવિવેકથી મોક્ષ–બંધ :–</a></li><li><a href="#index177">દુઃખથી પીડિતને ઉપદેશ :–</a></li><li><a href="#index178">મૃત્યુની નિશ્ચિતતા :–</a></li><li><a href="#index179">છદ્મસ્થોનાં વચન પણ સમાદરણીય :–</a></li><li><a href="#index180">હિંસા વિષયક આર્ય અનાર્યની પ્રરૂપણા :–</a></li><li><a href="#index181">। અધ્યયન–4/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index182">ચોથુંં અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index183">ધર્મવિમુખનો સંગ ત્યાગ :–</a></li><li><a href="#index184">કુશળ ઉપદેષ્ટાની પરિજ્ઞા :–</a></li><li><a href="#index185">શરીર નિર્મોહ આરાધના :–</a></li><li><a href="#index186">ક્રોધ ત્યાગ :–</a></li><li><a href="#index187">પાપ અને કષાય ત્યાગ :–</a></li><li><a href="#index188">। અધ્યયન–4/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index189">ચોથુંં અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index190">વિવિધ તપારાધના :–</a></li><li><a href="#index191">જિનાજ્ઞાવિરાધક શ્રમણ :–</a></li><li><a href="#index192">નિષ્કર્મદર્શીની આરાધના :–</a></li><li><a href="#index193">આરાધકોનું અનુકરણ :–</a></li><li><a href="#index194">ચોથો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index195">। અધ્યયન–4/4 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index196">પાંચમું અધ્યયન</a></li><li><a href="#index197">પાંચમું અધ્યયન–લોકસાર</a><ol><li><a href="#index198">પહેલો ઉદ્દેશક</a><ol><li><a href="#index199">જીવહિંસાનું પરિણામ :–</a></li><li><a href="#index200">દુસ્ત્યાજ્ય કામભોગ :–</a></li><li><a href="#index201">બાલજીવોની અવસ્થાઓ :–</a></li><li><a href="#index202">બ્રહ્મચર્યની આરાધના :–</a></li><li><a href="#index203">આરંભજીવી જીવો :–</a></li><li><a href="#index204">દૂષિત એકલવિહાર ચર્યા :–</a></li><li><a href="#index205">અજ્ઞાનથી મુક્તિની ખોટી પ્રરૂપણા :–</a></li><li><a href="#index206">। અધ્યયન–પ/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index207">પાંચમું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index208">અનારંભી સાધક :–</a></li><li><a href="#index209">ધૈર્યવાન સાધકની સાધના :–</a></li><li><a href="#index210">પરિગ્રહધારીને મહાભય :–</a></li><li><a href="#index211">પરિણામોથી બંધ–મોક્ષ :–</a></li><li><a href="#index212">સહનશીલતા અને અપ્રમત્તભાવ :–</a></li><li><a href="#index213">। અધ્યયન–પ/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index214">પાંચમું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index215">અપરિગ્રહી શ્રમણનો પુરુષાર્થ :–</a></li><li><a href="#index216">સાધકની ચડતી પડતી અવસ્થા :–</a></li><li><a href="#index217">સાધુ જીવનના વિવિધ ગુણો :–</a></li><li><a href="#index218">આત્મયુદ્ધના દુર્લભ સાધન :–</a></li><li><a href="#index219">વિવેકથી ચ્યુત સાધક :–</a></li><li><a href="#index220">સંવિગ્નપથ સંયમી મુનિ :–</a></li><li><a href="#index221">સાધ્વાચાર પાલનની મહત્તા :–</a></li><li><a href="#index222">। અધ્યયન–પ/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index223">પાંચમું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index224">અપરિપક્વ ભિક્ષુના એકલ વિહારની દશા :–</a></li><li><a href="#index225">સમર્પણભાવે ગુરુ સાંનિધ્ય :–</a></li><li><a href="#index226">ગુરુ સાંનિધ્યમાં સંયમ અભ્યાસ :–</a></li><li><a href="#index227">ઈર્યા સમિતિવંતને લઘુકર્મ બંધ :–</a></li><li><a href="#index228">બ્રહ્મચારી સાધકની સ્ત્રીઓ પ્રત્યે પરાઙ્ગમુખતા :–</a></li><li><a href="#index229">ચલવિચલ પરિણામોની ચિકિત્સા :–</a></li><li><a href="#index230">સ્ત્રીસંપર્ક વર્જન :–</a></li><li><a href="#index231">। અધ્યયન–પ/4 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index232">પાંચમું અધ્યયન : પાંચમો ઉદ્દેશક</a><ol><li><a href="#index233">સરોવરની ઉપમાથી મહર્ષિની મહત્તા :–</a></li><li><a href="#index234">સમ્યક્ત્વની શુદ્ધિ, ગૂંચવણની વિશુદ્ધિ :–</a></li><li><a href="#index235">પ્રવ્રજિતના પરિવર્તિત પરિણામો ચૌભંગી :–</a></li><li><a href="#index236">સંપ્રેક્ષણનો દિશાવબોધ :–</a></li><li><a href="#index237">ઉત્થિત અને સ્થિતની ગતિ :–</a></li><li><a href="#index238">આત્મોપમ્યથી અહિંસાની પુષ્ટિ :–</a></li><li><a href="#index239">પ્રતિબુદ્ધજીવી આત્માની અહિંસા :–</a></li><li><a href="#index240">આત્મવિજ્ઞાતાની સંયમપર્યાય :–</a></li><li><a href="#index241">। અધ્યયન–પ/પ સંપૂર્ણ ।</a></li></ol></li><li><a href="#index242">પાંચમું અધ્યયન : છઠ્ઠો ઉદ્દેશક</a><ol><li><a href="#index243">સંયમ સુરક્ષા :–</a></li><li><a href="#index244">સાધકની સ્વાવલંબી સાધના :–</a></li><li><a href="#index245">આગમ આજ્ઞાની પ્રમુખતા :–</a></li><li><a href="#index246">ત્રણેય લોકમાં આશ્રવ અને બંધ :–</a></li><li><a href="#index247">આશ્રવત્યાગી આત્મા :–</a></li><li><a href="#index248">જન્મમરણના ચક્રથી મુક્તિ :–</a></li><li><a href="#index249">મુક્તાત્માઓનું સ્વરૂપ :–</a></li><li><a href="#index250">છઠ્ઠો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index251">। અધ્યયન–પ/6 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index252">છઠ્ઠું અધ્યયન</a></li><li><a href="#index253">છઠ્ઠું અધ્યયન–ધૂત</a><ol><li><a href="#index254">પહેલો ઉદ્દેશક</a><ol><li><a href="#index255">વક્તા અને શ્રોતાનો પરિબોધ :–</a></li><li><a href="#index256">પાત્ર પ્રમાણે પરિણમન :–</a></li><li><a href="#index257">આત્મઉત્થાન રહિત પ્રાણીની ઉપમા :–</a></li><li><a href="#index258">વ્યાધિગ્રસ્ત પ્રાણીજગત :–</a></li><li><a href="#index259">દુઃખમય પ્રાણીઓની કરુણતા :–</a></li><li><a href="#index260">શરીર માટે હિંસાનો નિષેધ :–</a></li><li><a href="#index261">માનવનો મહામુનિ સુધીનો વિકાસક્રમ :–</a></li><li><a href="#index262">દીક્ષાર્થી સામે આવતા પ્રલોભનો :–</a></li><li><a href="#index263">। અધ્યયન–6/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index264">છઠ્ઠું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index265">સાધકનું ઉત્થાન–પતન :–</a></li><li><a href="#index266">મુનિની એકત્વભાવના :–</a></li><li><a href="#index267">આક્રોશાદિ પરીષહોની તિતિક્ષા :–</a></li><li><a href="#index268">બાધાઓના પારગામી સાધુ :–</a></li><li><a href="#index269">જિનાજ્ઞાની સર્વોત્તમતા :–</a></li><li><a href="#index270">પ્રશસ્ત એકચર્યા નિરૂપણ :–</a></li><li><a href="#index271">॥ बिइओ उद्देसो समत्तो ॥</a></li><li><a href="#index272">। અધ્યયન–6/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index273">છઠ્ઠું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index274">અચેલક મુનિનાં સંયમ તપ :–</a></li><li><a href="#index275">અસંદીન–દ્વીપ સમાન ધર્મ :–</a></li><li><a href="#index276">શિષ્ય પ્રતિ ગુરુનું કર્તવ્ય :–</a></li><li><a href="#index277">। અધ્યયન–6/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index278">છઠ્ઠું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index279">શિષ્યની અવિનીતતા :–</a></li><li><a href="#index280">સંયમ પતિત સાધકો :–</a></li><li><a href="#index281">ચારિત્રભ્રષ્ટનો વક્ર વ્યવહાર :–</a></li><li><a href="#index282">હિતશિક્ષા પ્રતિ અવિનીતતા :–</a></li><li><a href="#index283">અવ્રતી થનારનો અપયશ :–</a></li><li><a href="#index284">ઉન્નત ગચ્છમાં ગુણહીન સાધક :–</a></li><li><a href="#index285">આગમાનુસારી આરાધના :–</a></li><li><a href="#index286">। અધ્યયન–6/4 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index287">છઠ્ઠું અધ્યયન : પાંચમો ઉદ્દેશક</a><ol><li><a href="#index288">સાધકની સહિષ્ણુતા :–</a></li><li><a href="#index289">ધર્મોપદેશ વિષયક જિનાજ્ઞા :–</a></li><li><a href="#index290">ધર્મોપદેષ્ટા મહામુનિ :–</a></li><li><a href="#index291">પરિનિર્વાણદાયક ગુણો :–</a></li><li><a href="#index292">કષાયથી મુક્તની મુક્તિ :–</a></li><li><a href="#index293">મૃત્યુ સમયે શરીરનું વિસર્જન :–</a></li><li><a href="#index294">પાંચમો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index295">। અધ્યયન–6/પ સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index296">સાતમું અધ્યયન - 'મહાપરિજ્ઞા' (વિચ્છેદ થયું છે.)</a></li><li><a href="#index297">આઠમું અધ્યયન–વિમોક્ષ</a><ol><li><a href="#index298">પહેલો ઉદ્દેશક</a><ol><li><a href="#index299">શ્રમણોમાં આહારનું આદાન–પ્રદાન :–</a></li><li><a href="#index300">અન્યધર્મી સાથે આહાર વ્યવહાર નિષેધ :–</a></li><li><a href="#index301">વિવચેન :–</a></li><li><a href="#index302">અન્યધર્મીના આચાર–વિચાર :–</a></li><li><a href="#index303">વિવિધ વાદ પ્રતિ વચનગુપ્તિ :–</a></li><li><a href="#index304">અનેકાંતિક વીતરાગ ધર્મ :–</a></li><li><a href="#index305">દંડ સમારંભ–વિમોક્ષ :–</a></li><li><a href="#index306">। અધ્યયન–8/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index307">આઠમું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index308">વધ પરીષહ :–</a></li><li><a href="#index309">સમનોજ્ઞ–અસમનોજ્ઞ સાધુઓનો પરસ્પર વ્યવહાર :–</a></li><li><a href="#index310">। અધ્યયન–8/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index311">આઠમું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index312">મધ્યમવયમાં નિર્ગ્રંથ સાધના :–</a></li><li><a href="#index313">સંયમ નિપુણની ગુણવત્તા :–</a></li><li><a href="#index314">શીતપરીષહમાં આચારનિષ્ઠા :–</a></li><li><a href="#index315">। અધ્યયન–8/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index316">આઠમું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index317">ત્રણ વસ્ત્રના અભિગ્રહધારી મુનિ :–</a></li><li><a href="#index318">બ્રહ્મચર્યની અસમાધિમાં વૈહાનસ મરણ :–</a></li><li><a href="#index319">। અધ્યયન–8/4 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index320">આઠમું અધ્યયન : પાંચમો ઉદ્દેશક</a><ol><li><a href="#index321">બે વસ્ત્રના અભિગ્રહધારી શ્રમણ :–</a></li><li><a href="#index322">સામે લાવેલ આહારાદિના ગ્રહણનો નિષેધ :–</a></li><li><a href="#index323">આહાર અભિગ્રહ :–</a></li><li><a href="#index324">ભક્ત પ્રત્યાખ્યાન અનશન :–</a></li><li><a href="#index325">। અધ્યયન–8/પ સંપૂર્ણ ।</a></li></ol></li><li><a href="#index326">આઠમું અધ્યયન : છઠ્ઠો ઉદ્દેશક</a><ol><li><a href="#index327">એક વસ્ત્રના અભિગ્રહધારી શ્રમણ :–</a></li><li><a href="#index328">ભિક્ષુની એકત્ત્વ અનુપ્રેક્ષા :–</a></li><li><a href="#index329">અભિગ્રહધારીનો સ્વાદ–પરિત્યાગ :–</a></li><li><a href="#index330">સંલેખના–ઈંગિતમરણ :–</a></li><li><a href="#index331">। અધ્યયન–8/6 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index332">આઠમું અધ્યયન : સાતમો ઉદ્દેશક</a><ol><li><a href="#index333">અચેલક મુનિ :–</a></li><li><a href="#index334">આહારના આદાનપ્રદાન સંબંધી અભિગ્રહ :–</a></li><li><a href="#index335">પાદપોપગમન અનશન :–</a></li><li><a href="#index336">। અધ્યયન–8/7 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index337">આઠમું અધ્યયન : આઠમો ઉદ્દેશક</a><ol><li><a href="#index338">વિમોક્ષનું જ્ઞાન :–</a></li><li><a href="#index339">ભક્તપ્રત્યાખ્યાન અનશન આરાધના :–</a></li><li><a href="#index340">ઈંગિતમરણ અનશન સાધના :–</a></li><li><a href="#index341">પાદપોપગમન અનશન સાધના :–</a></li><li><a href="#index342">આઠમો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index343">। અધ્યયન–8/8 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index344">નવમું અધ્યયન–ઉપધાનશ્રુત</a><ol><li><a href="#index345">પહેલો ઉદ્દેશક</a><ol><li><a href="#index346">ભગવાન મહાવીરની દીક્ષા :–</a></li><li><a href="#index347">વિહારચર્યામાં જન વ્યવહાર :–</a></li><li><a href="#index348">દીક્ષા પૂર્વે ત્યાગ સાધના :–</a></li><li><a href="#index349">અહિંસા આરાધના :–</a></li><li><a href="#index350">સમિતિમય સાધના :–</a></li><li><a href="#index351">વસ્ત્રત્યાગ શીત આતાપના :–</a></li><li><a href="#index352">ઉદ્દેશકનો ઉપસંહાર :–</a></li><li><a href="#index353">। અધ્યયન–9/1 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index354">નવમું અધ્યયન : બીજો ઉદ્દેશક</a><ol><li><a href="#index355">સાધનાકાળમાં પ્રભુના સ્થાનો :–</a></li><li><a href="#index356">ભગવાનની નિદ્રા અને અપ્રમત્ત દશા :–</a></li><li><a href="#index357">સાધના કાળમાં વિવિધ ઉપસર્ગ :–</a></li><li><a href="#index358">સ્થાન પરીષહ :–</a></li><li><a href="#index359">શીત–પરીષહ :–</a></li><li><a href="#index360">। અધ્યયન–9/ર સંપૂર્ણ ।</a></li></ol></li><li><a href="#index361">નવમું અધ્યયન : ત્રીજો ઉદ્દેશક</a><ol><li><a href="#index362">લાઢદેશમાં પ્રભુની ઉપસર્ગમય સાધના :–</a></li><li><a href="#index363">। અધ્યયન–9/3 સંપૂર્ણ ।</a></li></ol></li><li><a href="#index364">નવમું અધ્યયન : ચોથો ઉદ્દેશક</a><ol><li><a href="#index365">ભગવાન મહાવીરની ઉગ્ર તપશ્ચર્યા :– :–</a></li><li><a href="#index366">તપ તેમજ આહારચર્યા :–</a></li><li><a href="#index367">ભગવાનની એષણા સમિતિ :–</a></li><li><a href="#index368">ભગવાનની ધ્યાન પરાયણતા :–</a></li><li><a href="#index369">ચોથો ઉદ્દેશક સંપૂર્ણ</a></li><li><a href="#index370">। અધ્યયન–9/4 સંપૂર્ણ ।</a></li></ol></li></ol></li><li><a href="#index371">પરિશિષ્ટો</a><ol><li><a href="#index372">પરિશિષ્ટ–1 મુનિશ્રી સંતબાલજીના ચિંતનો</a><ol><li><a href="#index373">પ્રથમ અધ્યયન</a></li><li><a href="#index374">બીજું અધ્યયન</a></li><li><a href="#index375">ત્રીજું અધ્યયન</a></li><li><a href="#index376">ચોથું અધ્યયન</a></li><li><a href="#index377">પાંચમું અધ્યયન</a></li><li><a href="#index378">છઠ્ઠું અધ્યયન</a></li><li><a href="#index379">આઠમું અધ્યયન</a></li><li><a href="#index380">નવમું અધ્યયન</a></li></ol></li><li><a href="#index381">પરિશિષ્ટ - ૨ (વિવેચીત વિષયોની અકરાત્મક અનુક્રમણિકા)</a></li></ol></li></ol></div><!-- INDEX_GENERATOR_END -->
+<button id="myBtn" onclick="topFunction()" style="display: block;" title="Go to top">Top</button>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+<p>This file is converted from html from Document file so it can be indexed by Google. For Original formats click on the following links as required to download the files.</p>
+<p><a href="https://parthfinvest.in/jain/Gujarati/Aanga Aagam/1-Acharanga Sutra Part 1/1-Acharanga Sutra Part 1.epub" rel="noopener noreferrer" target="_blank"><img src="https://st4.depositphotos.com/1024345/41391/v/450/depositphotos_413917200-stock-illustration-vector-purple-icon-epub-file.jpg" style="width:50px;height:60px;" title="EPUB"/>Link to EPUB File of this Book</a></p>
+<p><a href="https://parthfinvest.in/jain/Gujarati/Aanga Aagam/1-Acharanga Sutra Part 1/1-Acharanga Sutra Part 1.pdf" rel="noopener noreferrer" target="_blank"><img src="https://img.icons8.com/office/80/000000/export-pdf.png" style="width:50px;height:60px;" title="PDF"/>Link to Original PDF File of this Book</a></p>
 <!--StartFragment-->
 <img id="cover" src="image004.png" style="max-width: 100%;"/><img src="image002.png" style="max-width: 100%;"/><img class="" src="image001.png" style="max-width: 100%;"/><img src="image005.png" style="max-width: 100%;"/><img src="image006.png" style="max-width: 100%;"/><img src="image007.png" style="max-width: 100%;"/><img src="image008.png" style="max-width: 100%;"/><img src="image009.png" style="max-width: 100%;"/><img src="image010.png" style="max-width: 100%;"/><img src="image011.png" style="max-width: 100%;"/><br/>
 <span id="index1" style='display: block;color: rgb(0, 150, 0);text-align: center; font-family: "Noto Serif India 11"; font-size: 32pt; font-weight: bold;'>પ્રકાશકીય </span>
@@ -15183,5 +15293,225 @@ border:.5pt solid windowtext;
 <img src="acharanga_1_ebook_508.png"/>
 <img src="acharanga_1_ebook_512.png"/>
 <!--EndFragment-->
+<div class="zoom-controls">
+<button id="zoomIn">A+</button>
+<button id="zoomOut">A−</button>
+</div>
+<script>
+(function () {
+
+    let zoomLevel = 1;
+
+    const content = document.body;
+
+    if (!content) return;
+
+    function applyZoom() {
+
+        content.querySelectorAll('*').forEach(function (el) {
+
+            if (!el.dataset.originalFontSize) {
+                el.dataset.originalFontSize =
+                    parseFloat(getComputedStyle(el).fontSize);
+            }
+
+            const originalSize =
+                parseFloat(el.dataset.originalFontSize);
+
+            el.style.fontSize =
+                (originalSize * zoomLevel) + 'px';
+        });
+    }
+
+    document.getElementById('zoomIn').onclick = function () {
+        zoomLevel = Math.min(2, zoomLevel + 0.1);
+        applyZoom();
+    };
+
+    document.getElementById('zoomOut').onclick = function () {
+        zoomLevel = Math.max(0.6, zoomLevel - 0.1);
+        applyZoom();
+    };
+
+})();
+</script>
 </div></div></span>
+<button id="aiBookButton" title="Ask AI about this book" aria-label="Ask AI about this book">&#129302;</button>
+<div id="aiSelectMenu">
+  <div class="ai-menu-title">&#129302; Ask AI about selection</div>
+  <button data-ai-action="Explain">&#128998; Explain</button>
+  <button data-ai-action="Give example">&#128161; Give example</button>
+  <button data-ai-action="Analyze">&#128269; Analyze</button>
+  <button data-ai-action="Why?">&#10067; Why?</button>
+  <button data-ai-action="Challenge the author">&#9878; Challenge the author</button>
+  <button data-ai-action="Connect with earlier ideas">&#128279; Connect with earlier ideas</button>
+  <button data-ai-action="Summarize">&#128221; Summarize</button>
+  <button data-ai-action="Test me">&#129504; Test me</button>
+  <button data-ai-action="Ask my own question">&#128172; Ask my own question</button>
+</div>
+<div id="aiAskDialog">
+  <div id="aiAskBox">
+    <h3>&#129302; Ask AI about this book</h3>
+    <div id="aiSelectedPreview"></div>
+    <textarea id="aiQuestion" placeholder="Type your question..."></textarea>
+    <div class="ai-actions">
+      <button id="aiOpenChatGPT">Open in ChatGPT</button>
+      <button id="aiCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var selectedText="";
+  var selectedContext="";
+
+  function getSelectionText(){
+    var s=window.getSelection?window.getSelection():null;
+    return s?s.toString().trim():"";
+  }
+
+  function getSectionContext(){
+    var s=window.getSelection();
+    if(!s||s.rangeCount===0)return "";
+    var node=s.anchorNode;
+    if(node&&node.nodeType===3)node=node.parentElement;
+    if(!node)return "";
+
+    var headings=Array.prototype.slice.call(
+      document.querySelectorAll('[id^="index"]')
+    ).filter(function(el){return /^index[0-9]+$/.test(el.id);});
+
+    var current=null;
+    for(var i=0;i<headings.length;i++){
+      var el=headings[i];
+      var pos=el.compareDocumentPosition(node);
+      if(pos&Node.DOCUMENT_POSITION_FOLLOWING)current=el;
+    }
+    return current?current.textContent.trim():"";
+  }
+
+ function makePrompt(action, customQuestion){
+    var book = document.title || location.pathname.split("/").pop();
+    var bookUrl = window.location.href;
+    var q = customQuestion || action || "Explain";
+
+    var prompt =
+      'I am reading the book "' + book + '".\n\n' +
+      'The book is available at this URL:\n' +
+      bookUrl + '\n\n' +
+      'Please answer based primarily on this book and the selected passage below. ' +
+      'Do not invent information that is not supported by the passage or book. ' +
+      'If the passage is ambiguous, say so.\n\n';
+
+    if(selectedContext)
+      prompt+="Section/context: "+selectedContext+"\n\n";
+    if(selectedText)
+      prompt+="Selected passage:\n"+selectedText+"\n\n";
+
+    prompt+="Task: "+q+"\n\n";
+    prompt+="Use the language of the selected passage when practical. "+
+      "For religious or philosophical material, distinguish what the text says "+
+      "from explanation or interpretation.";
+    return prompt;
+  }
+
+  function openDialog(text,action){
+    selectedText=text||"";
+    selectedContext=getSectionContext();
+    document.getElementById("aiSelectedPreview").textContent=
+      selectedText||"No passage selected. You can ask a question about the book.";
+    var question=document.getElementById("aiQuestion");
+    question.value=action==="Ask my own question"?"":(action||"");
+    document.getElementById("aiAskDialog").style.display="flex";
+    setTimeout(function(){question.focus();},50);
+  }
+
+  function closeDialog(){
+    document.getElementById("aiAskDialog").style.display="none";
+  }
+
+  function showSelectionMenu(){
+    var text = getSelectionText();
+    var menu = document.getElementById("aiSelectMenu");
+
+    if(!text){
+        menu.style.display = "none";
+        return;
+    }
+
+    selectedText = text;
+    selectedContext = getSectionContext();
+
+    var s = window.getSelection();
+    if(!s || s.rangeCount === 0) return;
+
+    var range = s.getRangeAt(0);
+    var r = range.getBoundingClientRect();
+
+    menu.style.display = "block";
+
+    var x = Math.max(
+        10,
+        Math.min(r.left, window.innerWidth - menu.offsetWidth - 10)
+    );
+
+    var y = r.bottom + 8;
+
+    if(y + menu.offsetHeight > window.innerHeight - 10){
+        y = r.top - menu.offsetHeight - 8;
+    }
+
+    if(y < 10) y = 10;
+
+    menu.style.left = x + "px";
+    menu.style.top = y + "px";
+}
+  document.addEventListener("selectionchange", function(){
+    setTimeout(showSelectionMenu, 100);
+  });
+  document.addEventListener("mouseup",function(e){
+    if(e.target.closest&&e.target.closest("#aiSelectMenu"))return;
+    setTimeout(showSelectionMenu,20);
+  });
+
+  document.addEventListener("touchend",function(){
+    setTimeout(showSelectionMenu,80);
+  });
+
+  document.addEventListener("scroll",function(){
+    document.getElementById("aiSelectMenu").style.display="none";
+  },{passive:true});
+
+  document.querySelectorAll("#aiSelectMenu [data-ai-action]").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var action=this.getAttribute("data-ai-action");
+      document.getElementById("aiSelectMenu").style.display="none";
+      openDialog(selectedText,action);
+    });
+  });
+
+  document.getElementById("aiBookButton").addEventListener("click",function(){
+    var text=getSelectionText();
+    openDialog(text,"Ask my own question");
+  });
+
+  document.getElementById("aiCancel").addEventListener("click",closeDialog);
+
+  document.getElementById("aiAskDialog").addEventListener("click",function(e){
+    if(e.target===this)closeDialog();
+  });
+
+  document.getElementById("aiOpenChatGPT").addEventListener("click",function(){
+    var q=document.getElementById("aiQuestion").value.trim();
+    if(!q)q="Explain the selected passage.";
+    var prompt=makePrompt("",q);
+    window.open(
+      "https://chatgpt.com/?q="+encodeURIComponent(prompt),
+      "_blank","noopener"
+    );
+  });
+})();
+</script>
 </body></html>
