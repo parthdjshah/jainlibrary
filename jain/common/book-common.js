@@ -135,11 +135,11 @@
       '<p class="block_2">' +
         'This book have been converted by Parth Shah from Original PDF file to its Unicode reflowable html format with manual reformatting. ' +
         'The same is converted to EPUB for easy viewing. All rights of original book are owned by the original publisher and this is an attempt to provide easy viewable copy for Gyan Seva. ' +
-        'You can use reference to this book to AI to ask any qustions, translate it to language you want and even convert to audio format as well. ' +
-        'Please refer <a href="http://parthfinvest.in/jain/AIhelper.html" rel="noopener noreferrer" target="_blank">here</a> for further details:' +
+        '</p><p>In HTML version, you can select any text or just click on the page of book to use ChatGPT AI to ask any qustions. ' +
+        'Please refer <a href="http://parthfinvest.in/jain/AIhelper.html" rel="noopener noreferrer" target="_blank">here</a> for further details. You can use Google translate to translate it to language you want and even convert to audio format as well with Text2Speech Softwares.</p><p>In EPUB version, you can use <a href="https://play.google.com/store/apps/details?id=com.gmail.jxlab.app.reasily&pcampaignid=web_share">Reasily Software</a> to view the EPUB file in mobile. It has AI, translate, notes writing, highlighting etc. features as well. Refer <a href="https://youtu.be/fn-9ItuBHeM?si=JULnWKffPTxpPxKH">this video</a> for further help' +
       '</p>' +
 
-      '<p style="text-align:center;">' +
+      '<p style="text-align:center;"> Feel free to: ' +
         '<a href="https://forms.gle/fedKyRf67kqVpwDE7"' +
         ' target="_blank" rel="noopener">📝 Give Feedback / Report an Error</a>' +
       '</p>';
