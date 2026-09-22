@@ -5,11 +5,16 @@
 html {
   scroll-behavior: smooth;
 }
+
 @font-face {
     font-family: 'Noto Serif India 11';
     src: url('../fonts/Noto_Serif_India_11_-_Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+body * {
+    font-family: 'Noto Serif India 11' !important;
 }
 /* ---------------- TOP BUTTON ---------------- */
 

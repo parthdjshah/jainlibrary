@@ -1,0 +1,1710 @@
+html,
+body,
+body * {
+    font-family: "Noto Serif India 11", serif;
+}
+@font-face {
+    font-family: "Noto Serif India 11";
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("fonts/Noto-Serif-India-11.ttf");
+}
+
+@font-face {
+    font-family: "Noto Serif India 11";
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("fonts/Noto-Serif-India-11.ttf");
+}
+
+/* EPUB navigation/index */
+nav,
+nav ol,
+nav ul,
+nav li,
+nav a {
+    font-family: "Noto Serif India 11";
+}
+
+
+/* book-common.css
+   Common UI for all Jain book HTML pages.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------- TOP BUTTON ---------------- */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 9998;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/* ---------------- ZOOM BUTTONS ---------------- */
+
+.zoom-controls {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoom-controls button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+/* ---------------- GENERAL MOBILE BOOK VIEW ---------------- */
+
+@media (max-width: 600px) {
+  body {
+    overflow-wrap: anywhere;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------------- AI MENU ---------------- */
+
+#aiSelectMenu {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.25);
+  padding: 6px;
+  width: min(290px,calc(100vw - 20px));
+  font-family: Arial,sans-serif;
+}
+
+#aiSelectMenu .ai-menu-title {
+  font-weight: bold;
+  padding: 7px 8px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 3px;
+}
+
+#aiSelectMenu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#aiSelectMenu button:hover {
+  background: #eee;
+}
+
+#aiBookButton {
+  position: fixed;
+  right: 18px;
+  bottom: 122px;
+  z-index: 9998;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.28);
+  cursor: pointer;
+}
+
+#aiAskDialog {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(0,0,0,.45);
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+#aiAskBox {
+  background: #fff;
+  border-radius: 12px;
+  width: min(620px,100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  font-family: Arial,sans-serif;
+}
+
+#aiAskBox h3 {
+  margin-top: 0;
+}
+
+#aiSelectedPreview {
+  background: #f5f5f5;
+  border-left: 4px solid #888;
+  padding: 10px;
+  margin: 10px 0;
+  max-height: 180px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#aiQuestion {
+  width: 100%;
+  min-height: 110px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 7px;
+}
+
+#aiAskBox .ai-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+#aiAskBox .ai-actions button {
+  padding: 9px 14px;
+  border: 1px solid #aaa;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#aiOpenChatGPT {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  #aiBookButton {
+    right: 12px;
+    bottom: 125px;
+  }
+
+  #aiSelectMenu {
+    width: 260px;
+  }
+}
+.block_ {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_1 {
+    display: block;
+        font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_2 {
+    color: #696900;
+    display: block;
+        line-height: 1.2;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_3 {
+    display: block;
+        font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_4 {
+    display: block;
+    font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 5pt;
+    padding: 0
+    }
+.block_5 {
+    color: #696900;
+    display: block;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_6 {
+    display: block;
+        font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_7 {
+    display: block;
+        font-size: 1.125em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_8 {
+    color: #000;
+    display: block;
+        line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_9 {
+    color: #000;
+    display: block;
+        font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_10 {
+    color: #FF0;
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_11 {
+    color: #000;
+    display: block;
+        font-size: 0.75em;
+    margin: 0;
+    padding: 0
+    }
+.block_12 {
+    color: #000;
+    display: block;
+    font-size: 0.75em;
+    margin: 0;
+    padding: 0
+    }
+.block_13 {
+    color: #000;
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_14 {
+    color: #000;
+    display: block;
+        font-size: 1.125em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_15 {
+    color: #000;
+    display: block;
+    font-size: 1.41667em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_16 {
+    color: #000;
+    display: block;
+        font-size: 1.41667em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_17 {
+    display: block;
+        font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_18 {
+    color: #365F91;
+    display: block;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_19 {
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_20 {
+    display: block;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_21 {
+    color: #365F91;
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_22 {
+    display: block;
+    font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_23 {
+    color: #365F91;
+    display: block;
+        font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_24 {
+    color: #FFF;
+    display: block;
+        font-size: 0.58333em;
+    margin: 0;
+    padding: 0
+    }
+.block_25 {
+    display: block;
+    font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_26 {
+    display: block;
+        font-size: 0.58333em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_27 {
+    display: block;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_28 {
+    color: #FFF;
+    display: block;
+        font-size: 0.58333em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0
+    }
+.block_29 {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_30 {
+    color: #365F91;
+    display: block;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0
+    }
+.block_31 {
+    color: #FFF;
+    display: block;
+        font-size: 0.58333em;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.block_32 {
+    color: #3D4094;
+    display: block;
+        font-size: 0.58333em;
+    font-weight: bold;
+    line-height: 1.15;
+    margin: 0 0 10pt;
+    padding: 0
+    }
+.calibre {
+    color: #242021;
+    display: block;
+        font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 5pt
+    }
+.calibre1 {
+    line-height: 1.2;
+    text-decoration: none
+    }
+.calibre2 {
+    font-style: italic;
+    line-height: 1.2
+    }
+.calibre3 {
+    white-space: pre-wrap
+    }
+.calibre4 {
+    font-weight: bold;
+    line-height: 1.2
+    }
+.calibre5 {
+    line-height: 1.2
+    }
+.calibre6 {
+    line-height: 1.2;
+    white-space: pre-wrap
+    }
+.calibre7 {
+    display: table-row-group;
+    line-height: 1.2;
+    vertical-align: middle
+    }
+.calibre8 {
+    display: table-row;
+    line-height: 1.2;
+    vertical-align: inherit
+    }
+.table_ {
+    border-collapse: collapse;
+    border-spacing: 2px;
+    display: table;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 0;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_ {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 68.2pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_1 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 36pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_2 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 74.2pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.td_3 {
+    display: table-cell;
+    line-height: 1.2;
+    text-align: inherit;
+    vertical-align: top;
+    width: 134pt;
+    padding: 0;
+    border: currentColor solid 1pt
+    }
+.text_ {
+    color: #00F;
+    line-height: 1.2;
+    text-decoration: underline
+    }
+.text_1 {
+    color: #696900;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_2 {
+    color: #00F;
+    font-size: 1.28571em;
+    text-decoration: underline
+    }
+.text_3 {
+    color: #696900;
+        font-size: 1.71429em
+    }
+.text_4 {
+    color: #E2E200;
+        font-size: 1.71429em
+    }
+.text_5 {
+    color: #6E6E00;
+        font-size: 1.71429em
+    }
+.text_6 {
+    color: #6E6E00;
+        font-size: 1.71429em
+    }
+.text_7 {
+    color: #8E8E00;
+        font-size: 1.71429em
+    }
+.text_8 {
+    color: #8E8E00;
+        font-size: 1.71429em
+    }
+.text_9 {
+    color: #6F6F00;
+        font-size: 1.71429em
+    }
+.text_10 {
+    color: #676700;
+        font-size: 1.71429em
+    }
+.text_11 {
+    color: #676700;
+        font-size: 1.71429em
+    }
+.text_12 {
+    color: #848400;
+        font-size: 1.71429em
+    }
+.text_13 {
+    color: #818100;
+        font-size: 1.71429em
+    }
+.text_14 {
+    color: #717100;
+        font-size: 1.71429em
+    }
+.text_15 {
+    color: #717100;
+        font-size: 1.71429em
+    }
+.text_16 {
+    color: #A2A200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_17 {
+    color: #DCDC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_18 {
+    color: #DCDC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_19 {
+    color: #919100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_20 {
+    color: #707000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_21 {
+    color: #550;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_22 {
+    color: #550;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_23 {
+    color: #5A5A00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_24 {
+    color: #848400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_25 {
+    color: #9A9A00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_26 {
+    color: #9A9A00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_27 {
+    color: #939300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_28 {
+    color: #A0A000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_29 {
+    color: #757500;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_30 {
+    color: #9E9E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_31 {
+    color: #959500;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_32 {
+    color: #A1A100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_33 {
+    color: #A1A100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_34 {
+    color: #565600;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_35 {
+    color: #565600;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_36 {
+    color: #595900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_37 {
+    color: #525200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_38 {
+    color: #525200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_39 {
+    color: #515100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_40 {
+    color: #515100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_41 {
+    color: #838300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_42 {
+    color: #6B6B00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_43 {
+    color: #6B6B00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_44 {
+    color: #808000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_45 {
+    color: #5D5D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_46 {
+    color: #660;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_47 {
+    color: #616100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_48 {
+    color: #606000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_49 {
+    color: #686800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_50 {
+    color: #ECEC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_51 {
+    color: #ECEC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_52 {
+    color: #5E5E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_53 {
+    color: #6E6E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_54 {
+    color: #737300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_55 {
+    color: #717100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_56 {
+    color: #727200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_57 {
+    color: #686800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_58 {
+    color: #6B6B00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_59 {
+    color: #770;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_60 {
+    color: #656500;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_61 {
+    color: #6C6C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_62 {
+    color: #7D7D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_63 {
+    color: #696900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_64 {
+    color: #6A6A00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_65 {
+    color: #646400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_66 {
+    color: #646400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_67 {
+    color: #5B5B00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_68 {
+    color: #787800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_69 {
+    color: #787800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_70 {
+    color: #880;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_71 {
+    color: #525200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_72 {
+    color: #6F6F00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_73 {
+    color: #747400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_74 {
+    color: #A3A300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_75 {
+    color: #5C5C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_76 {
+    color: #5C5C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_77 {
+    color: #AEAE00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_78 {
+    color: #9C9C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_79 {
+    color: #757500;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_80 {
+    color: #636300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_81 {
+    color: #636300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_82 {
+    color: #5F5F00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_83 {
+    color: #676700;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_84 {
+    color: #727200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_85 {
+    color: #868600;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_86 {
+    color: #ACAC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_87 {
+    color: #ACAC00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_88 {
+    color: #767600;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_89 {
+    color: #545400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_90 {
+    color: #6C6C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_91 {
+    color: #676700;
+        font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_92 {
+    color: #676700;
+        font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_93 {
+    color: #6D6D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_94 {
+    color: #6D6D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_95 {
+    color: #4F4F00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_96 {
+    color: #858500;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_97 {
+    color: #8A8A00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_98 {
+    color: #C3C300;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_99 {
+    color: #6E6E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_100 {
+    color: #929200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_101 {
+    color: #5D5D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_102 {
+    color: #585800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_103 {
+    color: #C9C900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_104 {
+    color: #8D8D00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_105 {
+    color: #5B5B00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_106 {
+    color: #797900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_107 {
+    color: #909000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_108 {
+    color: #B9B900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_109 {
+    color: #B9B900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_110 {
+    color: #E2E200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_111 {
+    color: #828200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_112 {
+    color: #5C5C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_113 {
+    color: #4E4E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_114 {
+    color: #F1F100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_115 {
+    color: #F1F100;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_116 {
+    color: #787800;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_117 {
+    color: #F7F700;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_118 {
+    color: #EE0;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_119 {
+    color: #626200;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_120 {
+    color: #646400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_121 {
+    color: #EFEF00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_122 {
+    color: #5E5E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_123 {
+    color: #B4B400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_124 {
+    color: #848400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_125 {
+    color: #B7B700;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_126 {
+    color: #848400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_127 {
+    color: #6C6C00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_128 {
+    color: #5E5E00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_129 {
+    color: #6E6E00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_130 {
+    color: #676700;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_131 {
+    color: #717100;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_132 {
+    color: #6A6A00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_133 {
+    color: #5D5D00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_134 {
+    color: #5F5F00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_135 {
+    color: #5D5D00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_136 {
+    color: #636300;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_137 {
+    color: #636300;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_138 {
+    color: #7F7F00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_139 {
+    color: #696900;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_140 {
+    color: #626200;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_141 {
+    color: #7A7A00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_142 {
+    color: #707000;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_143 {
+    color: #767600;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_144 {
+    color: #767600;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_145 {
+    color: #6F6F00;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_146 {
+    color: #696900;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_147 {
+    color: #747400;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_148 {
+    color: #626200;
+        font-size: 1.71429em
+    }
+.text_149 {
+    color: #660;
+        font-size: 1.71429em
+    }
+.text_150 {
+    color: #737300;
+        font-size: 1.71429em
+    }
+.text_151 {
+    color: #545400;
+        line-height: 1.2
+    }
+.text_152 {
+    color: #6B6B00;
+        line-height: 1.2
+    }
+.text_153 {
+    color: #6A6A00;
+        line-height: 1.2
+    }
+.text_154 {
+    color: #6A6A00;
+        line-height: 1.2
+    }
+.text_155 {
+    color: #6F6F00;
+        line-height: 1.2
+    }
+.text_156 {
+    color: #656500;
+        line-height: 1.2
+    }
+.text_157 {
+    color: #585800;
+        line-height: 1.2
+    }
+.text_158 {
+    color: #4F4F00;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_159 {
+    color: #D5D500;
+        font-size: 0.71429em
+    }
+.text_160 {
+    color: #BB0;
+        font-size: 0.71429em
+    }
+.text_161 {
+    color: #CDCD00;
+        font-size: 0.71429em
+    }
+.text_162 {
+    color: #FF0;
+        font-size: 0.71429em
+    }
+.text_163 {
+    color: #D1D100;
+        font-size: 0.71429em
+    }
+.text_164 {
+    color: #BEBE00;
+        font-size: 0.71429em
+    }
+.text_165 {
+    color: #D4D400;
+        font-size: 0.71429em
+    }
+.text_166 {
+    color: #D4D400;
+        font-size: 0.71429em
+    }
+.text_167 {
+    color: #C9C900;
+        font-size: 0.71429em
+    }
+.text_168 {
+    color: #BABA00;
+        font-size: 0.71429em
+    }
+.text_169 {
+    color: #000;
+        font-size: 0.71429em
+    }
+.text_170 {
+    color: #000;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_171 {
+    color: #E0E000;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_172 {
+    color: #FF0;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_173 {
+    color: #FF0;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_174 {
+    color: #000;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_175 {
+    color: #000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_176 {
+    color: #FF0;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_177 {
+        line-height: 1.2
+    }
+.text_178 {
+        line-height: 1.2
+    }
+.text_179 {
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_180 {
+        font-size: 1em
+    }
+.text_181 {
+        font-size: 1.28571em
+    }
+.text_182 {
+        font-size: 1.28571em
+    }
+.text_183 {
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_184 {
+        font-size: 1.92857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_185 {
+        font-size: 1.28571em;
+    font-weight: bold
+    }
+.text_186 {
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_187 {
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_188 {
+        font-size: 1.28571em
+    }
+.text_189 {
+        font-size: 1.71429em
+    }
+.text_190 {
+        font-size: 1.71429em
+    }
+.text_191 {
+        font-size: 1.28571em;
+    font-style: italic
+    }
+.text_192 {
+        font-size: 1.71429em
+    }
+.text_193 {
+        }
+.text_194 {
+        }
+.text_195 {
+        }
+.text_196 {
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_197 {
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_198 {
+    font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_199 {
+    font-size: 1.71429em
+    }
+.text_200 {
+        font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_201 {
+        font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_202 {
+    color: #C1C100;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_203 {
+    color: #000;
+        font-size: 1.92857em;
+    line-height: 1.2
+    }
+.text_204 {
+    color: #000;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_205 {
+    color: #000;
+        font-size: 1.71429em
+    }
+.text_206 {
+    color: #000;
+        font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_207 {
+    color: #000;
+        font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_208 {
+    font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_209 {
+    font-size: 2.42857em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_210 {
+        font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_211 {
+        font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_212 {
+    color: #B3B300;
+        font-size: 2.42857em;
+    line-height: 1.2
+    }
+.text_213 {
+        font-size: 1.71429em;
+    font-style: italic
+    }
+.text_214 {
+        line-height: 1.2
+    }
+.text_215 {
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_216 {
+    color: #242021;
+    font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_217 {
+    color: #242021;
+    font-size: 1.71429em
+    }
+.text_218 {
+    color: #FFF;
+    font-size: 1em;
+    font-weight: bold
+    }
+.text_219 {
+    color: #FFF;
+        font-size: 1em;
+    font-weight: bold
+    }
+.text_220 {
+    font-size: 1.28571em
+    }
+.text_221 {
+    font-size: 1em
+    }
+.text_222 {
+        font-size: 1.28571em;
+    font-weight: bold
+    }
+.text_223 {
+        font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_224 {
+    color: #242021;
+        font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_225 {
+    color: #242021;
+        font-size: 1.71429em
+    }
+.text_226 {
+    color: #FFF;
+    font-size: 1em
+    }
+.text_227 {
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_228 {
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_229 {
+    color: #FFF;
+        font-size: 1em
+    }
+.text_230 {
+    color: #242021;
+        font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_231 {
+        font-size: 1em
+    }
+.text_232 {
+    color: #242021;
+        font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_233 {
+    color: #FFF;
+        font-size: 1em
+    }
+.text_234 {
+        font-size: 1em
+    }
+.text_235 {
+    color: #FFF;
+        font-size: 1em;
+    font-weight: bold
+    }
+.text_236 {
+        font-size: 1.28571em
+    }
+.text_237 {
+    color: #365F91;
+        font-size: 1.71429em;
+    font-weight: bold
+    }
+.text_238 {
+    color: #242021;
+    font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_239 {
+    color: #FFF;
+    font-size: 2.42857em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_240 {
+    color: #242021;
+    font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_241 {
+        font-size: 1.71429em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_242 {
+        font-size: 1.71429em;
+    line-height: 1.2
+    }
+.text_243 {
+        font-size: 1.71429em;
+    font-style: italic;
+    line-height: 1.2
+    }
+.text_244 {
+        font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_245 {
+        font-size: 1.71429em;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_246 {
+    color: #3D4094;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_247 {
+    color: #A83D40;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_248 {
+    color: #F00;
+    font-weight: bold;
+    line-height: 1.2
+    }
+.text_249 {
+    color: #063;
+    font-weight: bold;
+    line-height: 1.2
+    }

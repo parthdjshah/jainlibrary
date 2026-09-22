@@ -1,15 +1,240 @@
+html,
+body,
+body * {
+    font-family: "Noto Serif India 11", serif;
+}
+@font-face {
+    font-family: "Noto Serif India 11";
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("fonts/Noto-Serif-India-11.ttf");
+}
+
+@font-face {
+    font-family: "Noto Serif India 11";
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("fonts/Noto-Serif-India-11.ttf");
+}
+
+/* EPUB navigation/index */
+nav,
+nav ol,
+nav ul,
+nav li,
+nav a {
+    font-family: "Noto Serif India 11";
+}
+
+
+/* book-common.css
+   Common UI for all Jain book HTML pages.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------- TOP BUTTON ---------------- */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 9998;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/* ---------------- ZOOM BUTTONS ---------------- */
+
+.zoom-controls {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zoom-controls button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+/* ---------------- GENERAL MOBILE BOOK VIEW ---------------- */
+
+@media (max-width: 600px) {
+  body {
+    overflow-wrap: anywhere;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------------- AI MENU ---------------- */
+
+#aiSelectMenu {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.25);
+  padding: 6px;
+  width: min(290px,calc(100vw - 20px));
+  font-family: Arial,sans-serif;
+}
+
+#aiSelectMenu .ai-menu-title {
+  font-weight: bold;
+  padding: 7px 8px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 3px;
+}
+
+#aiSelectMenu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#aiSelectMenu button:hover {
+  background: #eee;
+}
+
+#aiBookButton {
+  position: fixed;
+  right: 18px;
+  bottom: 122px;
+  z-index: 9998;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 24px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.28);
+  cursor: pointer;
+}
+
+#aiAskDialog {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(0,0,0,.45);
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+#aiAskBox {
+  background: #fff;
+  border-radius: 12px;
+  width: min(620px,100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+  font-family: Arial,sans-serif;
+}
+
+#aiAskBox h3 {
+  margin-top: 0;
+}
+
+#aiSelectedPreview {
+  background: #f5f5f5;
+  border-left: 4px solid #888;
+  padding: 10px;
+  margin: 10px 0;
+  max-height: 180px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#aiQuestion {
+  width: 100%;
+  min-height: 110px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 7px;
+}
+
+#aiAskBox .ai-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+#aiAskBox .ai-actions button {
+  padding: 9px 14px;
+  border: 1px solid #aaa;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#aiOpenChatGPT {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  #aiBookButton {
+    right: 12px;
+    bottom: 125px;
+  }
+
+  #aiSelectMenu {
+    width: 260px;
+  }
+}
 .block_ {
     display: block;
-    font-family: serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
     }
 .block_1 {
     display: block;
-    font-family: "Calibri", sans-serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -47,8 +272,7 @@
 .block_6 {
     color: #3C2B99;
     display: block;
-    font-family: serif;
-    font-size: 1.66667em;
+        font-size: 1.66667em;
     line-height: 1.2;
     margin: 0 0 8pt;
     padding: 0
@@ -56,8 +280,7 @@
 .block_7 {
     color: #FFF;
     display: block;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     font-weight: bold;
     line-height: 1.08;
     margin: 0 0 8pt;
@@ -65,8 +288,7 @@
     }
 .block_8 {
     display: block;
-    font-family: serif;
-    line-height: 1.2;
+        line-height: 1.2;
     margin: 0 0 8pt;
     padding: 0
     }
@@ -79,8 +301,7 @@
 .block_10 {
     color: #FFF;
     display: block;
-    font-family: serif;
-    font-size: 1.125em;
+        font-size: 1.125em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -124,8 +345,7 @@
     }
 .block_16 {
     display: block;
-    font-family: "Times New Roman", serif;
-    font-size: 1em;
+        font-size: 1em;
     font-weight: bold;
     line-height: 1.2;
     margin: 0 0 8pt;
@@ -141,8 +361,7 @@
     }
 .block_18 {
     display: block;
-    font-family: serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     line-height: 1.08;
     text-indent: 36pt;
     margin: 0 0 8pt;
@@ -160,16 +379,14 @@
 .block_20 {
     color: #FFF;
     display: block;
-    font-family: serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
     }
 .block_21 {
     display: block;
-    font-family: "Calibri", sans-serif;
-    line-height: 1.2;
+        line-height: 1.2;
     margin: 0 0 8pt;
     padding: 0
     }
@@ -184,8 +401,7 @@
 .block_23 {
     color: #2F5496;
     display: block;
-    font-family: serif;
-    font-size: 1.125em;
+        font-size: 1.125em;
     line-height: 1.2;
     margin: 0;
     padding: 0
@@ -198,8 +414,7 @@
     }
 .block_25 {
     display: block;
-    font-family: serif;
-    font-size: 0.75em;
+        font-size: 0.75em;
     margin: 0;
     padding: 0
     }
@@ -221,8 +436,7 @@
 .block_28 {
     color: #FFF;
     display: block;
-    font-family: serif;
-    font-size: 1.41667em;
+        font-size: 1.41667em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -230,8 +444,7 @@
 .block_29 {
     color: #696900;
     display: block;
-    font-family: "Cambria", serif;
-    font-size: 1.125em;
+        font-size: 1.125em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -239,15 +452,13 @@
 .block_30 {
     color: #87160A;
     display: block;
-    font-family: serif;
-    line-height: 1.2;
+        line-height: 1.2;
     margin: 0 0 8pt;
     padding: 0
     }
 .block_31 {
     display: block;
-    font-family: serif;
-    font-size: 1em;
+        font-size: 1em;
     line-height: 1.2;
     margin: 0 0 8pt;
     padding: 0
@@ -255,8 +466,7 @@
 .block_32 {
     color: #98180B;
     display: block;
-    font-family: serif;
-    font-size: 1.125em;
+        font-size: 1.125em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -264,8 +474,7 @@
 .block_33 {
     color: #151616;
     display: block;
-    font-family: "Arial", sans-serif;
-    font-size: 0.41667em;
+        font-size: 0.41667em;
     line-height: 1.08;
     margin: 0 0 8pt;
     padding: 0
@@ -273,8 +482,7 @@
 .calibre {
     color: #231F20;
     display: block;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1em;
+        font-size: 1em;
     padding-left: 0;
     padding-right: 0;
     margin: 0 5pt
@@ -306,19 +514,16 @@
     white-space: pre-wrap
     }
 .text_ {
-    font-family: "Calibri", sans-serif;
-    font-size: 1em
+        font-size: 1em
     }
 .text_1 {
     color: #3C2B99;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.22222em;
+        font-size: 2.22222em;
     line-height: 1.2
     }
 .text_2 {
     color: #696900;
-    font-family: "Cambria", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     line-height: 1.2
     }
 .text_3 {
@@ -327,280 +532,238 @@
     text-decoration: underline
     }
 .text_4 {
-    font-family: "Noto Serif Gujarati", serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_5 {
-    font-family: "AkrutiGujAkshataNormal-Identity", sans-serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_6 {
     color: #FFF;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.44444em;
+        font-size: 2.44444em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_7 {
     color: #FFF;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 2.44444em;
+        font-size: 2.44444em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_8 {
     color: #FFF;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.66667em;
+        font-size: 2.66667em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_9 {
     color: #FFF;
-    font-family: "AkrutiGujMograBold-Identity-H", sans-serif;
-    font-size: 2.66667em;
+        font-size: 2.66667em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_10 {
     color: #DD2B1C;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.44444em;
+        font-size: 2.44444em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_11 {
     color: #DD2B1C;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 2.44444em;
+        font-size: 2.44444em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_12 {
     color: #063;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_13 {
     color: #063;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_14 {
     color: #3C2B99;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_15 {
     color: #3C2B99;
-    font-family: "AkrutiGujRajaniBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_16 {
     color: #8D003C;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_17 {
     color: #8D003C;
-    font-family: "AkrutiGujSabarmatiBold-Identity", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_18 {
     color: #FFF;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_19 {
     color: #FFF;
-    font-family: "AkrutiGujMamataBold-Identity-H", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_20 {
     color: #00A759;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_21 {
     color: #00A759;
-    font-family: "AkrutiGujMamataBold-Identity-H", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_22 {
     color: #063;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_23 {
     color: #063;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_24 {
     color: #DD2B1C;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_25 {
     color: #DD2B1C;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_26 {
     color: #3C2B99;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_27 {
     color: #87160A;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_28 {
     color: #87160A;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_29 {
     color: #AE1EA3;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_30 {
     color: #AE1EA3;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_31 {
     color: #E10886;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_32 {
     color: #E10886;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_33 {
     color: #3C2B99;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_34 {
     color: #3C2B99;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_35 {
     color: #DD2B1C;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.22222em;
+        font-size: 2.22222em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_36 {
     color: #DD2B1C;
-    font-family: "AkrutiGujRajaniBold-Identity-H", sans-serif;
-    font-size: 2.22222em;
+        font-size: 2.22222em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_37 {
     color: #FFF;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1em;
+        font-size: 1em;
     font-weight: bold
     }
 .text_38 {
     color: #FFF;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 2.22222em;
+        font-size: 2.22222em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_39 {
     color: #FFF;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 2.22222em;
+        font-size: 2.22222em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_40 {
     color: #231F20;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_41 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_42 {
-    font-family: "AkrutiGujLekha,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_43 {
     color: #231F20;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_44 {
-    font-family: "Calibri", sans-serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_45 {
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_46 {
@@ -614,49 +777,41 @@
     }
 .text_48 {
     color: #231F20;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_49 {
     color: #231F20;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     line-height: 1.2
     }
 .text_50 {
     color: #FFF;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_51 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_52 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     line-height: 1.2
     }
 .text_53 {
-    font-family: "Times New Roman", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_54 {
-    font-family: "Times New Roman", serif;
-    font-size: 1em
+        font-size: 1em
     }
 .text_55 {
     color: #231F20;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
@@ -678,276 +833,229 @@
     line-height: 1.2
     }
 .text_60 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_61 {
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_62 {
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1em;
+        font-size: 1em;
     font-weight: bold
     }
 .text_63 {
     color: #231F20;
-    font-family: "Calibri", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_64 {
-    font-family: "AkrutiDevRahul,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_65 {
-    font-family: "Times New Roman", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_66 {
-    font-family: "Times New Roman", serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_67 {
     color: #231F20;
-    font-family: "Times New Roman", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_68 {
-    font-family: "Cambria", serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_69 {
     color: #2F5496;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_70 {
-    font-family: "Arial", sans-serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_71 {
     color: #231F20;
-    font-family: "MonotypeCorsiva,Italic", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-style: italic;
     line-height: 1.2
     }
 .text_72 {
-    font-family: "MonotypeCorsiva,Italic", sans-serif;
-    font-style: italic;
+        font-style: italic;
     line-height: 1.2
     }
 .text_73 {
-    font-family: "AkrutiGujMangal,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_74 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_75 {
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_76 {
-    font-family: "Calibri", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_77 {
-    font-family: "Calibri", sans-serif;
-    font-size: 0.77778em
+        font-size: 0.77778em
     }
 .text_78 {
-    font-family: "Wingdings3", sans-serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_79 {
     color: #000;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_80 {
     color: #000;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_81 {
-    font-family: "AkrutiDevYogini,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_82 {
     color: #231F20;
-    font-family: "Calibri", sans-serif;
-    font-size: 1em
+        font-size: 1em
     }
 .text_83 {
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-size: 1.5em;
+        font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_84 {
     color: #231F20;
-    font-family: sans-serif;
-    line-height: 1.2
+        line-height: 1.2
     }
 .text_85 {
     color: #231F20;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_86 {
     color: #231F20;
-    font-family: "AkrutiGujChitra,Bold", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_87 {
     color: #3C2B99;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_88 {
     color: #3C2B99;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_89 {
     color: #DD2B1C;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_90 {
     color: #DD2B1C;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_91 {
     color: #00612D;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_92 {
     color: #00612D;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_93 {
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_94 {
     color: #A83D40;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_95 {
     color: #A83D40;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_96 {
     color: #3D4094;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_97 {
     color: #3D4094;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_98 {
     color: #063;
-    font-family: "Noto Serif Gujarati", serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_99 {
     color: #063;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
 .text_100 {
     color: #3C2B99;
-    font-family: "AkrutiGujKetakiBold-Identity-H", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_101 {
     color: #3C2B99;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_102 {
     color: #3C2B99;
-    font-family: "AkrutiGujKetakiNormal-Identity-", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     line-height: 1.2
     }
 .text_103 {
     color: #686868;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_104 {
     color: #686868;
-    font-family: "AkrutiGujChitraBold-Identity-H", sans-serif;
-    font-size: 1.88889em;
+        font-size: 1.88889em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_105 {
     color: #87160A;
-    font-family: "AkrutiGujShyamaBold-Identity-H", sans-serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_106 {
     color: #87160A;
-    font-family: "Noto Serif Gujarati", serif;
-    font-size: 1.33333em;
+        font-size: 1.33333em;
     font-weight: bold;
     line-height: 1.2
     }
 .text_107 {
-    font-family: "AkrutiGujSabarmatiBold-Identity", sans-serif;
-    font-weight: bold;
+        font-weight: bold;
     line-height: 1.2
     }
+
