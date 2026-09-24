@@ -547,7 +547,7 @@
   function initSmartAnnotations() {
 
     var CONFIG_KEY = "parthSmartAnnotationConfig";
-    var CLIENT_ID = "1014387999684-i3il5dt1gu0jo2h53a8jeldeib85rlmg.apps.googleusercontent.com";
+    var CLIENT_ID = "YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com";
     var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
     var DISCOVERY_DOC =
       "https://sheets.googleapis.com/$discovery/rest?version=v4";
