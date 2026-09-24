@@ -566,6 +566,7 @@
     var CONFIG_KEY = "parthSmartAnnotationConfig";
     var CLIENT_ID = "1014387999684-i3il5dt1gu0jo2h53a8jeldeib85rlmg.apps.googleusercontent.com";
     var PICKER_API_KEY = "AIzaSyBAXkic0VuCBHQXCkFZsnOSVe3OCWCr_5A";
+    // Required for Google Picker. Restrict this key to https://parthfinvest.in/* and the Picker/Drive APIs.
     var GOOGLE_APP_ID = "1014387999684";
     var SCOPES = "https://www.googleapis.com/auth/drive.file";
     var DISCOVERY_DOC =
@@ -781,15 +782,24 @@
     function updateSettingsDialog() {
       createSettingsDialog();
       var info = document.getElementById("smartAnnotationSheetInfo");
+      var msg = document.getElementById("smartAnnotationSettingsMessage");
       if (!info) return;
 
-      if (config && config.spreadsheetId) {
+      if (msg) msg.textContent = "";
+
+      if (config && config.spreadsheetId && config.selectedByPicker) {
         var link = config.spreadsheetUrl ||
           ("https://docs.google.com/spreadsheets/d/" + config.spreadsheetId + "/edit");
         info.innerHTML =
           "<strong>Current Google Sheet:</strong><br>" +
           escapeHtml(config.spreadsheetName || "Selected spreadsheet") +
           '<br><a href="' + escapeHtml(link) + '" target="_blank" rel="noopener">Open Google Sheet</a>';
+      } else if (config && config.spreadsheetId) {
+        info.innerHTML =
+          "<strong>Previous Google Sheet found</strong><br>" +
+          "This Sheet was configured with the older version of Smart Annotation. " +
+          "For the new, more private permission (drive.file), please select the Sheet once using Google Picker.";
+        if (msg) msg.textContent = "Click “Choose / Change Google Sheet” below to select it through Google Picker.";
       } else {
         info.textContent = "No Google Sheet selected.";
       }
@@ -1112,13 +1122,61 @@
       });
     }
 
+    function showPickerConfigurationMessage() {
+      createSettingsDialog();
+      var msg = document.getElementById("smartAnnotationSettingsMessage");
+      if (msg) {
+        msg.innerHTML =
+          "Google Picker is not configured yet. Replace <code>YOUR_GOOGLE_PICKER_BROWSER_API_KEY</code> in this JS file with your restricted Google Cloud Browser API key, then reload the page.";
+      }
+      var setupMsg = document.getElementById("smartAnnotationSetupMessage");
+      if (setupMsg) {
+        setupMsg.innerHTML =
+          "Google Picker is not configured yet. The site owner must add the Google Cloud Browser API key to the common JS file.";
+      }
+    }
+
+    function saveGoogleAccountHint(email) {
+      if (!email) return;
+      var c = readConfig() || {};
+      c.googleAccountEmail = email;
+      saveConfig(c);
+    }
+
+    function getSelectedSheetOwnerEmail(spreadsheetId, accessToken) {
+      if (!spreadsheetId || !accessToken) return Promise.resolve(null);
+
+      var url =
+        "https://www.googleapis.com/drive/v3/files/" +
+        encodeURIComponent(spreadsheetId) +
+        "?fields=owners(emailAddress)";
+
+      return fetch(url, {
+        method: "GET",
+        headers: {
+          "Authorization": "Bearer " + accessToken
+        }
+      }).then(function (response) {
+        if (!response.ok) throw new Error("Drive metadata request failed: " + response.status);
+        return response.json();
+      }).then(function (data) {
+        return data && data.owners && data.owners[0]
+          ? (data.owners[0].emailAddress || null)
+          : null;
+      }).catch(function (err) {
+        console.warn("Could not determine Google account hint:", err);
+        return null;
+      });
+    }
+
     function authorizeGoogle(onAuthorized) {
       if (!CLIENT_ID || CLIENT_ID.indexOf("YOUR_GOOGLE") === 0) {
         alert("Smart Annotation needs the Google OAuth Client ID configured in the script.");
         return;
       }
+
       if (!PICKER_API_KEY || PICKER_API_KEY.indexOf("YOUR_GOOGLE") === 0) {
-        alert("Smart Annotation needs the Google Picker Browser API key configured in the script.");
+        showPickerConfigurationMessage();
         return;
       }
 
@@ -1126,25 +1184,59 @@
         var existingToken = gapi.client.getToken && gapi.client.getToken();
         tokenClient.callback = function (response) {
           if (response.error) {
-            console.error(response);
-            alert("Google authorization was not completed.");
+            console.error("Google authorization error:", response);
+            var msg = document.getElementById("smartAnnotationSettingsMessage");
+            if (msg) msg.textContent = "Google authorization was not completed. If your Google session is signed out, choose the account once again.";
             return;
           }
           gapi.client.setToken(response);
           if (typeof onAuthorized === "function") onAuthorized(response);
         };
-        tokenClient.requestAccessToken({ prompt: existingToken ? "" : "" });
+
+        var request = {};
+
+        if (existingToken) {
+          /* Token already exists on this page: no UI. */
+          request.prompt = "";
+        } else if (config && config.googleAccountEmail) {
+          /*
+             A page navigation clears the in-memory access token.
+             Re-request it silently and tell Google which account owns the
+             selected Sheet. This prevents the Account Chooser from appearing
+             on every book/page.
+          */
+          request.prompt = "none";
+          request.login_hint = config.googleAccountEmail;
+        } else {
+          /* First authorization / old configuration without an account hint. */
+          request.prompt = "consent";
+        }
+
+        tokenClient.requestAccessToken(request);
       });
     }
 
     function chooseGoogleSheet() {
-      authorizeGoogle(function (response) {
-        if (!google.picker) {
-          alert("Google Picker is not ready yet. Please try again.");
+      if (!PICKER_API_KEY || PICKER_API_KEY.indexOf("YOUR_GOOGLE") === 0) {
+        showPickerConfigurationMessage();
+        return;
+      }
+
+      authorizeGoogle(function () {
+        if (!window.google || !google.picker) {
+          var msg = document.getElementById("smartAnnotationSettingsMessage") ||
+                    document.getElementById("smartAnnotationSetupMessage");
+          if (msg) msg.textContent = "Google Picker is still loading. Please click Choose Google Sheet again in a moment.";
           return;
         }
 
         var token = gapi.client.getToken();
+        if (!token || !token.access_token) {
+          var msg2 = document.getElementById("smartAnnotationSettingsMessage");
+          if (msg2) msg2.textContent = "Google authorization is missing. Please click Choose Google Sheet again.";
+          return;
+        }
+
         var docsView = new google.picker.DocsView(google.picker.ViewId.SPREADSHEETS)
           .setMimeTypes("application/vnd.google-apps.spreadsheet")
           .setIncludeFolders(false);
@@ -1160,32 +1252,42 @@
               var doc = data.docs && data.docs[0];
               if (!doc || !doc.id) return;
 
-              saveConfig({
-                enabled: true,
-                skipped: false,
-                spreadsheetId: doc.id,
-                spreadsheetName: doc.name || "Google Sheet",
-                spreadsheetUrl: doc.url || ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit"),
-                selectedByPicker: true,
-                sheetName: SHEET_NAME
-              });
+              var selectedToken = gapi.client.getToken();
+              var selectedUrl = doc.url || ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit");
 
-              var setup = document.getElementById("smartAnnotationSetup");
+              /*
+                 Remember only a Google-account hint (email), never the
+                 OAuth access token. This lets later pages request a fresh
+                 token silently for the same Google account.
+              */
+              getSelectedSheetOwnerEmail(doc.id, selectedToken && selectedToken.access_token)
+                .then(function (ownerEmail) {
+                  saveConfig({
+                    enabled: true,
+                    skipped: false,
+                    spreadsheetId: doc.id,
+                    spreadsheetName: doc.name || "Google Sheet",
+                    spreadsheetUrl: selectedUrl,
+                    selectedByPicker: true,
+                    googleAccountEmail: ownerEmail || (config && config.googleAccountEmail) || "",
+                    sheetName: SHEET_NAME
+                  });
+
+                  var setup = document.getElementById("smartAnnotationSetup");
               if (setup) setup.style.display = "none";
               var settings = document.getElementById("smartAnnotationSettings");
               if (settings) settings.style.display = "none";
+
               updateSettingsDialog();
               initializeAnnotationSheet();
+                  showStatus("Google Sheet selected");
+                });
             }
           })
           .build();
 
         picker.setVisible(true);
       });
-    }
-
-    function sheetApi() {
-      return gapi.client.sheets.spreadsheets;
     }
 
     function initializeAnnotationSheet() {
@@ -1569,7 +1671,10 @@
       return;
     }
 
-    /* Existing production configuration: no setup question. */
+    /* Existing production configuration: no setup question.
+       The authorization helper now uses a saved account hint + prompt:none
+       after the first successful Picker selection, so normal page changes
+       do not show Google's account chooser. */
     authorizeGoogle(function () {
       initializeAnnotationSheet();
     });
