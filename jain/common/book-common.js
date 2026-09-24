@@ -565,7 +565,7 @@
 
     var CONFIG_KEY = "parthSmartAnnotationConfig";
     var CLIENT_ID = "1014387999684-i3il5dt1gu0jo2h53a8jeldeib85rlmg.apps.googleusercontent.com";
-    var PICKER_API_KEY = "YOUR_GOOGLE_PICKER_BROWSER_API_KEY";
+    var PICKER_API_KEY = "AIzaSyBAXkic0VuCBHQXCkFZsnOSVe3OCWCr_5A";
     var GOOGLE_APP_ID = "1014387999684";
     var SCOPES = "https://www.googleapis.com/auth/drive.file";
     var DISCOVERY_DOC =
