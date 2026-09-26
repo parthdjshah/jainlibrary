@@ -775,8 +775,8 @@ function setupFavicon() {
         "#smartAnnotationToolbar button:hover{background:#e5e5e5;}" +
         "#smartAnnotationStatus{position:fixed;right:12px;bottom:12px;display:none;z-index:2147482998;background:#222;color:#fff;padding:8px 12px;border-radius:8px;font:13px Arial,sans-serif;}" +
         ".smartAnnotationFloat{position:fixed;right:12px;z-index:2147482997;width:42px;height:42px;border:1px solid #aaa;border-radius:50%;background:#fff;cursor:pointer;font-size:19px;box-shadow:0 2px 8px rgba(0,0,0,.2);padding:0;}" +
-        "#smartAnnotationFindButton{bottom:112px;}" +
-        "#smartAnnotationSettingsButton{bottom:62px;}" +
+        "#smartAnnotationFindButton{bottom:222px;right:20px;}" +
+        "#smartAnnotationSettingsButton{bottom:172px;right:20px;}" +
         "#smartAnnotationSetup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2147482999;background:rgba(0,0,0,.45);}" +
         "#smartAnnotationSetupBox{background:#fff;color:#222;width:min(540px,calc(100vw - 30px));padding:22px;border-radius:14px;box-shadow:0 8px 35px rgba(0,0,0,.35);font-family:Arial,sans-serif;}" +
         "#smartAnnotationSetupBox h3{margin:0 0 12px;font-size:21px;}" +
