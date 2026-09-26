@@ -527,34 +527,23 @@
       );
   }
 
-  /* ---------------- Logo / Favicon Branding ---------------- */
+  /* ---------------- Logo Added ---------------- */
 function setupSiteBranding() {
-    // Use the site-root-relative path so every book folder gets the same logo.
-    // IMPORTANT: the ICO file must contain an actual visible icon.
-    var logoUrl = "/jain/common/Logo.svg?v=2";
-	var faviconUrl = "/jain/common/Logo.ico?v=2";
+    var logoUrl = "/jain/common/Logo.ico";
 
-    // ---------- BROWSER TAB FAVICON ----------
-    // Remove only favicons previously created by this script.
-    document.querySelectorAll("link[data-parth-favicon]").forEach(function (el) {
-        el.remove();
-    });
+    // ---------- FAVICON ----------
+    var favicon = document.querySelector('link[data-parth-favicon]');
 
-    // ICO files must be declared as image/x-icon, not image/png.
-    var favicon = document.createElement("link");
-    favicon.rel = "icon";
-    favicon.type = "image/x-icon";
-    favicon.href = faviconUrl;
-    favicon.setAttribute("data-parth-favicon", "true");
-    document.head.appendChild(favicon);
+    if (!favicon) {
+        favicon = document.createElement("link");
+        favicon.rel = "icon";
+        favicon.type = "image/png";
+        favicon.setAttribute("data-parth-favicon", "true");
+        document.head.appendChild(favicon);
+    }
 
-    // Compatibility with browsers that still look for shortcut icon.
-    var shortcutIcon = document.createElement("link");
-    shortcutIcon.rel = "shortcut icon";
-    shortcutIcon.type = "image/x-icon";
-    shortcutIcon.href = logoUrl;
-    shortcutIcon.setAttribute("data-parth-favicon", "true");
-    document.head.appendChild(shortcutIcon);
+    favicon.href = logoUrl;
+
 
     // ---------- VISIBLE HEADER ----------
     if (document.getElementById("parthSiteBranding")) {
@@ -565,8 +554,8 @@ function setupSiteBranding() {
     header.id = "parthSiteBranding";
 
     header.innerHTML =
-        '<img src="' + logoUrl + '" alt="Parth Jain Library" decoding="async">' +
-        '<span>Parth Jain Library</span>';
+        '<img src="' + logoUrl + '" alt="Parth Jain Books">' +
+        '<span>Parth Jain Books</span>';
 
     header.style.cssText =
         "display:flex;" +
@@ -584,14 +573,7 @@ function setupSiteBranding() {
     img.style.cssText =
         "width:36px;" +
         "height:36px;" +
-        "display:block;" +
-        "object-fit:contain;" +
-        "background:transparent;";
-
-    // If the ICO cannot be decoded, don't leave an unexplained blank box.
-    img.addEventListener("error", function () {
-        img.style.display = "none";
-    });
+        "object-fit:contain;";
 
     document.body.insertBefore(header, document.body.firstChild);
 }
@@ -601,68 +583,10 @@ function setupPageTitle() {
 
     if (
         title &&
-        title.indexOf("Parth Jain Library") === -1
+        title.indexOf("Parth Jain Books") === -1
     ) {
-        document.title = title + " | Parth Jain Library";
+        document.title = title + " | Parth Jain Books";
     }
-}
-/* ---------------- Icon setup ---------------- */
-function setupFavicon() {
-    var base = "/jain/common/";
-    var version = "?v=4";
-
-    // Remove favicons previously added by this script
-    document.querySelectorAll('link[data-parth-favicon]').forEach(function (el) {
-        el.remove();
-    });
-
-    var icons = [
-        {
-            rel: "icon",
-            type: "image/x-icon",
-            href: base + "Favicon.ico" + version
-        },
-        {
-            rel: "icon",
-            type: "image/png",
-            sizes: "16x16",
-            href: base + "Favicon-16.png" + version
-        },
-        {
-            rel: "icon",
-            type: "image/png",
-            sizes: "32x32",
-            href: base + "Favicon-32.png" + version
-        },
-        {
-            rel: "icon",
-            type: "image/png",
-            sizes: "48x48",
-            href: base + "Favicon-48.png" + version
-        },
-        {
-            rel: "apple-touch-icon",
-            type: "image/png",
-            sizes: "180x180",
-            href: base + "Favicon-180.png" + version
-        }
-    ];
-
-    icons.forEach(function (item) {
-        var link = document.createElement("link");
-
-        link.rel = item.rel;
-        link.type = item.type;
-
-        if (item.sizes) {
-            link.sizes = item.sizes;
-        }
-
-        link.href = item.href;
-        link.setAttribute("data-parth-favicon", "true");
-
-        document.head.appendChild(link);
-    });
 }
   /* ---------------- SMART ANNOTATION ---------------- */
 
@@ -1860,7 +1784,6 @@ function setupFavicon() {
     initAnalytics();
 	setupSiteBranding();
 	setupPageTitle();
-	setupFavicon();
   }
 
   if (document.readyState === "loading") {
