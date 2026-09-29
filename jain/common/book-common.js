@@ -1426,55 +1426,97 @@ function setupFavicon() {
     }
 
     function initializeAnnotationSheet() {
-      if (!config || !config.spreadsheetId) return;
-      var token = gapi.client.getToken && gapi.client.getToken();
-      if (!token || !token.access_token) return;
+	  if (!config || !config.spreadsheetId) return;
 
-      showStatus("Preparing annotations…");
+	  var token = gapi.client.getToken && gapi.client.getToken();
+	  if (!token || !token.access_token) return;
 
-      sheetApi().get({ spreadsheetId:config.spreadsheetId }).then(function (meta) {
-        var sheets = meta.result && meta.result.sheets || [];
-        var found = null;
-        for (var i = 0; i < sheets.length; i++) {
-          if (sheets[i].properties && sheets[i].properties.title === SHEET_NAME) {
-            found = sheets[i].properties;
-            break;
-          }
-        }
+	  showStatus("Preparing annotations…");
 
-        if (found) {
-          window.__smartAnnotationSheetId = found.sheetId;
-          return null;
-        }
+	  gapi.client.sheets.spreadsheets.get({
+		spreadsheetId: config.spreadsheetId
+	  }).then(function (meta) {
 
-        return sheetApi().batchUpdate({
-          spreadsheetId:config.spreadsheetId,
-          resource:{ requests:[{ addSheet:{ properties:{ title:SHEET_NAME } } }] }
-        }).then(function (created) {
-          var added = created.result && created.result.replies && created.result.replies[0] && created.result.replies[0].addSheet;
-          window.__smartAnnotationSheetId = added && added.properties && added.properties.sheetId;
-        });
-      }).then(function () {
-        return gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId:config.spreadsheetId,
-          range:SHEET_NAME + "!A1:L1"
-        });
-      }).then(function (response) {
-        var values = response.result && response.result.values;
-        if (values && values.length && values[0].length) return;
-        return gapi.client.sheets.spreadsheets.values.update({
-          spreadsheetId:config.spreadsheetId,
-          range:SHEET_NAME + "!A1:L1",
-          valueInputOption:"RAW",
-          resource:{ values:[HEADER] }
-        });
-      }).then(function () {
-        loadAnnotations();
-      }).catch(function (err) {
-        console.error("Smart Annotation sheet error", err);
-        showStatus("Could not access the selected Google Sheet");
-      });
-    }
+		var sheets = meta.result && meta.result.sheets || [];
+		var found = null;
+
+		for (var i = 0; i < sheets.length; i++) {
+		  if (
+			sheets[i].properties &&
+			sheets[i].properties.title === SHEET_NAME
+		  ) {
+			found = sheets[i].properties;
+			break;
+		  }
+		}
+
+		if (found) {
+		  window.__smartAnnotationSheetId = found.sheetId;
+		  return null;
+		}
+
+		return gapi.client.sheets.spreadsheets.batchUpdate({
+		  spreadsheetId: config.spreadsheetId,
+		  resource: {
+			requests: [
+			  {
+				addSheet: {
+				  properties: {
+					title: SHEET_NAME
+				  }
+				}
+			  }
+			]
+		  }
+		}).then(function (created) {
+
+		  var added =
+			created.result &&
+			created.result.replies &&
+			created.result.replies[0] &&
+			created.result.replies[0].addSheet;
+
+		  window.__smartAnnotationSheetId =
+			added &&
+			added.properties &&
+			added.properties.sheetId;
+		});
+
+	  }).then(function () {
+
+		return gapi.client.sheets.spreadsheets.values.get({
+		  spreadsheetId: config.spreadsheetId,
+		  range: SHEET_NAME + "!A1:L1"
+		});
+
+	  }).then(function (response) {
+
+		var values = response.result && response.result.values;
+
+		if (values && values.length && values[0].length) {
+		  return;
+		}
+
+		return gapi.client.sheets.spreadsheets.values.update({
+		  spreadsheetId: config.spreadsheetId,
+		  range: SHEET_NAME + "!A1:L1",
+		  valueInputOption: "RAW",
+		  resource: {
+			values: [HEADER]
+		  }
+		});
+
+	  }).then(function () {
+
+		loadAnnotations();
+
+	  }).catch(function (err) {
+
+		console.error("Smart Annotation sheet error", err);
+		showStatus("Could not access the selected Google Sheet");
+
+	  });
+	}
 
     function loadAnnotations() {
       if (!config || !config.spreadsheetId) return;
@@ -1582,7 +1624,7 @@ function setupFavicon() {
       findAnnotationRow(annotationId).then(function (rowNumber) {
         if (!rowNumber) return null;
         if (typeof window.__smartAnnotationSheetId !== "number") return null;
-        return sheetApi().batchUpdate({
+        return gapi.client.sheets.spreadsheets.batchUpdate({
           spreadsheetId:config.spreadsheetId,
           resource:{ requests:[{ deleteDimension:{ range:{ sheetId:window.__smartAnnotationSheetId, dimension:"ROWS", startIndex:rowNumber-1, endIndex:rowNumber } } }] }
         });
