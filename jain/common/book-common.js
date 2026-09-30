@@ -708,6 +708,11 @@ function setupFavicon() {
       "https://sheets.googleapis.com/$discovery/rest?version=v4";
 
     var SHEET_NAME = "Annotations";
+
+    // Google Sheets has a 50,000-character limit per cell.
+    // We enforce the same maximum for user notes.
+    var MAX_NOTE_CHARS = 50000;
+
     var HEADER = [
       "AnnotationID",
       "PageName",
@@ -720,7 +725,8 @@ function setupFavicon() {
       "EndOffset",
       "Style",
       "CreatedAt",
-      "UpdatedAt"
+      "UpdatedAt",
+      "Note"
     ];
 
     var config = null;
@@ -770,6 +776,16 @@ function setupFavicon() {
         ".smart-annotation-bold{font-weight:700;}" +
         ".smart-annotation-italic{font-style:italic;}" +
         ".smart-annotation-focus{outline:3px solid #ff9800;outline-offset:2px;border-radius:2px;}" +
+        ".smart-annotation-note{border-bottom:2px dotted #777;}" +
+        "#smartAnnotationNoteEditor{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2147483001;background:rgba(0,0,0,.45);}" +
+        "#smartAnnotationNoteEditorBox{background:#fff;color:#222;width:min(620px,calc(100vw - 24px));padding:20px;border-radius:14px;box-shadow:0 8px 35px rgba(0,0,0,.35);font-family:Arial,sans-serif;}" +
+        "#smartAnnotationNoteEditorBox h3{margin:0 0 10px;font-size:20px;}" +
+        "#smartAnnotationNoteText{width:100%;box-sizing:border-box;min-height:180px;resize:vertical;padding:10px;border:1px solid #aaa;border-radius:8px;font:15px/1.5 inherit;}" +
+        "#smartAnnotationNoteCounter{font-size:12px;color:#666;margin-top:6px;text-align:right;}" +
+        "#smartAnnotationNoteLimit{font-size:12px;color:#666;margin:8px 0 0;line-height:1.4;}" +
+        "#smartAnnotationNoteEditorActions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap;}" +
+        "#smartAnnotationNoteEditorActions button{padding:9px 14px;border:1px solid #aaa;border-radius:8px;background:#fff;cursor:pointer;}" +
+        "#smartAnnotationNoteSave{font-weight:700;}" +
         "#smartAnnotationToolbar{position:fixed;display:none;z-index:2147483000;background:#fff;border:1px solid #bbb;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);padding:5px;white-space:nowrap;}" +
         "#smartAnnotationToolbar button{border:0;background:#f7f7f7;border-radius:6px;min-width:34px;height:34px;margin:2px;cursor:pointer;font-size:16px;}" +
         "#smartAnnotationToolbar button:hover{background:#e5e5e5;}" +
@@ -794,6 +810,7 @@ function setupFavicon() {
         ".smartAnnotationItem:hover{background:#f6f6f6;}" +
         ".smartAnnotationItem.active{border-color:#ff9800;background:#fff8e8;}" +
         ".smartAnnotationItemText{font-size:15px;line-height:1.45;margin-bottom:6px;}" +
+        ".smartAnnotationItemNote{font-size:14px;line-height:1.45;margin:7px 0;padding:8px 9px;background:#fffbe6;border-left:3px solid #c9a227;border-radius:4px;white-space:normal;word-break:break-word;max-height:180px;overflow:auto;}" +
         ".smartAnnotationItemMeta{font-size:12px;color:#666;}" +
         "#smartAnnotationViewerFooter{border-top:1px solid #ddd;padding:10px 14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}" +
         "#smartAnnotationViewerFooter button{padding:8px 12px;border:1px solid #aaa;border-radius:7px;background:#fff;cursor:pointer;}" +
@@ -968,6 +985,7 @@ function setupFavicon() {
         '<button data-smart-style="blue" title="Blue highlight">🔵</button>' +
         '<button data-smart-style="yellow" title="Yellow highlight">🟡</button>' +
         '<button data-smart-style="green" title="Green highlight">🟢</button>' +
+        '<button data-smart-style="note" title="Add / edit note">📝</button>' +
         '<button data-smart-style="remove" title="Remove annotation">✕</button>';
       document.body.appendChild(t);
 
@@ -976,6 +994,15 @@ function setupFavicon() {
         btn.addEventListener("click", function () {
           var style = this.getAttribute("data-smart-style");
           if (!pendingSelection || !pendingSelection.range) return;
+
+          if (style === "note") {
+            var noteRange = pendingSelection.range.cloneRange();
+            pendingSelection = null;
+            hideToolbar();
+            openNoteEditor(noteRange, findAnnotationForRange(noteRange));
+            return;
+          }
+
           applyAnnotation(pendingSelection.range, style);
           pendingSelection = null;
           hideToolbar();
@@ -1099,6 +1126,183 @@ function setupFavicon() {
         suffix = all[ei].nodeValue.slice(range.endOffset, range.endOffset + count);
       }
       return { prefix: prefix, suffix: suffix, selected: selected };
+    }
+
+    function countNoteCharacters(text) {
+      // Array.from counts Unicode code points rather than UTF-16 code units,
+      // which makes the counter behave better for emoji and non-Latin scripts.
+      return Array.from(String(text || "")).length;
+    }
+
+    function findAnnotationForRange(range) {
+      if (!range) return null;
+
+      var foundId = null;
+      Array.prototype.slice.call(document.querySelectorAll(".smart-annotation")).some(function (span) {
+        try {
+          if (range.intersectsNode(span) && span.dataset.annotationId) {
+            foundId = span.dataset.annotationId;
+            return true;
+          }
+        } catch (e) {}
+        return false;
+      });
+
+      if (!foundId) return null;
+
+      for (var i = 0; i < currentPageAnnotations.length; i++) {
+        if (currentPageAnnotations[i].AnnotationID === foundId) return currentPageAnnotations[i];
+      }
+      return null;
+    }
+
+    function ensureNoteEditor() {
+      if (document.getElementById("smartAnnotationNoteEditor")) return;
+
+      var d = document.createElement("div");
+      d.id = "smartAnnotationNoteEditor";
+      d.className = "book-common-ui";
+      d.innerHTML =
+        '<div id="smartAnnotationNoteEditorBox">' +
+          '<h3>📝 Add note / comment</h3>' +
+          '<textarea id="smartAnnotationNoteText" maxlength="' + MAX_NOTE_CHARS + '" placeholder="Write your note or comment in any language…"></textarea>' +
+          '<div id="smartAnnotationNoteCounter">0 / ' + MAX_NOTE_CHARS.toLocaleString() + '</div>' +
+          '<div id="smartAnnotationNoteLimit">Notes can contain Gujarati, Hindi, English, emoji, and other Unicode text. Maximum: ' + MAX_NOTE_CHARS.toLocaleString() + ' characters per Google Sheets cell.</div>' +
+          '<div id="smartAnnotationNoteEditorActions">' +
+            '<button id="smartAnnotationNoteCancel">Cancel</button>' +
+            '<button id="smartAnnotationNoteSave">Save note</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(d);
+
+      var textarea = document.getElementById("smartAnnotationNoteText");
+      var counter = document.getElementById("smartAnnotationNoteCounter");
+      textarea.addEventListener("input", function () {
+        counter.textContent = countNoteCharacters(textarea.value).toLocaleString() + " / " + MAX_NOTE_CHARS.toLocaleString();
+      });
+
+      document.getElementById("smartAnnotationNoteCancel").addEventListener("click", function () {
+        d.style.display = "none";
+        d.__annotation = null;
+        d.__range = null;
+      });
+
+      document.getElementById("smartAnnotationNoteSave").addEventListener("click", function () {
+        var note = textarea.value;
+        if (countNoteCharacters(note) > MAX_NOTE_CHARS) {
+          showStatus("Note is longer than " + MAX_NOTE_CHARS.toLocaleString() + " characters");
+          return;
+        }
+
+        var annotation = d.__annotation || null;
+        var range = d.__range || null;
+
+        d.style.display = "none";
+        d.__annotation = null;
+        d.__range = null;
+
+        if (annotation) {
+          updateAnnotationNote(annotation, note);
+        } else if (range) {
+          createNoteAnnotation(range, note);
+        }
+      });
+
+      d.addEventListener("click", function (e) {
+        if (e.target === d) {
+          d.style.display = "none";
+          d.__annotation = null;
+          d.__range = null;
+        }
+      });
+    }
+
+    function openNoteEditor(range, annotation) {
+      if (!range && !annotation) return;
+      ensureNoteEditor();
+
+      var d = document.getElementById("smartAnnotationNoteEditor");
+      var textarea = document.getElementById("smartAnnotationNoteText");
+      var counter = document.getElementById("smartAnnotationNoteCounter");
+
+      d.__annotation = annotation || null;
+      d.__range = range ? range.cloneRange() : null;
+      textarea.value = annotation ? (annotation.Note || "") : "";
+      counter.textContent = countNoteCharacters(textarea.value).toLocaleString() + " / " + MAX_NOTE_CHARS.toLocaleString();
+      document.getElementById("smartAnnotationNoteSave").textContent = annotation ? "Save note" : "Save note";
+      d.style.display = "flex";
+
+      setTimeout(function () { textarea.focus(); }, 50);
+    }
+
+    function createNoteAnnotation(range, note) {
+      if (!range || range.collapsed) return;
+      var annotation = makeAnnotation(range, "note");
+      if (!annotation) return;
+      annotation.Note = note;
+
+      var spans = wrapRange(range, "note", annotation.AnnotationID);
+      if (!spans.length) return;
+
+      if (config && config.enabled) {
+        saveAnnotation(annotation);
+      } else {
+        currentPageAnnotations.push(annotation);
+        refreshAnnotationViewer();
+      }
+
+      window.getSelection().removeAllRanges();
+    }
+
+    function updateAnnotationNote(annotation, note) {
+      if (!annotation) return;
+
+      annotation.Note = note;
+      annotation.UpdatedAt = new Date().toISOString();
+
+      if (!config || !config.spreadsheetId) {
+        refreshAnnotationViewer();
+        return;
+      }
+
+      var token = gapi.client.getToken && gapi.client.getToken();
+      if (!token || !token.access_token) {
+        showStatus("Google authorization is missing");
+        return;
+      }
+
+      findAnnotationRow(annotation.AnnotationID).then(function (rowNumber) {
+        if (!rowNumber) throw new Error("Annotation row not found");
+
+        var row = [
+          annotation.AnnotationID,
+          annotation.PageName,
+          annotation.SelectedText,
+          annotation.PrefixText,
+          annotation.SuffixText,
+          annotation.StartPath,
+          annotation.StartOffset,
+          annotation.EndPath,
+          annotation.EndOffset,
+          annotation.Style,
+          annotation.CreatedAt,
+          annotation.UpdatedAt,
+          annotation.Note || ""
+        ];
+
+        return gapi.client.sheets.spreadsheets.values.update({
+          spreadsheetId: config.spreadsheetId,
+          range: SHEET_NAME + "!A" + rowNumber + ":M" + rowNumber,
+          valueInputOption: "RAW",
+          resource: { values: [row] }
+        });
+      }).then(function () {
+        refreshAnnotationViewer();
+        showStatus(note ? "Note saved" : "Note removed");
+      }).catch(function (err) {
+        console.error("Smart Annotation note update error", err);
+        showStatus("Could not save note");
+      });
     }
 
     function makeAnnotation(range, style) {
@@ -1320,9 +1524,7 @@ function setupFavicon() {
         tokenClient.callback = function (response) {
           if (response.error) {
             console.error("Google authorization error:", response);
-            restoreSmartAnnotationDialogZIndexes();
-            var msg = document.getElementById("smartAnnotationSettingsMessage") ||
-                      document.getElementById("smartAnnotationSetupMessage");
+            var msg = document.getElementById("smartAnnotationSettingsMessage");
             if (msg) msg.textContent = "Google authorization was not completed. If your Google session is signed out, choose the account once again.";
             return;
           }
@@ -1353,69 +1555,21 @@ function setupFavicon() {
       });
     }
 
-    /*
-       Google Picker is created by Google's library outside our dialog.
-       Both Smart Annotation dialogs normally use an extremely high z-index.
-       If either dialog is still open, it can therefore cover the Picker.
-
-       The important detail is that the first-use dialog (#smartAnnotationSetup)
-       can also be the visible dialog. Earlier code only lowered
-       #smartAnnotationSettings, which is why the Picker could still appear
-       behind the first-use Smart Annotation dialog.
-    */
-    function putSmartAnnotationDialogsBehindPicker() {
-      var ids = [
-        "smartAnnotationSetup",
-        "smartAnnotationSettings",
-        "smartAnnotationViewer"
-      ];
-
-      ids.forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) {
-          // !important is intentional: Google Picker's own overlay must be
-          // allowed to sit above our dialogs regardless of their CSS rules.
-          el.style.setProperty("z-index", "1", "important");
-        }
-      });
-    }
-
-    function restoreSmartAnnotationDialogZIndexes() {
-      var setup = document.getElementById("smartAnnotationSetup");
-      var settings = document.getElementById("smartAnnotationSettings");
-      var viewer = document.getElementById("smartAnnotationViewer");
-
-      if (setup) {
-        setup.style.setProperty("z-index", "2147482999", "important");
-      }
-      if (settings) {
-        settings.style.setProperty("z-index", "2147482999", "important");
-      }
-      if (viewer) {
-        viewer.style.setProperty("z-index", "2147482996", "important");
-      }
-    }
-
     function chooseGoogleSheet() {
       if (!PICKER_API_KEY || PICKER_API_KEY.indexOf("YOUR_GOOGLE") === 0) {
-        showPickerConfigurationMessage();
-        return;
-      }
+		showPickerConfigurationMessage();
+		return;
+	  }
 
-      /*
-         IMPORTANT: Do not hide our Smart Annotation dialog.
-         Keep it visible, but put it behind Google's OAuth / Picker UI.
-
-         This handles BOTH possible dialogs:
-         - smartAnnotationSetup  (first-use dialog)
-         - smartAnnotationSettings (settings dialog)
-      */
-      putSmartAnnotationDialogsBehindPicker();
+	  // Keep Smart Annotation Settings open,
+	  // but place it BEHIND the Google Picker.
+	  var settings = document.getElementById("smartAnnotationSettings");
+	  if (settings) {
+		settings.style.zIndex = "100";
+	  }
 
       authorizeGoogle(function () {
         if (!window.google || !google.picker) {
-          restoreSmartAnnotationDialogZIndexes();
-
           var msg = document.getElementById("smartAnnotationSettingsMessage") ||
                     document.getElementById("smartAnnotationSetupMessage");
           if (msg) msg.textContent = "Google Picker is still loading. Please click Choose Google Sheet again in a moment.";
@@ -1424,10 +1578,7 @@ function setupFavicon() {
 
         var token = gapi.client.getToken();
         if (!token || !token.access_token) {
-          restoreSmartAnnotationDialogZIndexes();
-
-          var msg2 = document.getElementById("smartAnnotationSettingsMessage") ||
-                     document.getElementById("smartAnnotationSetupMessage");
+          var msg2 = document.getElementById("smartAnnotationSettingsMessage");
           if (msg2) msg2.textContent = "Google authorization is missing. Please click Choose Google Sheet again.";
           return;
         }
@@ -1443,61 +1594,40 @@ function setupFavicon() {
           .addView(docsView)
           .setTitle("Choose your Smart Annotation Google Sheet")
           .setCallback(function (data) {
-
             if (data.action === google.picker.Action.PICKED) {
               var doc = data.docs && data.docs[0];
-              if (!doc || !doc.id) {
-                restoreSmartAnnotationDialogZIndexes();
-                return;
-              }
+              if (!doc || !doc.id) return;
 
               var selectedToken = gapi.client.getToken();
-              var selectedUrl = doc.url ||
-                ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit");
+              var selectedUrl = doc.url || ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit");
 
               /*
                  Remember only a Google-account hint (email), never the
                  OAuth access token. This lets later pages request a fresh
                  token silently for the same Google account.
               */
-              getSelectedSheetOwnerEmail(
-                doc.id,
-                selectedToken && selectedToken.access_token
-              ).then(function (ownerEmail) {
+              getSelectedSheetOwnerEmail(doc.id, selectedToken && selectedToken.access_token)
+                .then(function (ownerEmail) {
+                  saveConfig({
+                    enabled: true,
+                    skipped: false,
+                    spreadsheetId: doc.id,
+                    spreadsheetName: doc.name || "Google Sheet",
+                    spreadsheetUrl: selectedUrl,
+                    selectedByPicker: true,
+                    googleAccountEmail: ownerEmail || (config && config.googleAccountEmail) || "",
+                    sheetName: SHEET_NAME
+                  });
 
-                saveConfig({
-                  enabled: true,
-                  skipped: false,
-                  spreadsheetId: doc.id,
-                  spreadsheetName: doc.name || "Google Sheet",
-                  spreadsheetUrl: selectedUrl,
-                  selectedByPicker: true,
-                  googleAccountEmail:
-                    ownerEmail ||
-                    (config && config.googleAccountEmail) ||
-                    "",
-                  sheetName: SHEET_NAME
+                  var setup = document.getElementById("smartAnnotationSetup");
+              if (setup) setup.style.display = "none";
+              var settings = document.getElementById("smartAnnotationSettings");
+              if (settings) settings.style.display = "none";
+
+              updateSettingsDialog();
+              initializeAnnotationSheet();
+                  showStatus("Google Sheet selected");
                 });
-
-                // Successful selection: close our own dialog.
-                var setup = document.getElementById("smartAnnotationSetup");
-                if (setup) setup.style.display = "none";
-
-                var settings = document.getElementById("smartAnnotationSettings");
-                if (settings) settings.style.display = "none";
-
-                restoreSmartAnnotationDialogZIndexes();
-
-                updateSettingsDialog();
-                initializeAnnotationSheet();
-                showStatus("Google Sheet selected");
-              });
-
-            } else if (data.action === google.picker.Action.CANCEL) {
-
-              // User closed Picker without selecting a Sheet.
-              // Bring the Smart Annotation dialog back to the foreground.
-              restoreSmartAnnotationDialogZIndexes();
             }
           })
           .build();
@@ -1567,23 +1697,36 @@ function setupFavicon() {
 
 		return gapi.client.sheets.spreadsheets.values.get({
 		  spreadsheetId: config.spreadsheetId,
-		  range: SHEET_NAME + "!A1:L1"
+		  range: SHEET_NAME + "!A1:M1"
 		});
 
 	  }).then(function (response) {
 
 		var values = response.result && response.result.values;
+		var header = values && values.length ? (values[0] || []) : [];
 
-		if (values && values.length && values[0].length) {
+		if (header.length && header[12] === "Note") {
 		  return;
 		}
 
+		if (!header.length) {
+		  // Brand-new Annotations sheet: create the complete header row.
+		  return gapi.client.sheets.spreadsheets.values.update({
+			spreadsheetId: config.spreadsheetId,
+			range: SHEET_NAME + "!A1:M1",
+			valueInputOption: "RAW",
+			resource: { values: [HEADER] }
+		  });
+		}
+
+		// Existing Smart Annotation sheets have 12 columns.
+		// Add the new Note header without disturbing existing data.
 		return gapi.client.sheets.spreadsheets.values.update({
 		  spreadsheetId: config.spreadsheetId,
-		  range: SHEET_NAME + "!A1:L1",
+		  range: SHEET_NAME + "!M1",
 		  valueInputOption: "RAW",
 		  resource: {
-			values: [HEADER]
+			values: [["Note"]]
 		  }
 		});
 
@@ -1607,7 +1750,7 @@ function setupFavicon() {
       showStatus("Loading annotations…");
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId:config.spreadsheetId,
-        range:SHEET_NAME + "!A2:L"
+        range:SHEET_NAME + "!A2:M"
       }).then(function (response) {
         var rows = response.result && response.result.values || [];
         currentPageAnnotations = rows.map(rowToAnnotation).filter(function (a) {
@@ -1640,7 +1783,8 @@ function setupFavicon() {
         EndOffset:Number(row[8] || 0),
         Style:row[9] || "",
         CreatedAt:row[10] || "",
-        UpdatedAt:row[11] || ""
+        UpdatedAt:row[11] || "",
+        Note:row[12] || ""
       };
     }
 
@@ -1665,12 +1809,13 @@ function setupFavicon() {
         annotation.EndOffset,
         annotation.Style,
         annotation.CreatedAt,
-        annotation.UpdatedAt
+        annotation.UpdatedAt,
+        annotation.Note || ""
       ];
 
       gapi.client.sheets.spreadsheets.values.append({
         spreadsheetId:config.spreadsheetId,
-        range:SHEET_NAME + "!A:L",
+        range:SHEET_NAME + "!A:M",
         valueInputOption:"RAW",
         insertDataOption:"INSERT_ROWS",
         resource:{ values:[row] }
@@ -1799,7 +1944,8 @@ function setupFavicon() {
       if (!q) return annotationRows();
       return annotationRows().filter(function (a) {
         return String(a.SelectedText || "").toLowerCase().indexOf(q) >= 0 ||
-               String(a.Style || "").toLowerCase().indexOf(q) >= 0;
+               String(a.Style || "").toLowerCase().indexOf(q) >= 0 ||
+               String(a.Note || "").toLowerCase().indexOf(q) >= 0;
       });
     }
 
@@ -1826,10 +1972,23 @@ function setupFavicon() {
         item.dataset.annotationId = a.AnnotationID;
         item.innerHTML =
           '<div class="smartAnnotationItemText">' + escapeHtml(a.SelectedText) + '</div>' +
-          '<div class="smartAnnotationItemMeta">' + escapeHtml(styleLabel(a.Style)) + (a.CreatedAt ? " • " + escapeHtml(new Date(a.CreatedAt).toLocaleString()) : "") + '</div>';
-        item.addEventListener("click", function () {
+          (a.Note ? '<div class="smartAnnotationItemNote">📝 ' + escapeHtml(a.Note).replace(/\n/g, "<br>") + '</div>' : '') +
+          '<div class="smartAnnotationItemMeta">' + escapeHtml(styleLabel(a.Style)) + (a.CreatedAt ? " • " + escapeHtml(new Date(a.CreatedAt).toLocaleString()) : "") + '</div>' +
+          '<div style="margin-top:8px;display:flex;gap:6px;justify-content:flex-end;">' +
+            '<button type="button" class="smartAnnotationEditNote" style="padding:5px 9px;border:1px solid #aaa;border-radius:6px;background:#fff;cursor:pointer;">' + (a.Note ? '📝 Edit note' : '📝 Add note') + '</button>' +
+          '</div>';
+        item.addEventListener("click", function (e) {
+          if (e.target.closest && e.target.closest(".smartAnnotationEditNote")) return;
           showAnnotationOnPage(a);
         });
+        var editNote = item.querySelector(".smartAnnotationEditNote");
+        if (editNote) {
+          editNote.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openNoteEditor(null, a);
+          });
+        }
         list.appendChild(item);
       });
     }
