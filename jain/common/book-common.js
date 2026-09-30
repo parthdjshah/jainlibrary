@@ -1353,9 +1353,16 @@ function setupFavicon() {
 
     function chooseGoogleSheet() {
       if (!PICKER_API_KEY || PICKER_API_KEY.indexOf("YOUR_GOOGLE") === 0) {
-        showPickerConfigurationMessage();
-        return;
-      }
+		showPickerConfigurationMessage();
+		return;
+	  }
+
+	  // Keep Smart Annotation Settings open,
+	  // but place it BEHIND the Google Picker.
+	  var settings = document.getElementById("smartAnnotationSettings");
+	  if (settings) {
+		settings.style.zIndex = "100";
+	  }
 
       authorizeGoogle(function () {
         if (!window.google || !google.picker) {
