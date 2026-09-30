@@ -1320,7 +1320,9 @@ function setupFavicon() {
         tokenClient.callback = function (response) {
           if (response.error) {
             console.error("Google authorization error:", response);
-            var msg = document.getElementById("smartAnnotationSettingsMessage");
+            restoreSmartAnnotationDialogZIndexes();
+            var msg = document.getElementById("smartAnnotationSettingsMessage") ||
+                      document.getElementById("smartAnnotationSetupMessage");
             if (msg) msg.textContent = "Google authorization was not completed. If your Google session is signed out, choose the account once again.";
             return;
           }
@@ -1351,21 +1353,69 @@ function setupFavicon() {
       });
     }
 
+    /*
+       Google Picker is created by Google's library outside our dialog.
+       Both Smart Annotation dialogs normally use an extremely high z-index.
+       If either dialog is still open, it can therefore cover the Picker.
+
+       The important detail is that the first-use dialog (#smartAnnotationSetup)
+       can also be the visible dialog. Earlier code only lowered
+       #smartAnnotationSettings, which is why the Picker could still appear
+       behind the first-use Smart Annotation dialog.
+    */
+    function putSmartAnnotationDialogsBehindPicker() {
+      var ids = [
+        "smartAnnotationSetup",
+        "smartAnnotationSettings",
+        "smartAnnotationViewer"
+      ];
+
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          // !important is intentional: Google Picker's own overlay must be
+          // allowed to sit above our dialogs regardless of their CSS rules.
+          el.style.setProperty("z-index", "1", "important");
+        }
+      });
+    }
+
+    function restoreSmartAnnotationDialogZIndexes() {
+      var setup = document.getElementById("smartAnnotationSetup");
+      var settings = document.getElementById("smartAnnotationSettings");
+      var viewer = document.getElementById("smartAnnotationViewer");
+
+      if (setup) {
+        setup.style.setProperty("z-index", "2147482999", "important");
+      }
+      if (settings) {
+        settings.style.setProperty("z-index", "2147482999", "important");
+      }
+      if (viewer) {
+        viewer.style.setProperty("z-index", "2147482996", "important");
+      }
+    }
+
     function chooseGoogleSheet() {
       if (!PICKER_API_KEY || PICKER_API_KEY.indexOf("YOUR_GOOGLE") === 0) {
-		showPickerConfigurationMessage();
-		return;
-	  }
+        showPickerConfigurationMessage();
+        return;
+      }
 
-	  // Keep Smart Annotation Settings open,
-	  // but place it BEHIND the Google Picker.
-	  var settings = document.getElementById("smartAnnotationSettings");
-	  if (settings) {
-		settings.style.zIndex = "100";
-	  }
+      /*
+         IMPORTANT: Do not hide our Smart Annotation dialog.
+         Keep it visible, but put it behind Google's OAuth / Picker UI.
+
+         This handles BOTH possible dialogs:
+         - smartAnnotationSetup  (first-use dialog)
+         - smartAnnotationSettings (settings dialog)
+      */
+      putSmartAnnotationDialogsBehindPicker();
 
       authorizeGoogle(function () {
         if (!window.google || !google.picker) {
+          restoreSmartAnnotationDialogZIndexes();
+
           var msg = document.getElementById("smartAnnotationSettingsMessage") ||
                     document.getElementById("smartAnnotationSetupMessage");
           if (msg) msg.textContent = "Google Picker is still loading. Please click Choose Google Sheet again in a moment.";
@@ -1374,7 +1424,10 @@ function setupFavicon() {
 
         var token = gapi.client.getToken();
         if (!token || !token.access_token) {
-          var msg2 = document.getElementById("smartAnnotationSettingsMessage");
+          restoreSmartAnnotationDialogZIndexes();
+
+          var msg2 = document.getElementById("smartAnnotationSettingsMessage") ||
+                     document.getElementById("smartAnnotationSetupMessage");
           if (msg2) msg2.textContent = "Google authorization is missing. Please click Choose Google Sheet again.";
           return;
         }
@@ -1390,40 +1443,61 @@ function setupFavicon() {
           .addView(docsView)
           .setTitle("Choose your Smart Annotation Google Sheet")
           .setCallback(function (data) {
+
             if (data.action === google.picker.Action.PICKED) {
               var doc = data.docs && data.docs[0];
-              if (!doc || !doc.id) return;
+              if (!doc || !doc.id) {
+                restoreSmartAnnotationDialogZIndexes();
+                return;
+              }
 
               var selectedToken = gapi.client.getToken();
-              var selectedUrl = doc.url || ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit");
+              var selectedUrl = doc.url ||
+                ("https://docs.google.com/spreadsheets/d/" + doc.id + "/edit");
 
               /*
                  Remember only a Google-account hint (email), never the
                  OAuth access token. This lets later pages request a fresh
                  token silently for the same Google account.
               */
-              getSelectedSheetOwnerEmail(doc.id, selectedToken && selectedToken.access_token)
-                .then(function (ownerEmail) {
-                  saveConfig({
-                    enabled: true,
-                    skipped: false,
-                    spreadsheetId: doc.id,
-                    spreadsheetName: doc.name || "Google Sheet",
-                    spreadsheetUrl: selectedUrl,
-                    selectedByPicker: true,
-                    googleAccountEmail: ownerEmail || (config && config.googleAccountEmail) || "",
-                    sheetName: SHEET_NAME
-                  });
+              getSelectedSheetOwnerEmail(
+                doc.id,
+                selectedToken && selectedToken.access_token
+              ).then(function (ownerEmail) {
 
-                  var setup = document.getElementById("smartAnnotationSetup");
-              if (setup) setup.style.display = "none";
-              var settings = document.getElementById("smartAnnotationSettings");
-              if (settings) settings.style.display = "none";
-
-              updateSettingsDialog();
-              initializeAnnotationSheet();
-                  showStatus("Google Sheet selected");
+                saveConfig({
+                  enabled: true,
+                  skipped: false,
+                  spreadsheetId: doc.id,
+                  spreadsheetName: doc.name || "Google Sheet",
+                  spreadsheetUrl: selectedUrl,
+                  selectedByPicker: true,
+                  googleAccountEmail:
+                    ownerEmail ||
+                    (config && config.googleAccountEmail) ||
+                    "",
+                  sheetName: SHEET_NAME
                 });
+
+                // Successful selection: close our own dialog.
+                var setup = document.getElementById("smartAnnotationSetup");
+                if (setup) setup.style.display = "none";
+
+                var settings = document.getElementById("smartAnnotationSettings");
+                if (settings) settings.style.display = "none";
+
+                restoreSmartAnnotationDialogZIndexes();
+
+                updateSettingsDialog();
+                initializeAnnotationSheet();
+                showStatus("Google Sheet selected");
+              });
+
+            } else if (data.action === google.picker.Action.CANCEL) {
+
+              // User closed Picker without selecting a Sheet.
+              // Bring the Smart Annotation dialog back to the foreground.
+              restoreSmartAnnotationDialogZIndexes();
             }
           })
           .build();
