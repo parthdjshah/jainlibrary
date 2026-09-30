@@ -776,7 +776,8 @@ function setupFavicon() {
         ".smart-annotation-bold{font-weight:700;}" +
         ".smart-annotation-italic{font-style:italic;}" +
         ".smart-annotation-focus{outline:3px solid #ff9800;outline-offset:2px;border-radius:2px;}" +
-        ".smart-annotation-note{border-bottom:2px dotted #777;}" +
+        ".smart-annotation-note{border-bottom:2px dotted #777;cursor:help;}" +
+        ".smartAnnotationNoteBalloon{position:fixed;display:none;z-index:2147483002;max-width:min(420px,calc(100vw - 24px));max-height:240px;overflow:auto;background:#fffef0;color:#222;border:1px solid #c9b458;border-radius:9px;box-shadow:0 5px 20px rgba(0,0,0,.25);padding:10px 12px;font:14px/1.5 Arial,sans-serif;white-space:pre-wrap;word-break:break-word;pointer-events:none;}" +
         "#smartAnnotationNoteEditor{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:2147483001;background:rgba(0,0,0,.45);}" +
         "#smartAnnotationNoteEditorBox{background:#fff;color:#222;width:min(620px,calc(100vw - 24px));padding:20px;border-radius:14px;box-shadow:0 8px 35px rgba(0,0,0,.35);font-family:Arial,sans-serif;}" +
         "#smartAnnotationNoteEditorBox h3{margin:0 0 10px;font-size:20px;}" +
@@ -1244,6 +1245,8 @@ function setupFavicon() {
       var spans = wrapRange(range, "note", annotation.AnnotationID);
       if (!spans.length) return;
 
+      setAnnotationNoteOnSpans(annotation);
+
       if (config && config.enabled) {
         saveAnnotation(annotation);
       } else {
@@ -1259,6 +1262,9 @@ function setupFavicon() {
 
       annotation.Note = note;
       annotation.UpdatedAt = new Date().toISOString();
+
+      setAnnotationNoteOnSpans(annotation);
+      hideNoteBalloon();
 
       if (!config || !config.spreadsheetId) {
         refreshAnnotationViewer();
@@ -1378,6 +1384,148 @@ function setupFavicon() {
       var spans = wrapRange(range, action, annotation.AnnotationID);
       if (spans.length && config && config.enabled) saveAnnotation(annotation);
       window.getSelection().removeAllRanges();
+    }
+
+    function ensureNoteBalloon() {
+      var balloon = document.getElementById("smartAnnotationNoteBalloon");
+      if (balloon) return balloon;
+
+      balloon = document.createElement("div");
+      balloon.id = "smartAnnotationNoteBalloon";
+      balloon.className = "smartAnnotationNoteBalloon book-common-ui";
+      balloon.setAttribute("role", "tooltip");
+      document.body.appendChild(balloon);
+      return balloon;
+    }
+
+    function getAnnotationById(annotationId) {
+      if (!annotationId) return null;
+      for (var i = 0; i < currentPageAnnotations.length; i++) {
+        if (currentPageAnnotations[i] &&
+            currentPageAnnotations[i].AnnotationID === annotationId) {
+          return currentPageAnnotations[i];
+        }
+      }
+      return null;
+    }
+
+    function setAnnotationNoteOnSpans(annotation) {
+      if (!annotation || !annotation.AnnotationID) return;
+
+      var selector =
+        '.smart-annotation[data-annotation-id="' +
+        String(annotation.AnnotationID).replace(/"/g, '\\"') +
+        '"]';
+
+      document.querySelectorAll(selector).forEach(function (span) {
+        if (annotation.Note) {
+          span.classList.add("smart-annotation-note");
+          span.dataset.hasNote = "1";
+          span.dataset.annotationNote = annotation.Note;
+          span.title = "📝 This text has a comment";
+        } else {
+          span.classList.remove("smart-annotation-note");
+          delete span.dataset.hasNote;
+          delete span.dataset.annotationNote;
+          span.removeAttribute("title");
+        }
+      });
+    }
+
+    function hideNoteBalloon() {
+      var balloon = document.getElementById("smartAnnotationNoteBalloon");
+      if (balloon) balloon.style.display = "none";
+    }
+
+    function showNoteBalloon(span) {
+      if (!span) return;
+
+      var annotation =
+        getAnnotationById(span.dataset.annotationId);
+
+      var note =
+        (annotation && annotation.Note) ||
+        span.dataset.annotationNote ||
+        "";
+
+      if (!note) {
+        hideNoteBalloon();
+        return;
+      }
+
+      var balloon = ensureNoteBalloon();
+      balloon.textContent = "📝 " + note;
+      balloon.style.display = "block";
+
+      var rect = span.getBoundingClientRect();
+      var margin = 10;
+
+      /*
+        First position below the annotated text.
+        If there is not enough room, place it above.
+      */
+      var left = rect.left;
+      var top = rect.bottom + 8;
+
+      var bw = balloon.offsetWidth;
+      var bh = balloon.offsetHeight;
+
+      if (left + bw > window.innerWidth - margin) {
+        left = window.innerWidth - bw - margin;
+      }
+      if (left < margin) left = margin;
+
+      if (top + bh > window.innerHeight - margin) {
+        top = rect.top - bh - 8;
+      }
+      if (top < margin) {
+        top = Math.min(
+          Math.max(margin, rect.bottom + 8),
+          window.innerHeight - bh - margin
+        );
+      }
+
+      balloon.style.left = left + "px";
+      balloon.style.top = top + "px";
+    }
+
+    function initNoteHover() {
+      ensureNoteBalloon();
+
+      document.addEventListener("mouseover", function (e) {
+        var target = e.target;
+        if (!target || !target.closest) return;
+
+        var span = target.closest(".smart-annotation");
+        if (!span || span.dataset.hasNote !== "1") return;
+
+        var from = e.relatedTarget;
+        if (from && from.closest &&
+            from.closest(".smart-annotation") === span) {
+          return;
+        }
+
+        showNoteBalloon(span);
+      });
+
+      document.addEventListener("mouseout", function (e) {
+        var target = e.target;
+        if (!target || !target.closest) return;
+
+        var span = target.closest(".smart-annotation");
+        if (!span) return;
+
+        var to = e.relatedTarget;
+        if (to && to.closest &&
+            to.closest(".smart-annotation") === span) {
+          return;
+        }
+
+        hideNoteBalloon();
+      });
+
+      window.addEventListener("scroll", hideNoteBalloon, { passive: true });
+      window.addEventListener("resize", hideNoteBalloon);
     }
 
     function ensureGoogleLibraries(callback) {
@@ -1899,6 +2047,10 @@ function setupFavicon() {
 
       var spans = wrapRange(range, annotation.Style, annotation.AnnotationID);
       spans.forEach(function (span) { span.dataset.annotationId = annotation.AnnotationID; });
+
+      if (annotation.Note) {
+        setAnnotationNoteOnSpans(annotation);
+      }
     }
 
     function ensureViewer() {
@@ -2003,6 +2155,9 @@ function setupFavicon() {
         if (range) {
           var spans = wrapRange(range, annotation.Style, annotation.AnnotationID);
           span = spans[0];
+          if (span && annotation.Note) {
+            setAnnotationNoteOnSpans(annotation);
+          }
         }
       }
       if (!span) {
@@ -2055,6 +2210,7 @@ function setupFavicon() {
     createSetupDialog();
     createSettingsDialog();
     ensureViewer();
+    initNoteHover();
 
     config = readConfig();
 
